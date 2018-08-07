@@ -1,0 +1,715 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"if",
+				"if\tif"
+			],
+			[
+				"mu",
+				"multiplicand"
+			],
+			[
+				"mul",
+				"multiply"
+			],
+			[
+				"ch",
+				"checkKey"
+			],
+			[
+				"next",
+				"next_"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"pla",
+				"playSound"
+			],
+			[
+				"border",
+				"border-width"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"postion",
+				"position"
+			],
+			[
+				"grid",
+				"grid-template-columns"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"u",
+				"url()"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"h",
+				"bfv-h\tbackface-visibility: hidden;"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"pr",
+				"product"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"post",
+				"position"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"heig",
+				"height"
+			],
+			[
+				"not",
+				"notVerifeed"
+			],
+			[
+				"stop",
+				"stopIt"
+			],
+			[
+				"argume",
+				"argument"
+			],
+			[
+				"on",
+				"onclick"
+			],
+			[
+				"modal",
+				"modalPopup"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"re",
+				"resumeBtn"
+			],
+			[
+				"phon",
+				"phoneBtn"
+			],
+			[
+				"hide",
+				"hideStarburst"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"outline",
+				"outline-color"
+			],
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"font-size",
+				"font-size-adjust"
+			],
+			[
+				"height",
+				"max-height"
+			],
+			[
+				"s",
+				"space-between"
+			],
+			[
+				"r",
+				"relative"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"my",
+				"myBtn"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"D",
+				"DataTypes"
+			],
+			[
+				"sin",
+				"signupPost"
+			],
+			[
+				"logout",
+				"logout_time"
+			],
+			[
+				"db",
+				"dblogoutLog"
+			],
+			[
+				"DAT",
+				"DATE"
+			],
+			[
+				"set",
+				"setActiveChat"
+			],
+			[
+				"last",
+				"lastMessage"
+			],
+			[
+				"activeSid",
+				"activeSideBar"
+			],
+			[
+				"Ch",
+				"CHATS"
+			],
+			[
+				"prop",
+				"PropTypes"
+			],
+			[
+				"Side",
+				"SideBarOption"
+			],
+			[
+				"chat",
+				"chat-room-container"
+			],
+			[
+				"add",
+				"addUserToChat"
+			],
+			[
+				"di",
+				"differenceBy"
+			],
+			[
+				"USE",
+				"USER_DISCONNECTED"
+			],
+			[
+				"C",
+				"COMMUNITY_CHAT"
+			],
+			[
+				"clas",
+				"classNames"
+			],
+			[
+				"sen",
+				"sendTypingFromUser"
+			],
+			[
+				"send",
+				"sendMessageToChatFromUser"
+			],
+			[
+				"create",
+				"createUser"
+			],
+			[
+				"Chat",
+				"ChatHeading"
+			],
+			[
+				"ME",
+				"MESSAGE_RECEIVED"
+			],
+			[
+				"MESS",
+				"MESSAGE_SENT"
+			],
+			[
+				"mess",
+				"messageEvent"
+			],
+			[
+				"Md",
+				"MDEject"
+			],
+			[
+				"conn",
+				"connectedUsers"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"handle",
+				"handleChange"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"const",
+				"const"
+			],
+			[
+				"so",
+				"socket"
+			],
+			[
+				"soc",
+				"socket"
+			],
+			[
+				"socke",
+				"socketIOClient"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"backg",
+				"background-size"
+			],
+			[
+				"com",
+				"computerGuess"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"ove",
+				"overflow"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"me",
+				"meta\tTag"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"head",
+				"header\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 78,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 38.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 428.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Owner/The-Carolinian-Bid-Form/index.html",
+		"/C/Users/Owner/flashcards/flashcards/level3.css",
+		"/C/Users/Owner/flashcards/flashcards/level3.html",
+		"/C/Users/Owner/flashcards/flashcards/level4.html",
+		"/C/Users/Owner/flashcards/flashcards/level2.html",
+		"/C/Users/Owner/flashcards/flashcards/level2.js",
+		"/C/Users/Owner/flashcards/flashcards/index.html",
+		"/C/Users/Owner/flashcards/flashcards/level2.css",
+		"/C/Users/Owner/flashcards/flashcards/app.js",
+		"/C/Users/Owner/flashcards/flashcards/cards.css",
+		"/C/Users/Owner/flashcards/flashcards/img/bronze_L.jpg",
+		"/C/Users/Owner/flashcards/flashcards/img/swirl.png",
+		"/C/Users/Owner/flashcards/flashcards/server.js",
+		"/C/Users/Owner/flashcards/flashcards/package.json",
+		"/C/Users/Owner/flashcards/flashcards/img/Purple_starburst_mini.svg",
+		"/C/Users/Owner/flashcards/flashcards/README.md",
+		"/C/Users/Owner/flashcards/flashcards/media/Card_Flip.m4a",
+		"/C/Users/Owner/Downloads/Purple_starburst_mini.svg",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/Procfile",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/.env",
+		"/C/Users/Owner/Downloads/rds-combined-ca-bundle.pem",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/CNAME",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/package.json",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/models/logoutLog.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/signin.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/controllers/authcontroller.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/layouts/main.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/routes/auth.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/server.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/Port.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/nav.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/signup.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/modal.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/models/user.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/logic/modals.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/welcome.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/config/passport/passport.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/logic/ampm.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/modal.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/node_modules/passport-strategy/lib/strategy.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/node_modules/passport-strategy/lib/index.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/models/index.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/logic/welcome.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/style.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/logic/contact.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/models/loginLog.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/sign_in.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/sign_up.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/logic/names.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/public/css/welcome.css",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/nav.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/partials/modals.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/controllers/greetings.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/views/modals.hbs",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/routes/loginRoute.js",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/config/config.json",
+		"/C/Users/Owner/RodneyRoss/RodneyRoss/routes/api-routes.js",
+		"/C/Users/Owner/Desktop/public/signup.html",
+		"/C/Users/Owner/Desktop/public/login.html",
+		"/C/Users/Owner/Desktop/public/js/login.js",
+		"/C/Users/Owner/Desktop/public/js/signup.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/chats/ChatContainer.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/package.json",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/SocketIO-ReactChat/package.json",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/LoginForm.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/Layout.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/server/index.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/sidebar/SideBar.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/public/index.html",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/styles/index.scss",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/index.css",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/sidebar/SideBarOption.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/Events.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/chats/ChatHeading.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/messages/MessageInput.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/messages/Messages.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/server/SocketManager.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/Factories.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/Chats/ChatContainer.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/Chats/SideBar.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/Chats/ChatHeading.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/App.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/index.js",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 3/Packages/Babel/Babel.sublime-settings",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 3/Packages/User/Babel.sublime-settings",
+		"/C/Users/Owner/Downloads/Package Control.sublime-package",
+		"/C/Users/Owner/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/socketio-react-chat-app/src/components/ChatContainer.js",
+		"/C/Users/Owner/CryptoChat/SocketIO-ReactChat/package.json",
+		"/C/Users/Owner/Desktop/Minority-newspaper/styles/js/index.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/ioreactchat/src/server/SocketManager.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/ioreactchat/src/App.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/ioreactchat/src/server/index.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/ioreactchat/package.json",
+		"/C/Users/Owner/CryptoChat/cryptochat/ioreactchat/src/index.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/package.json",
+		"/C/Users/Owner/CryptoChat/cryptochat/src/App.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/src/server/index.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/src/server/SocketManager.js",
+		"/C/Users/Owner/CryptoChat/cryptochat/src/index.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/App.css",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/ChatPage.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/server.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/App.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/ChatPage.1.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/package.json",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/package.json",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/nodemon.json",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/yarn.lock",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/index.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/node_modules/socket.io/lib/index.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/ChatIo/index.html",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/public/index.html",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/ChartPage.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/SideChart4.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/SideChart3.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/SideChart2.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/SideChart1.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/registerServiceWorker.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/Chart4.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/Chart3.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/Dropdown.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/FaqPage.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/HomePage.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/Sidebar.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/Chart2.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/src/components/charts/Chart1.js",
+		"/C/Users/Owner/RodneySocketIO/CryptoBase/jeff/server/client/public/faq.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 184.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 78,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 76.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "README.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,45 @@
+.bg {
+	background: url("view/img/Paper3.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity:.4
+}
+
+.container {
+
+	background: #fff;
+	height: 800px;
+	width:400px;
+	height: 800px;
+	border: 4px solid;
+	/*border-color: black;*/
+	border-color: orange;
+	opacity: 1;
+	z-index: 10;
+}
+
+img {
+	width:100%;
+}
+
+body {
+	color: green;
+}
+
+input {
+	/*border-color: #993233;*/
+	outline-color: orange;
+	/*border-color:orange;*/
+}
+
+.billed {
+	color:993233;	
+}
+
+textarea {
+	outline-color: orange;
+}
+
+.date {
+	width:100px;
+}

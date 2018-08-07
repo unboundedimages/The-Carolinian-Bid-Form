@@ -1,0 +1,32 @@
+{
+  "name": "the-carolinian-bid-form",
+  "version": "1.0.0",
+  "description": "Form to place bid advertisement with The Carolinian Newspaper",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[Cserver.js)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unboundedimages/The-Carolinian-Bid-Form.git"
+  },
+  "keywords": [
+    "caro.news",
+    "The",
+    "carolinian",
+    "community",
+    "newspaper",
+    "advertisement"
+  ],
+  "author": "Rodney Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unboundedimages/The-Carolinian-Bid-Form/issues"
+  },
+  "homepage": "https://github.com/unboundedimages/The-Carolinian-Bid-Form#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1"
+  }
+}
