@@ -25,13 +25,23 @@
 				<!-- <div id="toolbar"> -->
 					<!-- <button class="ql-bold">Bold</button> -->
 					<!-- <button class="ql-italic">Italic</button> -->
-					<select onchange="textarea1.style.fontSize = this.value;">
-						<option value="12px" selected="selected">12px</option>
-						<option value="9px">9pt</option>
-						<option value="30px">30px</option>
+					<select onchange="textarea1.style.fontSize = value;">
+						<option value="10pt">10pt</option>
+						<option value="12pt" >12px</option>
+						<option value="30pt">30px</option>
 					</select>
-					<button ckass="text-button-style" id="bold" onclick="bold()"><strong>B</strong></button>
-					<button ckass="text-button-style" id="italics"><strong>i</strong></button>
+
+					<select onchange="textarea1.style.fontWeight = value;">
+						<option value="normal" >Normal</option>
+						<option value="bold">Bold</option>
+					</select>
+					<select onchange="textarea1.style.fontStyle = value;">
+						<option value="normal" >Normal</option>
+						<option value="italic">italic</option>
+					</select>
+
+					<button class="text-button-style" id="bold" onclick="bold()"><strong>B</strong></button>
+					<button class="text-button-style" id="italics"><strong>i</strong></button>
 
 					<!-- </div> -->
 					<p>How long will the bid run?</p>
