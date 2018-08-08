@@ -1,6 +1,5 @@
 function bold() {
-	var norm = document.getElementById("test");
-	var bold = document.getElementById("test")
+	var norm = document.getElementById("textarea1");
 	if (norm.style.fontWeight == 'bold') {
 		norm.style.fontWeight = "normal"
 		// alert("alert")

@@ -2,65 +2,41 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=2.0, maximum-scale=1.0, user-scalable=no">
 	<title>The Carolinanian Bid Form</title>
 	<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="app.css">
-	<script type="text/javascript" src="app.js"></script>
+	<!-- <script type="text/javascript" src="app.js"></script> -->
 </head>
 <body>
-	<div class="bg"><img src="view/img/Paper3.png"></div>
+	<div id="overlay"></div>
+	<!-- <div class="bg"><img src="view/img/Paper3.png"></div> -->
 	<div class="container">
 		<img src="http://caro.news/wp-content/uploads/2017/12/caro-logo-for-website.png">
-		<header><h3>The Carolinian Bid Form</h3></header>
+		<header><h2>The Carolinian Bid Form</h2></header>
 		<form action="">
-			<label>Title of Bid:</label><br>
-			<input type="" name=""><br>
-			<label>	Bid Details:</label>
+			<label class="title" >Title of Bid:</label><br>
+			<input type="" name=""><span><img src="http://caro.news/wp-content/uploads/2018/01/Caro-Newsman-Mark-223x300.png" class="caroman"></span><br>
+			<label class="billed">	Bid Details:</label>
 			&nbsp; &nbsp;
 			<a href="#" class="billed">How you are billed</a><br>		
-			<!-- <div id="editor"> -->
+			<div id="editor">
 				<textarea id="textarea1">
 				</textarea>
-				<!-- s</div> -->
-				<!-- <div id="toolbar"> -->
-					<!-- <button class="ql-bold">Bold</button> -->
-					<!-- <button class="ql-italic">Italic</button> -->
-					<select onchange="textarea1.style.fontSize = value;">
-						<option value="10pt">10pt</option>
-						<option value="12pt" >12px</option>
-						<option value="30pt">30px</option>
-					</select>
-
-					<select onchange="textarea1.style.fontWeight = value;">
-						<option value="normal" >Normal</option>
-						<option value="bold">Bold</option>
-					</select>
-					<select onchange="textarea1.style.fontStyle = value;">
-						<option value="normal" >Normal</option>
-						<option value="italic">italic</option>
-					</select>
-
-					<button class="text-button-style" id="bold" onclick="bold()"><strong>B</strong></button>
-					<button class="text-button-style" id="italics"><strong>i</strong></button>
-
-					<!-- </div> -->
-					<p>How long will the bid run?</p>
-					<label>	Start Date:</label>		
-					<input  class="date" type="date" name="bid date">
-					<label>	End Date:</label>		
-					<input class="date" type="date" name="bid date">
-					<button>Submit</button>
-				</form>
 			</div>
-
-			<p id="test">Test</p>
-			<button onclick="bold()">Try it</button>
-			<!-- <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
-			<script>
-				var editor = new Quill('#editor', {
-					modules: { toolbar: '#toolbar' },
-					theme: 'snow'
-				});
-			</script>  -->
-		</body>
-		</html>
+			<p>How long will the bid run?</p>
+			<label>	Start Date:</label>		
+			<input  class="date" type="date" name="bid date">
+			<label>	End Date:</label>		
+			<input class="date" type="date" name="bid date">
+			<button class="caro-submit">Submit</button>
+		</form>
+	</div>
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+	<script>
+		var quill = new Quill('#editor', {
+			theme: 'snow'
+		});
+	</script> 
+</body>
+</html>

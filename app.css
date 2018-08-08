@@ -1,3 +1,30 @@
+body {
+	background-color: white;
+	color: #993233;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#overlay {
+	background-image: url("view/img/Paper3.png");
+	position: fixed; /* Sit on top of the page content */
+	/*display: none;*/ /* Hidden by default */
+	width: 100%; /* Full width (cover the whole page) */
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0; 
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: .02;
+	/*background-color: rgba(0,0,0,0.5);*/ /* Black background with opacity */
+	/*z-index: 2;*/ /* Specify a stack order in case you're using a different order for other elements */
+	/*cursor: pointer;*/ /* Add a pointer on hover */
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 100px
+}
+
 .bg {
 	background: url("view/img/Paper3.png");
 	background-repeat: no-repeat;
@@ -6,37 +33,62 @@
 }
 
 .container {
-
 	background: #fff;
-	height: 800px;
-	width:400px;
-	height: 800px;
+	width:490px;
+	height: 750px;
 	border: 4px solid;
 	/*border-color: black;*/
 	border-color: orange;
 	opacity: 1;
 	z-index: 10;
 	font-size: 10pt;
+	opacity:.97;
 }
-label{
+
+label {
 	font-weight: bold;
+	margin: 10px -9px 0px 10px;
 }
+
 img {
 	width:100%;
 }
 
-body {
-	color: green;
+.title {
+	position: absolute;
+	overflow: hidden;
+	z-index: 5;
+}
+
+.caroman {
+	width: 38%;
+	position: absolute;
+	left: -10px;
+	top: 76px;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0.15;
 }
 
 input {
 	/*border-color: #993233;*/
 	outline-color: orange;
+	margin: 18px 10px 22px;
 	/*border-color:orange;*/
+}
+
+p {
+	margin: 10px;
 }
 
 .billed {
 	color:993233;	
+	padding-bottom: 10px;
+}
+
+#editor {
+	margin: 0px 11px 19px 11px;
+	color: black;
 }
 
 textarea {
@@ -47,7 +99,7 @@ textarea {
 }
 
 .date {
-	width:100px;
+	width:130px;
 }
 
 .bold {
@@ -55,5 +107,133 @@ textarea {
 }
 
 .ql-editor{
-	height: 100px;
+	height: 220px;
+	background-color: #ffffffab;
 }
+
+.ql-snow .ql-picker {
+	/*color: #993233;*/ /*red*/
+	color: #df7d36; /*orange*/
+}
+
+.ql-snow.ql-toolbar .ql-picker-label:hover {
+	color: #70866b;
+}
+
+.ql-snow.ql-toolbar .ql-picker-label.ql-active {
+	color: #df7d36;
+}
+
+.ql-snow.ql-toolbar .ql-picker-item:hover {
+	color: #70866b;
+}
+
+.ql-snow .ql-stroke {
+	stroke: #df7d36;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow .ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke,
+.ql-snow.ql-toolbar button:hover .ql-stroke-mitter,
+.ql-snow .ql-toolbar button:hover .ql-stroke-mitter,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke-mitter,
+.ql-snow .ql-toolbar button.ql-active .ql-stroke-mitter,
+.ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-mitter,
+.ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-mitter,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-mitter,
+.ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-mitter,
+.ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-mitter,
+.ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-mitter,
+.ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-mitter,
+.ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-mitter {
+	stroke: #70866b;
+}
+/*toolbar bg color*/
+.ql-toolbar.ql-snow {
+	margin: 4px 10px -1px 10px;
+	/*background-color: #53624f;*/ /*green*/
+	background-color: #9b3333; /*red*/
+}
+
+.caro-submit {
+	background-color:  #9b3333;
+	color: orange;
+	padding:7px;
+	border-radius: 28px;
+	width: 78px;
+	height: 37px;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 414px) {
+	body {
+		/*background-image: url("view/img/Paper3.png");*/
+		background:none;
+		background-size: cover;
+		/*height: 400px;*/
+	}
+
+	.container{
+		position: relative;
+		overflow: hidden;
+		/*left:2.5%;*/
+		width:395px;
+		/*right:5px;*/
+		/*margin-right: 4px;*/
+	}
+
+	.caroman {
+		width: 127%;
+		position: absolute;
+		left: 15px;
+		top: 61px;
+		/*overflow: hidden;*/
+		/*z-index: -1;*/
+		/*opacity: 0.15;*/
+	}
+	
+	.date {
+		width:100px;
+	}
+}
+
+@media screen and (max-width: 736px) and (min-width: 660px) {
+	body{
+		/*background-image: url("view/img/Paper3.png");*/
+		background-size: cover;
+		/*height: 400px;*/
+	}
+	.container {
+		position: relative;
+		left:10%;
+		width:575px;
+		overflow: hidden;
+	}
+
+	.caroman {
+		width: 127%;
+		position: absolute;
+		left: 15px;
+		top: 61px;
+		/*overflow: hidden;*/
+		/*z-index: -1;*/
+		/*opacity: 0.15;*/
+	}
+	
+}
+
+
+/*svg { color : black; }*/
+/*svg { color : #df7d36; }*/
+
+/*svg*/
