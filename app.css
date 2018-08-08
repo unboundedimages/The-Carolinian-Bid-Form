@@ -1,25 +1,9 @@
 body {
-	background-color: white;
+	background-image: url("view/img/Paper3.png");
 	color: #993233;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-#overlay {
-	background-image: url("view/img/Paper3.png");
-	position: fixed; /* Sit on top of the page content */
-	/*display: none;*/ /* Hidden by default */
-	width: 100%; /* Full width (cover the whole page) */
-	height: 100%; /* Full height (cover the whole page) */
-	top: 0; 
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: .02;
-	/*background-color: rgba(0,0,0,0.5);*/ /* Black background with opacity */
-	/*z-index: 2;*/ /* Specify a stack order in case you're using a different order for other elements */
-	/*cursor: pointer;*/ /* Add a pointer on hover */
-}
-
 h2 {
 	text-align: center;
 	margin-bottom: 100px
@@ -177,19 +161,19 @@ textarea {
 
 @media screen and (max-width: 414px) {
 	body {
-		/*background-image: url("view/img/Paper3.png");*/
 		background:none;
 		background-size: cover;
-		/*height: 400px;*/
 	}
 
+	h2 {
+		margin-bottom: 50px;
+	}
 	.container{
 		position: relative;
 		overflow: hidden;
-		/*left:2.5%;*/
 		width:395px;
-		/*right:5px;*/
-		/*margin-right: 4px;*/
+		height:680px;
+		right:2px;
 	}
 
 	.caroman {
@@ -197,9 +181,6 @@ textarea {
 		position: absolute;
 		left: 15px;
 		top: 61px;
-		/*overflow: hidden;*/
-		/*z-index: -1;*/
-		/*opacity: 0.15;*/
 	}
 	
 	.date {
@@ -209,9 +190,7 @@ textarea {
 
 @media screen and (max-width: 736px) and (min-width: 660px) {
 	body{
-		/*background-image: url("view/img/Paper3.png");*/
 		background-size: cover;
-		/*height: 400px;*/
 	}
 	.container {
 		position: relative;
@@ -225,9 +204,6 @@ textarea {
 		position: absolute;
 		left: 15px;
 		top: 61px;
-		/*overflow: hidden;*/
-		/*z-index: -1;*/
-		/*opacity: 0.15;*/
 	}
 	
 }
