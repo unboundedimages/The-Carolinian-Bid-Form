@@ -1,15 +1,31 @@
-function bold() {
-	var norm = document.getElementById("textarea1");
-	if (norm.style.fontWeight == 'bold') {
-		norm.style.fontWeight = "normal"
-		// alert("alert")
-	} 
+// function bold() {
+// 	var norm = document.getElementById("textarea1");
+// 	if (norm.style.fontWeight == 'bold') {
+// 		norm.style.fontWeight = "normal"
+// 		// alert("alert")
+// 	} 
+// 	else {
+// 		norm.style.fontWeight = "bold"
+// // alert("alert111111111111111")
+// }
+
+// }
+
+function money(event) {
+	var key = event.keyCode;
+	var forumla = key == 13;
+	var x = 1.56
+	if (forumla ){
+		// alert("alert111111111111111")
+		document.getElementById('estimate').innerHTML = x = 0;
+	}
 	else {
-		norm.style.fontWeight = "bold"
-// alert("alert111111111111111")
+		
+		document.getElementById('estimate').innerHTML = x++;
+	}
 }
 
-}
+document.addEventListener('keydown', money);
 
 // function bold(){
 // 	document.getElementbyId("textarea1").style.fontWeight = 'bold';
