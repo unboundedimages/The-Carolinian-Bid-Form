@@ -11,17 +11,47 @@
 
 // }
 
-function money(event) {
+
+// function money(event) {
+// 	var key = event.keyCode;
+// 	var forumla = key == 13;
+// 	var x = 1.56
+// 	if (forumla ){
+// 		// alert("alert111111111111111")
+// 		document.getElementById('estimate').value = parseInt(document.getElementById('estimate').value) + 2;
+// 	}
+// }
+document.addEventListener('keyup', checkKey);
+
+function checkKey(event) {
 	var key = event.keyCode;
-	var forumla = key == 13;
-	var x = 1.56
-	if (forumla ){
-		// alert("alert111111111111111")
-		document.getElementById('estimate').innerHTML = x + x;
+	if (key === 13) {
+		money(event)
 	}
 }
 
-document.addEventListener('keydown', money);
+//make a variable that ++ each time enter is pressed. And thta will be muliplied by 1.56
+
+var x = 2;
+var y = 1.56;
+function money() {
+	// var y = Math.floor(Math.random() * 13);
+	// var z = x * y;
+	// var zz= x + x;
+	return document.getElementById('estimate').innerHTML = "$"+1.56 * x++;
+}
+
+
+// function money(event) {
+// 	var key = event.keyCode;
+// 	var forumla = key == 13;
+// 	var x = 1.56
+// 	if (forumla ){
+// 		// alert("alert111111111111111")
+// 		document.getElementById('estimate').innerHTML = x + x;
+// 	}
+// }
+
 
 // function bold(){
 // 	document.getElementbyId("textarea1").style.fontWeight = 'bold';

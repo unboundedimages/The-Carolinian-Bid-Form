@@ -6,7 +6,6 @@
 	<title>The Carolinanian Bid Form</title>
 	<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="app.css">
-	<script type="text/javascript" src="app.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -18,7 +17,7 @@
 			<label class="billed">	Bid Details:</label>
 			&nbsp; &nbsp;
 			<a href="#" class="billed">How you are billed</a><br>		
-			<div id="editor"  placeholder="Title" onkeydown="money()">
+			<div id="editor"  placeholder="Title">
 				<!-- <textarea class="ql-editor" id="textarea1" placeholder="Title">
 				</textarea> -->
 
@@ -31,12 +30,13 @@
 			<button class="caro-submit">Submit</button>
 		</form>
 	</div>
-	<div id="estimate" value = "1.56"; >toast</div>
+	<div id="estimate">toast</div>
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 	<script>
 		var quill = new Quill('#editor', {
 			theme: 'snow'
 		});
 	</script> 
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

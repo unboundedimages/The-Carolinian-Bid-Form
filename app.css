@@ -90,6 +90,10 @@ p {
 	/*text-justify: inter-word;*/
 }
 
+#estimate {
+	font-size: 30px;
+}
+
 textarea {
 	outline-color: orange;
 	width:350px;
