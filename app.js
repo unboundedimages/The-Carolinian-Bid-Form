@@ -17,11 +17,7 @@ function money(event) {
 	var x = 1.56
 	if (forumla ){
 		// alert("alert111111111111111")
-		document.getElementById('estimate').innerHTML = x = 0;
-	}
-	else {
-		
-		document.getElementById('estimate').innerHTML = x++;
+		document.getElementById('estimate').innerHTML = x + x;
 	}
 }
 
