@@ -5,11 +5,11 @@ body {
 	background-size: cover;
 }
 
-p{
+p {
 	text-align: justify;
 }
 
-h2 {
+#bid-form {
 	text-align: center;
 	margin-bottom: 100px
 }
@@ -83,19 +83,20 @@ p {
 
 #ta {
 	/*font-family: 'Lato', sans-serif;*/
-	font-family: 'Arial', sans-serif;
+	/*font-family: 'Arial', sans-serif;*/
 	position: relative;
 	left:25px;
 	min-width: 384px;
-	max-width:435px;
+	max-width:424px;
 	line-height: 20px;
 	height: 200px;
 	border: 3px inset orange;
 	overflow-x: hidden;
-	padding: 0px 0px 0px 8px;
+	padding: 0px 8px 0px 8px;
 	color: black;
 	text-align: justify;
-	font-size: 10px;
+	font-size: 12pt;
+	font-weight: 400;
 }
 
 /*#ta:after {
@@ -104,13 +105,15 @@ p {
 	}*/
 
 	#start-here {
-		font-size:20px;
+		/*font-size:25px;*/
+		font-weight: 750;
+		font-style: black;
 		text-transform: uppercase;
 		text-align:center;
-		margin-bottom: 0px;
 	}
 
 	h3 {
+		font-weight: 600;
 		text-transform: uppercase;
 		text-align:center;
 	}
