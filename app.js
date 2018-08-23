@@ -84,9 +84,10 @@ var calculateHeight = function() {
         taHeight = calculateContentHeight(ta, taLineHeight),
         // calculate the number of lines
         numberOfLines = Math.ceil(taHeight / taLineHeight) *(1.56);
+        numberOfLiness = Math.ceil(taHeight / taLineHeight);
 
         document.getElementById("lines").innerHTML = "Estimate $" +
-        numberOfLines.toFixed(2);
+        numberOfLines.toFixed(2) + "for " + numberOfLiness + " lines.";
     };
 
     calculateHeight();

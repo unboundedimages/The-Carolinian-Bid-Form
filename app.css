@@ -155,6 +155,25 @@ p {
 		/*font-family: helvetica-neue;*/
 		/*font-family: "Neue Helvetica Pro 65 Medium";	*/
 	}
+
+	.button {
+		background-color: #748a70; /* Green */
+		border: none;
+		color: white;
+		padding: 20px;
+		text-align: center;
+		border-radius: 100%; 
+		padding:14px 18px;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+
+	#italics {
+		padding:14px 22px;
+	}
+
 	@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro');
 	#editor {
 		font-size: 16px;
