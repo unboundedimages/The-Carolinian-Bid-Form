@@ -84,6 +84,7 @@ p {
 #ta {
 	/*font-family: 'Lato', sans-serif;*/
 	/*font-family: 'Arial', sans-serif;*/
+	background-color: #ffffffb3;
 	position: relative;
 	left:25px;
 	min-width: 384px;
@@ -113,6 +114,7 @@ p {
 	}
 
 	h3 {
+		/*font-size: 10pt;*/
 		font-weight: 600;
 		text-transform: uppercase;
 		text-align:center;
@@ -139,8 +141,8 @@ p {
 		/*text-justify: inter-word;*/
 	}
 
-	#estimate {
-		font-size: 30px;
+	#lines {
+		font-size: 20pt;
 	}
 
 	textarea {

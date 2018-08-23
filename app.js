@@ -76,17 +76,17 @@ var calculateHeight = function() {
 	var ta = document.getElementById("ta"),
 	style = (window.getComputedStyle) ?
 	window.getComputedStyle(ta) : ta.currentStyle,
-	
+
         // This will get the line-height only if it is set in the css,
         // otherwise it's "normal"
         taLineHeight = parseInt(style.lineHeight, 10),
         // Get the scroll height of the textarea
         taHeight = calculateContentHeight(ta, taLineHeight),
         // calculate the number of lines
-        numberOfLines = Math.ceil(taHeight / taLineHeight);
+        numberOfLines = Math.ceil(taHeight / taLineHeight) *(1.56);
 
-        document.getElementById("lines").innerHTML = "there are " +
-        numberOfLines + " lines in the text area";
+        document.getElementById("lines").innerHTML = "Estimate $" +
+        numberOfLines.toFixed(2);
     };
 
     calculateHeight();
