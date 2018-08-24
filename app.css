@@ -79,6 +79,7 @@ p {
 	position: relative;
 	left:25px;
 	height:30px;
+	bottom: 33px;
 }
 
 #ta {
@@ -172,6 +173,35 @@ p {
 
 	#italics {
 		padding:14px 22px;
+		background-color: #f5a73f;
+	}
+
+	#be-underline {
+		background-color: #9d3939; /* Green */
+	}
+
+	#bullet-list {
+		padding:14px 6px;
+
+	}
+
+	#bul-list {
+		width:45%;
+		height: auto;
+		filter: invert(100%);
+	}
+
+	#undo {
+		background-color: #f5a73f; /* Green */
+		padding:13px 16px;
+		text-align: center;
+		margin-top: 7px;
+	}
+
+	#redo {
+		background-color: #9d3939; /* Green */
+		padding:13px 16px;
+		text-align: center;
 	}
 
 	@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro');
@@ -289,6 +319,19 @@ p {
 		.date {
 			width:100px;
 		}
+
+		#undo {
+			background-color: #f5a73f; /* Green */
+			padding:11px 16px;
+			text-align: center;
+			margin-top: 7px;
+		}
+
+		#redo {
+			background-color: #9d3939; /* Green */
+			padding:11px 16px;
+			text-align: center;
+		}
 	}
 
 	@media screen and (max-width: 736px) and (min-width: 660px) {
@@ -309,6 +352,18 @@ p {
 			top: 61px;
 		}
 
+		#undo {
+			background-color: #f5a73f; /* Green */
+			padding:11px 16px;
+			text-align: center;
+			margin-top: 7px;
+		}
+
+		#redo {
+			background-color: #9d3939; /* Green */
+			padding:11px 16px;
+			text-align: center;
+		}
 	}
 
 

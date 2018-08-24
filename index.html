@@ -20,17 +20,17 @@
 				<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text" contenteditable="false">
 					<i>i</i>
 				</button>
-				<button class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null);" contenteditable="false">
+				<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null);" contenteditable="false">
 					<u>U</u>
 				</button>
-				<button class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
-					list
+				<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
+					<img id="bul-list" src="view/img/bullet-List.png">
 				</button>
-				<button class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
+				<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
 					<b>&#x27f2;</b>
 				</button>
 
-				<button class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
+				<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
 					<b>&#x27f3;</b>
 				</button>
 			</div>
