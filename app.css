@@ -1,5 +1,4 @@
 body {
-	/*background-image: url("view/img/Paper3.png");*/
 	color: #993233;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -25,11 +24,8 @@ p {
 	background: #fff;
 	position: relative;
 	width:100%;
-	/*width:490px;*/
-	/*height: 750px;*/
 	height: 100%;
 	border: 4px solid;
-	/*border-color: black;*/
 	border-color: orange;
 	z-index: 10;
 	font-size: 10pt;
@@ -95,8 +91,6 @@ p {
 }
 
 #ta {
-	/*font-family: 'Lato', sans-serif;*/
-	/*font-family: 'Arial', sans-serif;*/
 	background-color: #ffffffb3;
 	position: relative;
 	left:25px;
@@ -114,7 +108,6 @@ p {
 }
 
 #start-here {
-	/*font-size:25px;*/
 	font-weight: 750;
 	font-style: black;
 	text-transform: uppercase;
@@ -122,7 +115,6 @@ p {
 }
 
 h3 {
-	/*font-size: 10pt;*/
 	font-weight: 600;
 	text-transform: uppercase;
 	text-align:center;
@@ -131,7 +123,6 @@ h3 {
 #lines {
 	font-size: 20pt;
 	margin: -5px 24px 6px 22px;
-	/*clear:right;*/
 }
 
 textarea {
@@ -140,9 +131,6 @@ textarea {
 	max-width:350px;
 	height: 100px;
 	text-align: justify;
-	/*text-justify: inter-word;*/
-	/*font-family: helvetica-neue;*/
-	/*font-family: "Neue Helvetica Pro 65 Medium";	*/
 }
 
 .button {
@@ -200,10 +188,7 @@ textarea {
 	font-size: 16px;
 	font-family: 'Source Sans Pro', sans-serif, Arial;	
 	color: black;
-	/*font-weight: 600;*/
-	/*letter-spacing: 1.2px;*/
 	text-align: justify;
-	/*text-justify: inter-word;*/
 }
 
 .date {
@@ -357,8 +342,3 @@ form {
 	}
 
 }
-
-/*svg { color : black; }*/
-/*svg { color : #df7d36; }*/
-
-/*svg*/
