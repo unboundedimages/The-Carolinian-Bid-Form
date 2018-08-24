@@ -225,8 +225,31 @@ p {
 		width:130px;
 	}
 
-	.bold {
-		font-weight:bold !important;
+	#bold:hover {
+		background-color:#71aa66;
+	}
+
+	#italics:hover {
+		background-color:#f99612;
+	}
+
+	#be-underline:hover{
+		background-color:#a31313;
+	}
+
+	#bullet-list:hover {
+		background-color:#71aa66;
+	}
+	#undo:hover {
+		background-color:#f99612;
+	}
+
+	#redo:hover {
+		background-color:#a31313;
+	}
+
+	#submit-B:hover {
+		background-color:#a31313;
 	}
 
 	.caro-submit {
