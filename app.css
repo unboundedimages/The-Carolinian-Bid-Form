@@ -4,6 +4,10 @@ body {
 	background-size: cover;
 }
 
+[contentEditable=true]:empty:not(:focus):before{
+	content:attr(data-text)
+}
+
 p {
 	text-align: justify;
 }
@@ -321,14 +325,14 @@ form {
 	}
 
 	#undo {
-		background-color: #f5a73f; /* Green */
+		background-color: #f5a73f;
 		padding:11px 16px;
 		text-align: center;
 		margin-top: 7px;
 	}
 
 	#redo {
-		background-color: #9d3939; /* Green */
+		background-color: #9d3939; 
 		padding:11px 16px;
 		text-align: center;
 	}

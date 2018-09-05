@@ -1,42 +1,23 @@
 //Use an event listener to 
-document.addEventListener('keyup', checkKey);
+// document.addEventListener('keyup', checkKey);
 
-function checkKey(event) {
-	var key = event.keyCode;
-	if (key === 13) {
-		money(event)
-	}
-}
+// function checkKey(event) {
+// 	var key = event.keyCode;
+// 	if (key === 13) {
+// 		money(event)
+// 	}
+// }
 
 //make a variable that ++ each time enter is pressed. And thta will be muliplied by 1.56
 // Ensure that the decimal prints out the 100th place, 2 places to the right of the deciimal only
-var x = 2;
-function money() {
-	return document.getElementById('estimate').innerHTML = "$"+ (1.56 * x++).toFixed(2);
-}
-
-
-//create a function that substracts 1.56 every time a line is removed.
+// var x = 2;
+// function money() {
+// 	return document.getElementById('estimate').innerHTML = "$"+ (1.56 * x++).toFixed(2);
+// }
 
 //create a formula that counts the lines and multiplies it by 1.56
-// (
-// document.onload =
-// function(){
-// 	var x = document.getElementsbyClassName('ql-editor')
 
-
-	// var lines = document.getElementById('editor').value().split(/\r|\r\n|\n/);
-	// var count = lines.length;
-	// return document.getElementById('estimate').innerHTML = count;
-	// alert(count + ' lines');
-// })()
-// window.onload =
-// function countLines() {
-// 	var divHeight = document.getElementById('editor').offsetHeight
-// 	var lineHeight = parseInt(document.getElementById('editor').style.lineHeight);
-// 	var lines = divHeight / lineHeight;
-// 	alert("Lines: " + lines);
-// }
+//create a function that substracts 1.56 every time a line is removed.
 
 var calculateContentHeight = function( ta, scanAmount ) {
 	var origHeight = ta.style.height,
@@ -86,8 +67,9 @@ var calculateHeight = function() {
         numberOfLines = Math.ceil(taHeight / taLineHeight) *(1.56);
         numberOfLiness = Math.ceil(taHeight / taLineHeight);
 
+        var runs = document.getElementById("runs").value * numberOfLines
         document.getElementById("lines").innerHTML = "Estimate $" +
-        numberOfLines.toFixed(2) + "for " + numberOfLiness + " lines.";
+        runs.toFixed(2) + "for " + numberOfLiness + " lines.";
     };
 
     calculateHeight();
