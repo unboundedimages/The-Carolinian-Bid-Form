@@ -1,17 +1,41 @@
+//require dependencies
 const express = require ('express');
-const app = express();
+const mysql = require('mysql');
 const path = require("path");
+const bodyParser = require ('body-parser');
 
+//connect to DB
+const db = mysql.createConnection({
+	host: 'localhost',
+	user: 'XXXX',
+	password: 'XXXXX',
+	database: 'caro_bid'
+});
 
+//connect express server 
 const PORT = process.env.PORT || 8080;
-
+const app = express();
 app.use(express.static(path.join(__dirname, '/')));
-
+app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.listen(PORT, function() {
 	console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
 
+//connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
+
+//CREATE db
+// db.connect(function(err) {
+// 	if (err) throw err;
+// 	console.log("Connected!");
+// 	db.query("CREATE DATABASE caro_bid", function (err, result) {
+// 		if (err) throw err;
+// 		console.log("Database created");
+// 	});
+// });
+
 
 //todo
 //create schema 
