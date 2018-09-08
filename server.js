@@ -7,9 +7,9 @@ const bodyParser = require ('body-parser');
 //connect to DB
 const db = mysql.createConnection({
 	host: 'localhost',
-	user: 'xxxxxxx',
-	password: 'xxxxxxxxx',
-	database: 'caro_bid'
+	user: 'xxx',
+	password: 'xxx',
+	database: 'xxx'
 });
 
 db.connect(function(err) {
@@ -40,11 +40,6 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	// db.query('CREATE TABLE company (id int AUTO_INCREMENT, name VARCHAR(255), PRIMARY KEY(id))', function(err, result){
-	// 	if (err) throw err;
-	// 	console.log("Table created" + result)
-	// 	res.send("Table created")
-	// });
 	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
@@ -53,27 +48,22 @@ app.get('/ad', (req,res)=>{
 });
 
 app.post("/add", (req, res)=> {
-	console.log(res)
-	console.log("hey")
+	// console.log(res)
+	// console.log("hey")
 	let company = req.body.company;
 	let bidDate = req.body.bid_date;
-	// db.query("INSERT INTO company SET ?",{name:req.body.company}, (err,res)=>{
-	// 	if (err) throw err;
-	// 	console.log("zzzzzzzzzzzzzz")
-	// 	console.log("data inserted" + res);
-	// 	// res.send("data inserted");
-	// });
 	db.query("INSERT INTO bid_nfo SET ?",{
 		name:req.body.company, 
 		start_date:req.body.bid_date,
-		end_date:req.body.bid_date_end
+		end_date:req.body.bid_date_end,
+		runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
 		console.log("data inserted" + res);
-	// res.json("data inserted");
 	// return;
 });
 
+	res.send("data inserted");
 });
 //connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
