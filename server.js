@@ -7,9 +7,14 @@ const bodyParser = require ('body-parser');
 //connect to DB
 const db = mysql.createConnection({
 	host: 'localhost',
-	user: 'XXXX',
-	password: 'XXXXX',
+	user: 'root',
+	password: 'majid158',
 	database: 'caro_bid'
+});
+
+db.connect(function(err) {
+	if (err) throw err;
+	console.log("DB Connected!");
 });
 
 //connect express server 
@@ -23,18 +28,29 @@ app.listen(PORT, function() {
 	console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
 
+//CREATE db
+
+app.get('/caro_bids', (req, res)=> {
+	db.query("CREATE DATABASE caro_bid", function (err, result) {
+		if (err) throw err;
+		console.log("Database created" + result);
+		res.send("db created")
+	});
+});
+
+//Create Table
+
+app.get('/ad', (req,res)=>{
+	db.query('CREATE TABLE posts(id int AUTO_INCREMENT, company VARCHAR(255), )', function(err, result){
+		if (err) throw err;
+		console.log("Table created" + result)
+		res.send("Table created")
+	});
+});
+
 //connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
 
-//CREATE db
-// db.connect(function(err) {
-// 	if (err) throw err;
-// 	console.log("Connected!");
-// 	db.query("CREATE DATABASE caro_bid", function (err, result) {
-// 		if (err) throw err;
-// 		console.log("Database created");
-// 	});
-// });
 
 
 //todo

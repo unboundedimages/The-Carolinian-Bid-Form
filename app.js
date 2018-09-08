@@ -80,3 +80,17 @@ var calculateHeight = function() {
 	ta.attachEvent("onmouseup", calculateHeight);
 	ta.attachEvent("onkeyup", calculateHeight);
 }
+//random id generator
+function makeid() {
+	var text = "";
+	var text2 = "";
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (let i = 0; i < 8; i++)
+	text += possible.charAt(Math.floor(Math.random() * possible.length))
+for (let i = 0; i < 8; i++)
+text2 += possible.charAt(Math.floor(Math.random() * possible.length));
+console.log(text2 +"-"+ text)
+document.getElementById("lines").innerHTML = text +"-" + text2;
+return text;
+}
+makeid()
