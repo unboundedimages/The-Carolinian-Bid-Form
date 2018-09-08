@@ -21,7 +21,6 @@ db.connect(function(err) {
 const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.static(path.join(__dirname, '/')));
-app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.listen(PORT, function() {
@@ -41,13 +40,41 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE posts(id int AUTO_INCREMENT, company VARCHAR(255), )', function(err, result){
+	// db.query('CREATE TABLE company (id int AUTO_INCREMENT, name VARCHAR(255), PRIMARY KEY(id))', function(err, result){
+	// 	if (err) throw err;
+	// 	console.log("Table created" + result)
+	// 	res.send("Table created")
+	// });
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
 	});
 });
 
+app.post("/add", (req, res)=> {
+	console.log(res)
+	console.log("hey")
+	let company = req.body.company;
+	let bidDate = req.body.bid_date;
+	// db.query("INSERT INTO company SET ?",{name:req.body.company}, (err,res)=>{
+	// 	if (err) throw err;
+	// 	console.log("zzzzzzzzzzzzzz")
+	// 	console.log("data inserted" + res);
+	// 	// res.send("data inserted");
+	// });
+	db.query("INSERT INTO bid_nfo SET ?",{
+		name:req.body.company, 
+		start_date:req.body.bid_date,
+		end_date:req.body.bid_date_end
+	}, (err,res)=>{
+		if (err) throw err;
+		console.log("data inserted" + res);
+	// res.json("data inserted");
+	// return;
+});
+
+});
 //connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
 
