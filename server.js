@@ -1,5 +1,6 @@
 //require dependencies
 const express = require ('express');
+const exphbs  = require('express-handlebars');
 const mysql = require('mysql');
 const path = require("path");
 const bodyParser = require ('body-parser');
@@ -7,9 +8,9 @@ const bodyParser = require ('body-parser');
 //connect to DB
 const db = mysql.createConnection({
 	host: 'localhost',
-	user: 'xxx',
-	password: 'xxx',
-	database: 'xxx'
+	user: 'root',
+	password: 'majid158',
+	database: 'caro_bid'
 });
 
 db.connect(function(err) {
@@ -20,6 +21,8 @@ db.connect(function(err) {
 //connect express server 
 const PORT = process.env.PORT || 8080;
 const app = express();
+app.engine('hbs', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, '/')));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -55,25 +58,29 @@ app.post("/add", (req, res)=> {
 	db.query("INSERT INTO bid_nfo SET ?",{
 		name:req.body.company, 
 		start_date:req.body.bid_date,
-		end_date:req.body.bid_date_end,
-		runs:BidRun
+		end_date:req.body.bid_date_end
+		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
 		console.log("data inserted" + res);
 	// return;
 });
 
-	res.send("data inserted");
+	// res.send("data inserted");
+	res.render('pybtyfts')
 });
 //connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
+app.get('/', (req,res,next)=>{
+	res.render('pybtyfts.html')
+});
 
 
 
 //todo
-//create schema 
-//company name
-//random identifier
+//create schema ** in progress
+//company name  ** done
+//random identifier ** done
 //amount charged/
 // paid true/false
 //date paid
@@ -118,5 +125,7 @@ app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
 // date(s) bid will run
 // text from bid
 
+//create a function that takes the total - estimate for the lines
+//and save that to the DB so it can be posted to the payment page.
 
 
