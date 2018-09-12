@@ -2,15 +2,16 @@
 const express = require ('express');
 const exphbs  = require('express-handlebars');
 const mysql = require('mysql');
+const env = require('dotenv').load()
 const path = require("path");
 const bodyParser = require ('body-parser');
 
 //connect to DB
 const db = mysql.createConnection({
 	host: 'localhost',
-	user: 'root',
-	password: 'majid158',
-	database: 'caro_bid'
+	user: process.env.dbu,
+	password: process.env.dbp,
+	database: process.env.dbn
 });
 
 db.connect(function(err) {
