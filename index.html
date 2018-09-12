@@ -8,7 +8,8 @@
 </head>
 <body>
 	<div class="container">
-		<img src="http://caro.news/wp-content/uploads/2017/12/caro-logo-for-website.png">
+		<div id="CaroBanner"></div>
+		<!-- <img src="http://caro.news/wp-content/uploads/2017/12/caro-logo-for-website.png"> -->
 		<header><h2 id="bid-form">The Carolinian Bid Form</h2></header>
 		<div id=text-editor>
 			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text" contenteditable="false">
@@ -21,7 +22,7 @@
 				<u>U</u>
 			</button>
 			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
-				<img id="bul-list" src="view/img/bullet-List.png">
+				<img id="bul-list" src="views/img/bullet-List.png">
 			</button>
 			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
 				<b>&#x27f2;</b>
@@ -65,6 +66,7 @@
 			</form>
 		</section>
 	</div> <!-- container -->
-	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="app.js"></script>	
+	<script type="text/javascript" src="media.js"></script>
 </body>
 </html>

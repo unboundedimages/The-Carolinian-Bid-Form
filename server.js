@@ -22,7 +22,7 @@ db.connect(function(err) {
 const PORT = process.env.PORT || 8080;
 const app = express();
 app.engine('hbs', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'hbs');
+app.set('view engine', './views');
 app.use(express.static(path.join(__dirname, '/')));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -43,7 +43,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
@@ -53,12 +53,35 @@ app.get('/ad', (req,res)=>{
 app.post("/add", (req, res)=> {
 	// console.log(res)
 	// console.log("hey")
-	let company = req.body.company;
-	let bidDate = req.body.bid_date;
-	db.query("INSERT INTO bid_nfo SET ?",{
-		name:req.body.company, 
-		start_date:req.body.bid_date,
-		end_date:req.body.bid_date_end
+
+
+	let text3 = []
+	function makeid(text, text2) {
+	// var text3 = []
+	var text = "";
+	var text2 = "";
+	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+	for (let i = 0; i < 8; i++)
+	text += possible.charAt(Math.floor(Math.random() * possible.length))
+for (let i = 0; i < 8; i++)
+text2 += possible.charAt(Math.floor(Math.random() * possible.length));
+// dynamically add alpha-numeric values to div element 
+// document.getElementById("randomId").innerHTML = text +"-" + text2;
+//store data in array
+text3.push(text + "-" + text2)
+return text + "-" + text2; 
+}
+makeid();
+
+
+
+let company = req.body.company;
+let bidDate = req.body.bid_date;
+db.query("INSERT INTO bid_nfo SET ?",{
+	name:req.body.company, 
+	start_date:req.body.bid_date,
+	end_date:req.body.bid_date_end,
+	rec_locator:text3
 		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
@@ -67,8 +90,11 @@ app.post("/add", (req, res)=> {
 });
 
 	// res.send("data inserted");
-	res.render('pybtyfts')
+	res.render('pybtyfts.hbs')
 });
+
+
+
 //connect routes
 app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
 app.get('/', (req,res,next)=>{
