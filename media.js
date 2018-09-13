@@ -1,4 +1,4 @@
-// require('mysql');
+// var dbs = require('mysql');
 
 //load banner
 function carobanner(){

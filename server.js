@@ -86,14 +86,50 @@ db.query("INSERT INTO bid_nfo SET ?",{
 		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
-		console.log("data inserted" + res);
+		console.log("data inserted", res);
 	// return;
 });
 
-	// res.send("data inserted");
-	res.render('pybtyfts.hbs')
+
+var recLoc;
+db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
+function (err, res){
+	if (err) throw err;
+		// console.log(res)
+		var recLoc= {
+			locator: res[0].rec_locator
+		}
+		console.log(recLoc)
+		// res.render(recLoc)
+		return;
+	})
+
+res.render('pybtyfts.hbs', recLoc)
 });
 
+// 		locator: req.body.rec_locator
+// }, (err, result)=> {
+// 		if (err) throw err;
+// 	}), 
+
+// })
+// 	// res.send("data inserted");
+
+// app.get("/add", (req,res)=>{
+	
+	// db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
+	// function (err, res){
+	// 	if (err) throw err;
+	// 	// console.log(res)
+	// 	var recLoc= {
+	// 		locator: res[0].rec_locator
+	// 	}
+	// 	console.log(recLoc)
+	// 	// res.render(recLoc)
+	// })
+// 		console.log("what is this", result);
+// 		res.render("pybtyfts.hbs" )
+// 	})
 
 
 //connect routes
@@ -102,6 +138,7 @@ app.get('/', (req,res,next)=>{
 	res.render('pybtyfts.html')
 });
 
+// })
 
 
 //todo
