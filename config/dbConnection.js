@@ -1,3 +1,5 @@
+// var exports = module.exports = {}
+
 const mysql = require('mysql');
 const env = require('dotenv').load()
 

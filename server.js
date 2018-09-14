@@ -5,31 +5,37 @@ const mysql = require('mysql');
 const env = require('dotenv').load()
 const path = require("path");
 const bodyParser = require ('body-parser');
-
-//connect to DB
-const db = mysql.createConnection({
-	host: 'localhost',
-	user: process.env.dbu,
-	password: process.env.dbp,
-	database: process.env.dbn
-});
-
-db.connect(function(err) {
-	if (err) throw err;
-	console.log("DB Connected!");
-});
-
-//connect express server 
+const db = require ("./config/dbConnection.js")
 const PORT = process.env.PORT || 8080;
 const app = express();
-app.engine('hbs', exphbs({defaultLayout: 'main'}));
-app.set('view engine', './views');
-app.use(express.static(path.join(__dirname, '/')));
+//connect to DB
+// const db = mysql.createConnection({
+// 	host: 'localhost',
+// 	user: process.env.dbu,
+// 	password: process.env.dbp,
+// 	database: process.env.dbn
+// });
+
+// db.connect(function(err) {
+// 	if (err) throw err;
+// 	console.log("DB Connected!!!!!!");
+// });
+
+//connect express server 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(express.static(path.join(__dirname, '/views')));
+app.set('views', './views');
+app.engine('hbs', exphbs({defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts/'}));
+app.set('view engine', '.hbs')
 app.listen(PORT, function() {
 	console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
+
+
+app.get('/', function(req, res) {
+	res.render('index')
+})
 
 //CREATE db
 
@@ -91,21 +97,48 @@ db.query("INSERT INTO bid_nfo SET ?",{
 });
 
 
-var recLoc;
-db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
-function (err, res){
-	if (err) throw err;
-		// console.log(res)
-		var recLoc= {
-			locator: res[0].rec_locator
-		}
-		console.log(recLoc)
-		// res.render(recLoc)
-		return;
-	})
+// var recLoc;
+// db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
+// function (err, res, recLoc){
+// 	if (err) throw err;
+// 		// console.log(res)
+// 		var recLoc= {
+// 			locator: res[0].rec_locator
+// 		}
+// 		console.log("this is reLoc",recLoc)
+// 		// res.render(recLoc)
+// 		return;
+// 	})
 
-res.render('pybtyfts.hbs', recLoc)
+// recLoc();
+res.render('pybtyfts.hbs')
 });
+
+
+// var recLoc = function() {db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
+// function (err, res, recLoc){
+// 	if (err) throw err;
+// 		// console.log(res)
+// 		var recLoc= {
+// 			locator: res[0].rec_locator
+// 		}
+
+// 		console.log("this is reLoc a",recLoc)
+// 		return;
+// 		res.render(recLoc)
+// 	})
+// }
+// recLoc();
+
+// app.get("/add", recLoc, function (req, res, next) {
+// 	console.log("this is arg reLoc")	
+// 	res.render('pybtyfts.hbs')
+// })
+
+
+
+
+
 
 // 		locator: req.body.rec_locator
 // }, (err, result)=> {

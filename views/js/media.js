@@ -10,6 +10,21 @@ function carobanner(){
 carobanner();
 
 
+exports = {}
+
+// exports.pybtyfts = (function(req, res) {
+	// var path = require('path')
+	var stupid = {
+		code: "blue"
+
+	}
+	console.log(stupid)
+	// res.send(stupid)
+// })()
+
+
+// module.exports = stupid;
+
 //random id generator
 //create variable to store random key
 // var text3 = [];
