@@ -34,6 +34,7 @@ app.listen(PORT, function() {
 
 
 app.get('/', function(req, res) {
+	console.log("we in here")
 	res.render('index')
 })
 
@@ -56,6 +57,23 @@ app.get('/ad', (req,res)=>{
 		res.send("Table created")
 	});
 });
+
+
+// app.get("/add", function (req, res) {
+	// console.log("this is arg reLoc")	
+
+	// var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
+
+	// db.query(records, function(error, results,fields){
+	// 	if(error) throw error;
+
+	// 	console.log("this is the results from the /add get: ");
+	// 	console.log(results[0].rec_locator);
+	// 	res.render('pybtyfts', {results: results[0].rec_locator})
+	// })
+
+// })
+
 
 app.post("/add", (req, res)=> {
 	// console.log(res)
@@ -97,21 +115,37 @@ db.query("INSERT INTO bid_nfo SET ?",{
 });
 
 
-// var recLoc;
-// db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
-// function (err, res, recLoc){
-// 	if (err) throw err;
-// 		// console.log(res)
-// 		var recLoc= {
-// 			locator: res[0].rec_locator
-// 		}
-// 		console.log("this is reLoc",recLoc)
-// 		// res.render(recLoc)
-// 		return;
-// 	})
+// var recLoc =
+db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
+function (err, res, recLoc){
+	// if (err) throw err;
+		// console.log(res)
+		// var recLoc= {
+			var recLoc =
+			{
+				locator: res[0].rec_locator
+			}
+		// }
+		console.log("this is reLoc",recLoc)
+		// res.render(recLoc)
+		// return reLoc.locator;
+		// recLoc;
+		// runit()
+	})
 
+console.log("this is arg reLoc")	
+
+var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
+
+db.query(records, function(error, results,fields){
+	if(error) throw error;
+
+	console.log("this is the results from the /add get: ");
+	console.log(results[0].rec_locator);
+	res.render('pybtyfts', {results: results[0].rec_locator})
+})
 // recLoc();
-res.render('pybtyfts.hbs')
+// res.render('pybtyfts.hbs')
 });
 
 
@@ -130,10 +164,6 @@ res.render('pybtyfts.hbs')
 // }
 // recLoc();
 
-// app.get("/add", recLoc, function (req, res, next) {
-// 	console.log("this is arg reLoc")	
-// 	res.render('pybtyfts.hbs')
-// })
 
 
 

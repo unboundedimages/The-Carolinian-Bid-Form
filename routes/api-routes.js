@@ -1,4 +1,4 @@
-const dbConnection = require("../config/dbConnection.js");
+const dbConnection = require("./config/dbConnection.js");
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxx", dbConnection)
 module.exports = function(app) {
 
@@ -39,7 +39,7 @@ dbConnection.query("INSERT INTO bid_nfo SET ?",{
 		console.log("data inserted" + res);
 		// return;
 		// res.send("data inserted");
-		res.render('pybtyfts.hbs')
+		// res.render('pybtyfts.hbs')
 	});
 
 res.render('pybtyfts.hbs')
