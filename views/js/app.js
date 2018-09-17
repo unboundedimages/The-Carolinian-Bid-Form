@@ -8,13 +8,6 @@
 // 	}
 // }
 
-//make a variable that ++ each time enter is pressed. And thta will be muliplied by 1.56
-// Ensure that the decimal prints out the 100th place, 2 places to the right of the deciimal only
-// var x = 2;
-// function money() {
-// 	return document.getElementById('estimate').innerHTML = "$"+ (1.56 * x++).toFixed(2);
-// }
-
 //create a formula that counts the lines and multiplies it by 1.56
 
 //create a function that substracts 1.56 every time a line is removed.
@@ -52,6 +45,8 @@ var calculateContentHeight = function( ta, scanAmount ) {
     	return scrollHeight;
     }
 }
+let estimate= [];
+console.log("estimate xxxx: ", estimate)
 
 var calculateHeight = function() {
 	var ta = document.getElementById("ta"),
@@ -68,8 +63,17 @@ var calculateHeight = function() {
         numberOfLiness = Math.ceil(taHeight / taLineHeight);
 
         var runs = document.getElementById("runs").value * numberOfLines
-        document.getElementById("lines").innerHTML = "Estimate $" +
-        runs.toFixed(2) + "for " + numberOfLiness + " lines.";
+        // document.getElementById("lines").innerHTML = "Estimate $" +
+        // runs.toFixed(2) + " for " + numberOfLiness + " lines.";
+        document.getElementById("lines").innerHTML = "$" +
+        runs.toFixed(2);
+        // estimate.push(runs.toFixed(2))
+        var json = runs.toFixed(2)
+        var obj = JSON.parse(json)
+        console.log("obj ", obj)
+        var new_json = JSON.stringify(obj)
+        estimate.push(new_json)
+        console.log("new J", new_json)
     };
 
     calculateHeight();
@@ -80,3 +84,45 @@ var calculateHeight = function() {
 	ta.attachEvent("onmouseup", calculateHeight);
 	ta.attachEvent("onkeyup", calculateHeight);
 }
+
+// module.exports = estimate;
+
+//AJAX
+
+// function getLines() {	
+// 	console.log("hooooooooooo")
+// 	fetch('http://localhost:8080',document.getElementById('lines'))
+// 	.then(function(res){
+// 		console.log("xxxxxxxxxxxxxxxxxxxxx", res)
+// 	})
+// }
+
+// console.log("white lines blowing through my mind")
+// getLines();
+
+// document.getElementById('lines').addEventListener('click', getLines);
+
+// getLines => 
+
+
+
+
+// var xhr = new XMLHttpRequest();
+
+// xhr.onreadystatechange = aCallBack();
+
+// function aCallBack() {
+// 	console.log("a callback executed")
+// 	if(xhr.readyState < 4) {
+// 		return;
+// 	} 
+
+// 	if (xhr.status !==200) {
+// 		return;
+// 	}
+
+// 	console.log(xhr.responseText);
+// }
+
+// xhr.open('GET', '/', true);
+// xhr.send('');

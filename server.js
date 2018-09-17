@@ -8,18 +8,7 @@ const bodyParser = require ('body-parser');
 const db = require ("./config/dbConnection.js")
 const PORT = process.env.PORT || 8080;
 const app = express();
-//connect to DB
-// const db = mysql.createConnection({
-// 	host: 'localhost',
-// 	user: process.env.dbu,
-// 	password: process.env.dbp,
-// 	database: process.env.dbn
-// });
 
-// db.connect(function(err) {
-// 	if (err) throw err;
-// 	console.log("DB Connected!!!!!!");
-// });
 
 //connect express server 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -36,7 +25,7 @@ app.listen(PORT, function() {
 app.get('/', function(req, res) {
 	console.log("we in here")
 	res.render('index')
-})
+});
 
 //CREATE db
 
@@ -51,7 +40,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad VARCHAR(255), price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
@@ -59,54 +48,37 @@ app.get('/ad', (req,res)=>{
 });
 
 
-// app.get("/add", function (req, res) {
-	// console.log("this is arg reLoc")	
-
-	// var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
-
-	// db.query(records, function(error, results,fields){
-	// 	if(error) throw error;
-
-	// 	console.log("this is the results from the /add get: ");
-	// 	console.log(results[0].rec_locator);
-	// 	res.render('pybtyfts', {results: results[0].rec_locator})
-	// })
-
-// })
-
+// Insert into Table
 
 app.post("/add", (req, res)=> {
-	// console.log(res)
-	// console.log("hey")
-
-
+	//create random key for record locator
 	let text3 = []
 	function makeid(text, text2) {
-	// var text3 = []
-	var text = "";
-	var text2 = "";
-	var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-	for (let i = 0; i < 8; i++)
-	text += possible.charAt(Math.floor(Math.random() * possible.length))
-for (let i = 0; i < 8; i++)
-text2 += possible.charAt(Math.floor(Math.random() * possible.length));
-// dynamically add alpha-numeric values to div element 
-// document.getElementById("randomId").innerHTML = text +"-" + text2;
-//store data in array
-text3.push(text + "-" + text2)
-return text + "-" + text2; 
-}
-makeid();
+
+		var text = "";
+		var text2 = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (let i = 0; i < 8; i++) {
+			text += possible.charAt(Math.floor(Math.random() * possible.length))
+		}
+		for (let i = 0; i < 8; i++) {
+			text2 += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+
+		text3.push(text + "-" + text2)
+		return text + "-" + text2; 
+	}
+	makeid();
 
 
-
-let company = req.body.company;
-let bidDate = req.body.bid_date;
+//Puts data into DB
 db.query("INSERT INTO bid_nfo SET ?",{
 	name:req.body.company, 
 	start_date:req.body.bid_date,
 	end_date:req.body.bid_date_end,
-	rec_locator:text3
+	rec_locator:text3,
+	price:req.body.price
 		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
@@ -118,23 +90,26 @@ db.query("INSERT INTO bid_nfo SET ?",{
 // var recLoc =
 db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
 function (err, res, recLoc){
-	// if (err) throw err;
-		// console.log(res)
-		// var recLoc= {
-			var recLoc =
-			{
-				locator: res[0].rec_locator
-			}
-		// }
-		console.log("this is reLoc",recLoc)
-		// res.render(recLoc)
-		// return reLoc.locator;
-		// recLoc;
-		// runit()
-	})
+	if (err) throw err;
+	var recLoc =
+	{
+		locator: res[0].rec_locator
+	};
+	console.log("this is reLoc:",recLoc);
+})
 
+db.query("select * from bid_nfo where price in (select max(price) from bid_nfo)", 
+function (err, res, price){
+	if (err) throw err;
+	var price =
+	{
+		price: res[0].price
+	};
+	console.log("this is price:",price);
+})
 console.log("this is arg reLoc")	
 
+//display record locator in DOM
 var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
 
 db.query(records, function(error, results,fields){
@@ -142,57 +117,22 @@ db.query(records, function(error, results,fields){
 
 	console.log("this is the results from the /add get: ");
 	console.log(results[0].rec_locator);
+	
 	res.render('pybtyfts', {results: results[0].rec_locator})
-})
-// recLoc();
-// res.render('pybtyfts.hbs')
 });
 
+var pricing = "select * from bid_nfo where price in (select max(price) from bid_nfo)"
 
-// var recLoc = function() {db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
-// function (err, res, recLoc){
-// 	if (err) throw err;
-// 		// console.log(res)
-// 		var recLoc= {
-// 			locator: res[0].rec_locator
-// 		}
+db.query(pricing, function(error, results,fields){
+	if(error) throw error;
 
-// 		console.log("this is reLoc a",recLoc)
-// 		return;
-// 		res.render(recLoc)
-// 	})
-// }
-// recLoc();
-
-
-
-
-
-
-
-// 		locator: req.body.rec_locator
-// }, (err, result)=> {
-// 		if (err) throw err;
-// 	}), 
-
-// })
-// 	// res.send("data inserted");
-
-// app.get("/add", (req,res)=>{
+	console.log("this is the results from the /add get: ");
+	console.log(results[0].rec_locator);
 	
-	// db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
-	// function (err, res){
-	// 	if (err) throw err;
-	// 	// console.log(res)
-	// 	var recLoc= {
-	// 		locator: res[0].rec_locator
-	// 	}
-	// 	console.log(recLoc)
-	// 	// res.render(recLoc)
-	// })
-// 		console.log("what is this", result);
-// 		res.render("pybtyfts.hbs" )
-// 	})
+	res.render('pybtyfts', {results: results[0].price})
+});
+
+}); //end of post route
 
 
 //connect routes
@@ -201,7 +141,10 @@ app.get('/', (req,res,next)=>{
 	res.render('pybtyfts.html')
 });
 
-// })
+
+
+//AJAX
+
 
 
 //todo
