@@ -111,47 +111,34 @@ console.log("this is arg reLoc")
 
 //display record locator in DOM
 var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
-
-db.query(records, function(error, results,fields){
-	if(error) throw error;
-
-	console.log("this is the results from the /add get: ");
-	console.log(results[0].rec_locator);
-	
-	res.render('pybtyfts', {results: results[0].rec_locator})
-});
-
 var pricing = "select * from bid_nfo where price in (select max(price) from bid_nfo)"
 
-db.query(pricing, function(error, results,fields){
-	if(error) throw error;
+db.query(records, pricing, function(error, results,fields){
+	if(error) { 
+		throw error;
+	}
+	let data = {
+	// price: res[0].price,
+	locator: {
+		res: results[0].rec_locator
+	}
 
-	console.log("this is the results from the /add get: ");
-	console.log(results[0].rec_locator);
-	
-	res.render('pybtyfts', {results: results[0].price})
+}
+// console.log("this is results object: ", results)
+// console.log("this is locator obj: ", data.locator.res)
+// console.log("this is the results from the /add get: ");
+console.log(results[0].rec_locator);
+res.render('pybtyfts', {records:results[0].rec_locator, pricing: results[0].price })
 });
-
 }); //end of post route
 
-
-//connect routes
-app.get('/hey',(req,res, next)=>{res.send({hello:"dude"})})
-app.get('/', (req,res,next)=>{
-	res.render('pybtyfts.html')
-});
-
-
-
-//AJAX
-
-
+//===============================================================================================
 
 //todo
 //create schema ** in progress
 //company name  ** done
 //random identifier ** done
-//amount charged/
+//amount charged ** done
 // paid true/false
 //date paid
 //date add runs
