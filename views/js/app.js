@@ -1,3 +1,16 @@
+// document.getElementById('bidAd').onload = ()=> getBidNfo();
+// "use strict";
+
+function getBidNfo() {
+	// window.onload(){	
+		let bidText = document.getElementById("ta")		
+		let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
+		console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
+		console.log("text text text text text ", bidText.innerText)
+	}
+
+	getBidNfo()
+// getBidNfo()
 //Use an event listener to 
 // document.addEventListener('keyup', checkKey);
 
@@ -60,13 +73,13 @@ var calculateHeight = function() {
         taHeight = calculateContentHeight(ta, taLineHeight),
         // calculate the number of lines
         numberOfLines = Math.ceil(taHeight / taLineHeight) *(1.56);
-        numberOfLiness = Math.ceil(taHeight / taLineHeight);
+        // numberOfLiness = Math.ceil(taHeight / taLineHeight);
 
         var runs = document.getElementById("runs").value * numberOfLines
         // document.getElementById("lines").innerHTML = "Estimate $" +
         // runs.toFixed(2) + " for " + numberOfLiness + " lines.";
         document.getElementById("lines").innerHTML = "$" +
-        runs.toFixed(2) + ta;
+        runs.toFixed(2);
         // estimate.push(runs.toFixed(2))
         var json = runs.toFixed(2)
         var obj = JSON.parse(json)
@@ -89,11 +102,6 @@ var calculateHeight = function() {
 	ta.attachEvent("onkeyup", calculateHeight);
 }
 
-var getBidNfo = function() {
-	let bidz = document.querySelector(".bidAd").innerHTML = "---" + document.getElementById('ta').innerHTML;
-	console.log(onload("bzzzzzzzzzzzzzzzzzzzzzz",bidz))
-}
-getBidNfo()
 
 //
 // console.log("white lines blowing through my mind")

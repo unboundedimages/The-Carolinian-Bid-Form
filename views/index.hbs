@@ -25,15 +25,15 @@
 	</div>
 	<section>
 		<form action="/add" method="post">
-			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text">
+			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 
 				<h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2>
 				<h3 contenteditable="true" data-text="Subtitle"></h3>
 
 
 			</div>	
-			<textarea class="bidAd" id="bidAd" type="text" name="bid_Ad">
-				{{!-- hi --}}
+			<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
+				{{!-- hil  oihljlllh --}}
 			</textarea>
 
 			<label class="title" >Company Name:</label><br>
