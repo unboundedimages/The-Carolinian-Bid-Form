@@ -125,9 +125,13 @@ h3 {
 }
 
 #lines {
-	/*display:none;*/
+	display:none;
 	font-size: 20pt;
 	margin: -5px 24px 6px 22px;
+}
+
+#bidAd {
+	display:none;
 }
 
 textarea {

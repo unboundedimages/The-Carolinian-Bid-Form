@@ -79,7 +79,8 @@ db.query("INSERT INTO bid_nfo SET ?",{
 	end_date:req.body.bid_date_end,
 	rec_locator:text3,
 	price:req.body.price,
-	bid_ad:req.body.bid_Ad
+	bid_ad:req.body.bid_Ad,
+	runs:req.body.runs
 		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;

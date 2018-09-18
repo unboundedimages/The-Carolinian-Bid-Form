@@ -44,8 +44,8 @@
 
 			<p class="how-long">
 				<b>How long will the bid run?:</b>
-				<select id="runs">
-					<option value="1">1</option>
+				<select  name="runs" id="runs">
+					<option  value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
 					<option value="4">4</option>
@@ -57,7 +57,7 @@
 			<input class="date" type="date" name="bid_date_end">
 			<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
 			<a href="/pybtyfts.html">
-				<button class="caro-submit" id="submit-B" href="pybtyfts.html">Submit</button>
+				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
 			</a>
 			{{!-- <div id="lines">...</div> --}}
 			<textarea contenteditable="true" id="lines" type="text" name="price">

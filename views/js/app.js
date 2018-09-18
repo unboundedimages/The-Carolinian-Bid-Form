@@ -100,6 +100,9 @@ var calculateHeight = function() {
 } else if (ta.attachEvent) { // IE
 	ta.attachEvent("onmouseup", calculateHeight);
 	ta.attachEvent("onkeyup", calculateHeight);
+} else if (runs.addEventListener) {
+	runs.addEventListener("mouseup", calculateHeight, false);
+	runs.addEventListener("keyup", calculateHeight, false);
 }
 
 
