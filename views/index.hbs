@@ -25,10 +25,17 @@
 	</div>
 	<section>
 		<form action="/add" method="post">
-			<section id="ta" rows="2" contenteditable="true">
+			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text">
+
 				<h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2>
 				<h3 contenteditable="true" data-text="Subtitle"></h3>
-			</section>		
+
+
+			</div>	
+			<textarea class="bidAd" id="bidAd" type="text" name="bid_Ad">
+				{{!-- hi --}}
+			</textarea>
+
 			<label class="title" >Company Name:</label><br>
 			<input class="title-input" type="text" name="company"><span><img src="http://caro.news/wp-content/uploads/2018/01/Caro-Newsman-Mark-223x300.png" class="caroman"></span><br>
 			<label class="billed">	Bid Details:</label>

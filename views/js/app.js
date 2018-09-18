@@ -66,7 +66,7 @@ var calculateHeight = function() {
         // document.getElementById("lines").innerHTML = "Estimate $" +
         // runs.toFixed(2) + " for " + numberOfLiness + " lines.";
         document.getElementById("lines").innerHTML = "$" +
-        runs.toFixed(2);
+        runs.toFixed(2) + ta;
         // estimate.push(runs.toFixed(2))
         var json = runs.toFixed(2)
         var obj = JSON.parse(json)
@@ -77,6 +77,10 @@ var calculateHeight = function() {
     };
 
     calculateHeight();
+    // function getBidAd() {	
+    	
+    // 	console.log(getBid)
+    // }
     if (ta.addEventListener) {
     	ta.addEventListener("mouseup", calculateHeight, false);
     	ta.addEventListener("keyup", calculateHeight, false);
@@ -85,18 +89,13 @@ var calculateHeight = function() {
 	ta.attachEvent("onkeyup", calculateHeight);
 }
 
-// module.exports = estimate;
+var getBidNfo = function() {
+	let bidz = document.querySelector(".bidAd").innerHTML = "---" + document.getElementById('ta').innerHTML;
+	console.log(onload("bzzzzzzzzzzzzzzzzzzzzzz",bidz))
+}
+getBidNfo()
 
-//AJAX
-
-// function getLines() {	
-// 	console.log("hooooooooooo")
-// 	fetch('http://localhost:8080',document.getElementById('lines'))
-// 	.then(function(res){
-// 		console.log("xxxxxxxxxxxxxxxxxxxxx", res)
-// 	})
-// }
-
+//
 // console.log("white lines blowing through my mind")
 // getLines();
 

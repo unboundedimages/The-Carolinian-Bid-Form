@@ -78,7 +78,8 @@ db.query("INSERT INTO bid_nfo SET ?",{
 	start_date:req.body.bid_date,
 	end_date:req.body.bid_date_end,
 	rec_locator:text3,
-	price:req.body.price
+	price:req.body.price,
+	bid_ad:req.body.bid_Ad
 		// runs:BidRun
 	}, (err,res)=>{
 		if (err) throw err;
@@ -112,8 +113,8 @@ console.log("this is arg reLoc")
 //display record locator in DOM
 var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
 var pricing = "select * from bid_nfo where price in (select max(price) from bid_nfo)"
-
-db.query(records, pricing, function(error, results,fields){
+var bids =  "select * from bid_nfo where bid_ad in (select max(bid_ad) from bid_nfo)"
+db.query(records, pricing && bids, function(error, results,fields){
 	if(error) { 
 		throw error;
 	}
@@ -127,8 +128,8 @@ db.query(records, pricing, function(error, results,fields){
 // console.log("this is results object: ", results)
 // console.log("this is locator obj: ", data.locator.res)
 // console.log("this is the results from the /add get: ");
-console.log(results[0].rec_locator);
-res.render('pybtyfts', {records:results[0].rec_locator, pricing: results[0].price })
+// console.log(results[0].rec_locator);
+res.render('pybtyfts', {records:results[0].rec_locator, pricing: results[0].price, bids: results[0].bid_ad,})
 });
 }); //end of post route
 
