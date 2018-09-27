@@ -27,6 +27,7 @@
 		<form action="/add" method="post">
 			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 
+				{{!-- Create two inputs that will have placeholders for Title and subtile.  Remove the borders in CSS. --}}
 				<h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2>
 				<h3 contenteditable="true" data-text="Subtitle"></h3>
 
@@ -52,9 +53,9 @@
 				</select>
 			</p>
 			<label>	Start Date:</label>		
-			<input  class="date" type="date" name="bid_date">
+			<input  class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date">
 			<label class="end-date">End Date:</label>		
-			<input class="date" type="date" name="bid_date_end">
+			<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end">
 			<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
 			<a href="/pybtyfts.html">
 				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
