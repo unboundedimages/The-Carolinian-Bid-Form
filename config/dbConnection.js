@@ -5,7 +5,8 @@ const dbConnection = mysql.createConnection({
 	host: 'localhost',
 	user: process.env.dbu,
 	password: process.env.dbp,
-	database: process.env.dbn
+	database: process.env.dbn,
+	multipleStatements: true
 });
 console.log( "=====================")
 // console.log(dbConnection, "=====================")

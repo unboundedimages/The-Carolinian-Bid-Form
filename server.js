@@ -6,7 +6,7 @@ const env = require('dotenv').load()
 const path = require("path");
 const bodyParser = require ('body-parser');
 const db = require ("./config/dbConnection.js")
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const app = express();
 
 
@@ -50,7 +50,7 @@ app.get('/ad', (req,res)=>{
 
 // Insert into Table
 
-app.post("/add", (req, res)=> {
+app.post("/add", (req, res, next)=> {
 	//create random key for record locator
 	let text3 = []
 	function makeid(text, text2) {
@@ -89,48 +89,24 @@ db.query("INSERT INTO bid_nfo SET ?",{
 });
 
 
-// var recLoc =
-db.query("select * from bid_nfo where logged in (select max(logged) from bid_nfo)", 
-function (err, res, recLoc){
-	if (err) throw err;
-	var recLoc =
-	{
-		locator: res[0].rec_locator
-	};
-	console.log("this is reLoc:",recLoc);
-})
-
-db.query("select * from bid_nfo where price in (select max(price) from bid_nfo)", 
-function (err, res, price){
-	if (err) throw err;
-	var price =
-	{
-		price: res[0].price
-	};
-	console.log("this is price:",price);
-})
-console.log("this is arg reLoc")	
-
-//display record locator in DOM
-var records = "select * from bid_nfo where logged in (select max(logged) from bid_nfo)"
-var pricing = "select * from bid_nfo where price in (select max(price) from bid_nfo)"
-var bids =  "select * from bid_nfo where bid_ad in (select max(bid_ad) from bid_nfo)"
-db.query(records, pricing && bids, function(error, results,fields){
+//display queries in DOM
+var queires = [
+	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
+	"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
+	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
+]
+db.query(queires.join(';'), function(error, results, fields){
+	
 	if(error) { 
 		throw error;
 	}
-	let data = {
-	// price: res[0].price,
-	locator: {
-		res: results[0].rec_locator
+	var rec = {
+		rec_locator: results[0][0].rec_locator,
+		price: results[1][0].price,
+		bid_text: results[2][0].bid_ad
 	}
-
-}
-// console.log("this is results object: ", results)
-// console.log("this is locator obj: ", data.locator.res)
-// console.log("this is the results from the /add get: ");
-// console.log(results[0].rec_locator);
-res.render('pybtyfts', {records:results[0].rec_locator, pricing: results[0].price, bids: results[0].bid_ad,})
+	res.render('pybtyfts', {rec})
+	return;
 });
 }); //end of post route
 
@@ -185,6 +161,5 @@ res.render('pybtyfts', {records:results[0].rec_locator, pricing: results[0].pric
 // text from bid
 
 //create a function that takes the total - estimate for the lines
+
 //and save that to the DB so it can be posted to the payment page.
-
-
