@@ -4,8 +4,15 @@
 function getBidNfo() {
 	// window.onload(){	
 		let bidText = document.getElementById("ta")		
-		let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
-		console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
+        let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
+        
+        /////////////////////////////////////////////////////////////////////////
+        // this will insert the html markup with the text in the db
+        // Find a way to store this and the text without html into a table
+		// let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
+        //////////////////////////////////////////////////////////////////////////
+
+        console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
 		console.log("text text text text text ", bidText.innerText)
 	}
 
@@ -19,6 +26,13 @@ function getBidNfo() {
 // 	if (key === 13) {
 // 		money(event)
 // 	}
+// }
+
+
+// create a formula that refreshes the index page so that when the user hits back the form is blank
+
+// function clearPage() {
+//     document.getElementsByName('input').values == 
 // }
 
 //create a formula that counts the lines and multiplies it by 1.56

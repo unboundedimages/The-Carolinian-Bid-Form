@@ -22,6 +22,12 @@
 		<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
 			<b>&#x27f3;</b>
 		</button>
+		<button class="button" id="h2" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
+			<b>h2</b>
+		</button>
+		<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
+			<b>h3</b>
+		</button>
 	</div>
 	<section>
 		<form action="/add" method="post">
@@ -57,9 +63,9 @@
 			<label class="end-date">End Date:</label>		
 			<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end">
 			<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
-			<a href="/pybtyfts.html">
+			{{!-- <a href="/pybtyfts.html"> --}}
 				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
-			</a>
+			{{!-- </a> --}}
 			{{!-- <div id="lines">...</div> --}}
 			<textarea contenteditable="true" id="lines" type="text" name="price">
 			</textarea>
