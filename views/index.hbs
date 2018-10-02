@@ -3,6 +3,12 @@
 	<!-- <img src="http://caro.news/wp-content/uploads/2017/12/caro-logo-for-website.png"> -->
 	<header><h2 id="bid-form">The Carolinian Bid Form</h2></header>
 	<div id=text-editor>
+		<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
+			<b>h1</b>
+		</button>
+		<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
+			<b>h3</b>
+		</button>
 		<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text" contenteditable="false">
 			<b>B</b>
 		</button>
@@ -22,20 +28,14 @@
 		<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
 			<b>&#x27f3;</b>
 		</button>
-		<button class="button" id="h2" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
-			<b>h2</b>
-		</button>
-		<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
-			<b>h3</b>
-		</button>
 	</div>
 	<section>
 		<form action="/add" method="post">
 			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 
 				{{!-- Create two inputs that will have placeholders for Title and subtile.  Remove the borders in CSS. --}}
-				<h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2>
-				<h3 contenteditable="true" data-text="Subtitle"></h3>
+				{{!-- <h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2> --}}
+				{{!-- <h3 contenteditable="true" data-text="Subtitle"></h3> --}}
 
 
 			</div>	

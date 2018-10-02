@@ -4,12 +4,12 @@
 function getBidNfo() {
 	// window.onload(){	
 		let bidText = document.getElementById("ta")		
-        let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
+        // let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
         
         /////////////////////////////////////////////////////////////////////////
         // this will insert the html markup with the text in the db
         // Find a way to store this and the text without html into a table
-		// let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
+		let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
         //////////////////////////////////////////////////////////////////////////
 
         console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
