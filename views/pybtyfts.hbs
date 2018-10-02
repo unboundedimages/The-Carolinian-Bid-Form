@@ -1,11 +1,17 @@
 <div class="container">
 	<div id="CaroBanner"></div>
-	You're record locator is: <span>{{rec.rec_locator}}</span>
+	<h2>You're record locator is: </h2> 
+	{{!-- <div id="recLo"> --}}
+	{{!-- </div> --}}
+	<div id="recLo">{{rec.rec_locator}}</div>
 	<div id="CaroMan"></div>
-	Your bill comes out to {{rec.price}}
+	<div>Your bill comes out to <b>{{rec.price}}</b></div>
 	{{!-- <div>And here's your add folks {{rec.bid_text}}</div> --}}
 
 	{{!-- This will allow the html to render with the markup from the text box --}}
-	<div id="ta" class="bid_ad_txt">And here's your add folks {{{rec.bid_text}}}</div>
+	{{!-- <div class="bid_ad_txt"> --}}
+	<div>Please review your BID ADD before continuing {{{rec.bid_text}}}</div>
+		{{!-- <div id="ta"> --}}
+		{{!-- </div> --}}
 </div>
 <script type="text/javascript" src="/js/media.js"></script>

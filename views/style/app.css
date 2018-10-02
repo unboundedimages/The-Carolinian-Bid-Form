@@ -27,8 +27,8 @@ p {
 .container {
 	background: #fff;
 	position: relative;
-	width:100%;
-	height: 100%;
+	widows: 100v;
+	/* height: 100vh; */
 	border: 4px solid;
 	border-color: orange;
 	z-index: 10;
@@ -89,9 +89,9 @@ p {
 
 #text-editor{
 	position: relative;
-	left:25px;
-	height:30px;
-	bottom: 33px;
+	/* left:25px; */
+	/* height:30px; */
+	bottom: 18px;
 }
 
 #ta {
@@ -192,7 +192,7 @@ textarea {
 #undo {
 	background-color: #f5a73f; /* Green */
 	padding:6px 12px;
-	font-size: 24px;
+	font-size: 22px;
 	/* text-align: center;
 	margin-top: 7px; */
 }
@@ -200,7 +200,7 @@ textarea {
 #redo {
 	background-color: #9d3939; /* Green */
 	padding:6px 12px;
-	font-size: 24px;
+	font-size: 22px;
 	/* padding:13px 16px; */
 	/* text-align: center; */
 }
@@ -254,12 +254,18 @@ textarea {
 	margin-left: 10px;
 }
 
-form {
+/* form {
 	position: 
-}
+} */
 
 .title-input{
 	margin-left:27px;
+}
+
+#recLo {
+	position: relative;
+	bottom: 34px;
+    left: 213px;
 }
 
 @media screen and (max-width: 414px) {
@@ -287,6 +293,7 @@ form {
 
 	#ta{
 		left:-9px;
+		font-size: 11pt;
 	}
 
 	.caroman {
@@ -351,14 +358,14 @@ form {
 
 	#undo {
 		background-color: #f5a73f;
-		padding:11px 16px;
+		/* padding:11px 16px; */
 		text-align: center;
 		margin-top: 7px;
 	}
 
 	#redo {
 		background-color: #9d3939; 
-		padding:11px 16px;
+		/* padding:11px 16px; */
 		text-align: center;
 	}
 	#lines {

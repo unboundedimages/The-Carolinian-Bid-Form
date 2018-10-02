@@ -12,7 +12,7 @@ function getBidNfo() {
 		let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
         //////////////////////////////////////////////////////////////////////////
 
-        console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
+        // console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
 		console.log("text text text text text ", bidText.innerText)
 	}
 
