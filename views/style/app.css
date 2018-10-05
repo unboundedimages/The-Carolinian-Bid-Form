@@ -130,8 +130,32 @@ p {
 	text-align: justify;
 	font-size: 12pt;
 	font-weight: 400;
+	width:100%;
+	/* word-wrap:break-all; */
+	/* word-break: break-all; */
+	/* overflow-wrap: break-word; */
+	/* white-space:pre-wrap; */
+	/* word-break: break-all; */
 }
-
+#ta_2 {
+	background-color: #ffffffb3;
+	position: relative;
+	left:25px;
+	min-width: 384px;
+	max-width:424px;
+	line-height: 20px;
+	height: auto;
+	/* width:100%; */
+	border: 3px inset orange;
+	overflow-x: hidden;
+	padding: 0px 8px 0px 8px;
+	color: black;
+	text-align: justify;
+	font-size: 12pt;
+	font-weight: 400;
+	/* white-space:pre-wrap; */
+	word-wrap:break-all;
+}
 #start-here {
 	font-weight: 750;
 	font-style: black;
