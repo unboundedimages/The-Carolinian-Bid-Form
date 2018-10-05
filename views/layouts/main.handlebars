@@ -7,9 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="style/app.css">
 	<noscript><h2>This page requires safari or chrome browsser</h2></noscript>
 	<script>
-	if (/Edge/.test(navigator.userAgent)) {
-    alert('We recommend using Google Chrome or Safari for this app. MS EDGE and Internet Explorer do not support the paste feature.');
-}
+		if (/Edge\/|Trident\/|MSIE/.test(navigator.userAgent)) {
+		alert('For the best user experience we recommend using Google Chrome or Safari. You can use Internet Exlorer v11, but Chrome is more advanced and works better.  The copy/paste feature is not supported by the Microsoft EDGE browswer.');
+		}
 	</script>
 </head>
 <body>
