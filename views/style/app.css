@@ -140,15 +140,17 @@ p {
 #ta_2 {
 	background-color: #ffffffb3;
 	position: relative;
-	left:25px;
+	left:65px;
 	min-width: 384px;
 	max-width:424px;
 	line-height: 20px;
-	height: auto;
+	height: 500px;
+	overflow:auto;
 	/* width:100%; */
-	border: 3px inset orange;
+	/* border: 3px inset rgba(15, 10, 1, 0.959); */
 	overflow-x: hidden;
 	padding: 0px 8px 0px 8px;
+	margin: 40px;
 	color: black;
 	text-align: justify;
 	font-size: 12pt;
@@ -310,7 +312,8 @@ textarea {
 #recLo {
 	position: relative;
 	bottom: 34px;
-    left: 213px;
+	left: 213px;
+	width: 50%;
 }
 
 @media screen and (max-width: 414px) {
