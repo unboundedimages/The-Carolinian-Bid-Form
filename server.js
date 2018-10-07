@@ -6,7 +6,7 @@ const env = require('dotenv').load()
 const path = require("path");
 const bodyParser = require ('body-parser');
 const db = require ("./config/dbConnection.js")
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 
@@ -25,6 +25,29 @@ app.listen(PORT, function() {
 app.get('/', function(req, res) {
 	console.log("we in here")
 	res.render('index')
+});
+
+app.get('/payment', function(req, res) {
+	console.log("we in here again")
+	
+	var queires = [
+		"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
+		"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
+		"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
+	]
+	db.query(queires.join(';'), function(error, results, fields){
+		
+		if(error) { 
+			throw error;
+		}
+		var rec = {
+			rec_locator: results[0][0].rec_locator,
+			price: results[1][0].price,
+			bid_text: results[2][0].bid_ad
+		}
+		res.render('ccpgtm', {rec})
+		return;
+	});
 });
 
 //CREATE db
