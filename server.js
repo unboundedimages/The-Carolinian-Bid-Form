@@ -50,6 +50,26 @@ app.get('/payment', function(req, res) {
 	});
 });
 
+app.post('/thanks', (req,res, next)=>{
+	console.log("ty for the business")
+	var queires = [
+		"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
+		"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
+		"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
+	]
+	db.query(queires.join(';'), function(error, results, fields){
+		
+if(error) {
+	console.log("it didn't make it: ", error)
+}
+var rec = {
+	rec_locator: results[0][0].rec_locator,
+	price: results[1][0].price,
+	bid_text: results[2][0].bid_ad
+}
+res.render('tycbrs', {rec})
+});
+});
 //CREATE db
 
 app.get('/caro_bids', (req, res)=> {

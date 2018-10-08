@@ -6,17 +6,17 @@
             The Carolinian <b>Bid Form</b>
         </h2>
     </header>
+    <div id="CaroMan"></div>
     <div>
         Your bill comes out to <b>{{rec.price}}</b>
     </div>
-    {{!-- <div id="CaroMan"></div> --}}
-    {{!-- <div = "CaroGuy"></div> --}}
-<div id="sq-ccbox">
+    <div id="ta_2">
+        <div id="sq-ccbox">
   <!--
     You should replace the action attribute of the form with the path of
     the URL you want to POST the nonce to (for example, "/process-card")
   -->
-  <form id="nonce-form" novalidate action="path/to/payment/processing/page" method="post">
+  <form id="nonce-form" novalidate action="thanks" method="post">
     Pay with a Credit Card
     <table>
     <tbody>
@@ -53,5 +53,21 @@
   </form>
 </div>
 
+<div id="sq-walletbox">
+  Pay with a Digital Wallet
+  <!-- Placeholder for Apple Pay for Web button -->
+  <button id="sq-apple-pay" class="button-apple-pay"></button>
+
+  <!-- Placeholder for Google Pay button-->
+  <button id="sq-google-pay" class="button-google-pay"></button>
+
+  <!-- Placeholder for Masterpass button -->
+  <button id="sq-masterpass" class="button-masterpass"></button>
 </div>
+
+    </div>
+
+</div>
+<!-- link to the local SqPaymentForm initialization -->
+<script type="text/javascript" src="/js/sqpaymentform.js"></script>
 <script type="text/javascript" src="/js/media.js"></script>
