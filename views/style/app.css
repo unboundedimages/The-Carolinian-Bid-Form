@@ -11,6 +11,17 @@ body {
 	margin:0;
 	padding:0;
 }
+#pad {
+	padding-bottom: 124px;
+}
+
+.add {
+    position: relative;
+	/* left: 455px; */
+	/* left: 36%; */
+	left:26vw;
+    bottom:9px;
+}
 
 [contentEditable=true]:empty:not(:focus):before{
 	content:attr(data-text)

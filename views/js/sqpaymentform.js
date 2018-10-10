@@ -1,8 +1,8 @@
 // Set the application ID
-var applicationId = "";
+var applicationId = "d--";
 
 // Set the location ID
-var locationId = "";
+var locationId = "-d";
 
 /*
  * function: requestCardNonce

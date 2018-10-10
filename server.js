@@ -68,6 +68,7 @@ var rec = {
 	bid_text: results[2][0].bid_ad
 }
 res.render('tycbrs', {rec})
+return;
 });
 });
 //CREATE db

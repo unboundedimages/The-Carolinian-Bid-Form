@@ -1,76 +1,76 @@
 <div class="container">
-	{{!-- <div id="CaroBanner"></div> --}}
-	<!-- <img src="http://caro.news/wp-content/uploads/2017/12/caro-logo-for-website.png"> -->
-	<header><h2 id="bid-form">The Carolinian <b>>Bid Form</b</h2></header>
-	<div id=text-editor>
-		<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
-			<b>h1</b>
-		</button>
-		<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
-			<b>h3</b>
-		</button>
-		<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text" contenteditable="false">
-			<b>B</b>
-		</button>
-		<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text" contenteditable="false">
-			<i>i</i>
-		</button>
-		<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null);" contenteditable="false">
-			<u>U</u>
-		</button>
-		<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
-			<img id="bul-list" src="/img/bullet-List.png">
-		</button>
-		<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
-			<b>&#x27f2;</b>
-		</button>
+	<div id="pad">
+		<header><h2 id="bid-form">The Carolinian <b>>Bid Form</b</h2></header>
+		<div id=text-editor>
+			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
+				<b>h1</b>
+			</button>
+			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
+				<b>h3</b>
+			</button>
+			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text" contenteditable="false">
+				<b>B</b>
+			</button>
+			<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text" contenteditable="false">
+				<i>i</i>
+			</button>
+			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null);" contenteditable="false">
+				<u>U</u>
+			</button>
+			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
+				<img id="bul-list" src="/img/bullet-List.png">
+			</button>
+			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
+				<b>&#x27f2;</b>
+			</button>
 
-		<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
-			<b>&#x27f3;</b>
-		</button>
-	</div>
-	<section>
-		<form action="/add" method="post">
-			<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
+			<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
+				<b>&#x27f3;</b>
+			</button>
+		</div>
+		<section>
+			<form action="/add" method="post">
+				<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 
-				{{!-- Create two inputs that will have placeholders for Title and subtile.  Remove the borders in CSS. --}}
-				{{!-- <h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2> --}}
-				{{!-- <h3 contenteditable="true" data-text="Subtitle"></h3> --}}
+					{{!-- Create two inputs that will have placeholders for Title and subtile.  Remove the borders in CSS. --}}
+					{{!-- <h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2> --}}
+					{{!-- <h3 contenteditable="true" data-text="Subtitle"></h3> --}}
 
-			</div>	
-			<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
-				{{!-- hil  oihljlllh --}}
-			</textarea>
+				</div>	
+				<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
+					{{!-- hil  oihljlllh --}}
+				</textarea>
 
-			<label class="title" >Company Name:</label><br>
-			<input class="title-input" type="text" name="company"><span><img src="http://caro.news/wp-content/uploads/2018/01/Caro-Newsman-Mark-223x300.png" class="caroman"></span><br>
-			<label class="billed">	Bid Details:</label>
-			&nbsp; &nbsp;
-			<a href="#" class="billed">How you are billed</a><br>		
+				<label class="title" >Company Name:</label><br>
+				<input class="title-input" type="text" name="company"><span><img src="http://caro.news/wp-content/uploads/2018/01/Caro-Newsman-Mark-223x300.png" class="caroman"></span><br>
+				<label class="billed">	Bid Details:</label>
+				&nbsp; &nbsp;
+				<a href="#" class="billed">How you are billed</a><br>		
 
-			<p class="how-long">
-				<b>How long will the bid run?:</b>
-				<select  name="runs" id="runs">
-					<option  value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-				</select>
-			</p>
-			<label>	Start Date:</label>		
-			<input  class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date">
-			<label class="end-date">End Date:</label>		
-			<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end">
-			<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
-			{{!-- <a href="/pybtyfts.html"> --}}
-				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
-			{{!-- </a> --}}
-			{{!-- <div id="lines">...</div> --}}
-			<textarea contenteditable="true" id="lines" type="text" name="price">
-			</textarea>
-			<!-- <input type="submit" value="submit" /> -->
-		</form>
-	</section>
+				<p class="how-long">
+					<b>How long will the bid run?:</b>
+					<select  name="runs" id="runs">
+						<option  value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+					</select>
+				</p>
+				<label>	Start Date:</label>		
+				<input  class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date">
+				<label class="end-date">End Date:</label>		
+				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end">
+				<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
+				{{!-- <a href="/pybtyfts.html"> --}}
+					<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
+				{{!-- </a> --}}
+				{{!-- <div id="lines">...</div> --}}
+				<textarea contenteditable="true" id="lines" type="text" name="price">
+				</textarea>
+				<!-- <input type="submit" value="submit" /> -->
+			</form>
+		</section>
+	</div>	
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
 <script type="text/javascript" src="/js/media.js"></script>
