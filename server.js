@@ -8,7 +8,28 @@ const bodyParser = require ('body-parser');
 const db = require ("./config/dbConnection.js")
 const PORT = process.env.PORT || 8080;
 const app = express();
+///////////////////////////////////
+//square
+var SquareConnect = require('square-connect');
+var defaultClient = SquareConnect.ApiClient.instance;
 
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = "YOUR ACCESS TOKEN";
+
+var api = new SquareConnect.LocationsApi();
+var apiInstance = new SquareConnect.TransactionsApi();
+var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
+var transactionId = "transactionId_example"; //String |
+
+var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+
+api.listLocations().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
 //connect express server 
 app.use(bodyParser.urlencoded({ extended: false }))
