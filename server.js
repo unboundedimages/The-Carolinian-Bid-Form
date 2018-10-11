@@ -70,7 +70,27 @@ app.get('/payment', function(req, res) {
 		return;
 	});
 });
+app.post('/payment', 	(req, res, next)=>{
 
+var SquareConnect = require('square-connect');
+var defaultClient = SquareConnect.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new SquareConnect.TransactionsApi();
+
+var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
+
+var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
+
+apiInstance.charge(locationId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+})
 app.post('/thanks', (req,res, next)=>{
 	console.log("ty for the business")
 	var queires = [

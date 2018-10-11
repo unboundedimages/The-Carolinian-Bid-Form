@@ -26,7 +26,8 @@ body {
 	/* left: 455px; */
 	/* left: 36%; */
 	left:26vw;
-    bottom:9px;
+	top: 2.7vh;
+	/* bottom:9px; */
 }
 
 #bill {
@@ -175,6 +176,7 @@ p {
 	text-align: justify;
 	font-size: 12pt;
 	font-weight: 400;
+	font-family: Arial, Helvetica, sans-serif; 
 	width:100%;
 	/* word-wrap:break-all; */
 	/* word-break: break-all; */
@@ -191,7 +193,7 @@ p {
 	line-height: 20px;
 	height: 500px;
 	overflow:auto;
-	/* width:100%; */
+	width:100%;
 	/* border: 3px inset rgba(15, 10, 1, 0.959); */
 	overflow-x: hidden;
 	padding: 0px 8px 0px 8px;
@@ -200,8 +202,18 @@ p {
 	text-align: justify;
 	font-size: 12pt;
 	font-weight: 400;
+	font-family: Arial, Helvetica, sans-serif; 
 	/* white-space:pre-wrap; */
 	word-wrap:break-all;
+}
+
+.black-line {
+	position:relative;
+	border: 3px inset rgba(15, 10, 1, 0.959);
+	overflow-x: hidden;
+	padding: 0px 8px 11px 8px;
+    width: 100%;
+    right: 11px;
 }
 
 #ta_3 {
@@ -232,6 +244,7 @@ p {
 h1 {
 	text-transform: uppercase;
 	text-align:center;
+	font-size: 1.5em;
 }
 h3 {
 	font-weight: 600;
