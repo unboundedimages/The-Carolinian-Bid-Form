@@ -86,7 +86,7 @@ var calculateHeight = function() {
         // Get the scroll height of the textarea
         taHeight = calculateContentHeight(ta, taLineHeight),
         // calculate the number of lines
-        numberOfLines = Math.ceil(taHeight / taLineHeight) *(1.56);
+        numberOfLines = Math.ceil(taHeight / taLineHeight) *(2.57)+5.14;
         // numberOfLiness = Math.ceil(taHeight / taLineHeight);
 
         var runs = document.getElementById("runs").value * numberOfLines
