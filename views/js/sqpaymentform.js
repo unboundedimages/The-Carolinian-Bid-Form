@@ -1,8 +1,8 @@
 // Set the application ID
-var applicationId = "d--";
+var applicationId = "sandbox-sq0idp-98E4m7OMYIphnLhfR3rUBQ";
 
 // Set the location ID
-var locationId = "-d";
+var locationId = "CBASEB8KpAzZQ3-IKJe3KFlPZYYgAQ";
 
 /*
  * function: requestCardNonce

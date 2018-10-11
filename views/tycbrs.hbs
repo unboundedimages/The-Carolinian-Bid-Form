@@ -1,10 +1,17 @@
-<div>
-    <div>Please save your record locator for this transatoin: {{rec.rec_locator}}</div>
-</div>
-<div>
-    <h2>
-        Thank you for placing your bid ad with <a href="http://www.caro.news">The Carolinian</a>
-    </h2>
+<div class="goodbye">
+    <div>
+        <h2>
+            Thank you for placing your bid ad with <a href="http://www.caro.news" title="Visit our website at www.caro.news" target="#" class="link_style">The Carolinian</a>
+        </h2>
+    </div>
+    <div class="space">
+        Please save your record locator for this transatoin: 
+        <span class="money" title="click on your record locator to copy it to your click board">
+        </span>
+            <input id="invisiline" class="money recL" type="text" value="{{rec.rec_locator}}" readonly>
+        <button class="copy-btn" onclick="copyRecord()">copy locator</button>
+    </div>
+     
 </div>
 <div id="CaroMan"></div>
 <script type="text/javascript" src="/js/media.js"></script>

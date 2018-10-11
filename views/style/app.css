@@ -3,6 +3,12 @@ html{
 	margin:0;
 	padding:0;
 }
+
+#CaroBanner {
+	margin: -4px;
+	width: 100.4vw;
+}
+
 body {
 	color: #993233;
 	background-repeat: no-repeat;
@@ -21,6 +27,34 @@ body {
 	/* left: 36%; */
 	left:26vw;
     bottom:9px;
+}
+
+#bill {
+    position: relative;
+    font-size: 16px;
+    left: 230px;
+	border-radius: 10px;
+	border: 1px solid rgb(200, 200, 200);
+    box-shadow: 2px 2px 1px rgb(201, 210, 196);
+    width: 275px;
+    padding: 10px;
+    padding-left: 15px;
+}
+
+.money {
+	color: rgb(115, 134, 105);
+	font-size: 1.2em;
+}
+
+.goodbye {
+    position: relative;
+    width: 75vw;
+    left: 8%;
+    top: 20%;
+}
+
+.space {
+    padding-top: 18px;
 }
 
 [contentEditable=true]:empty:not(:focus):before{
@@ -169,6 +203,26 @@ p {
 	/* white-space:pre-wrap; */
 	word-wrap:break-all;
 }
+
+#ta_3 {
+    background-color: #ffffffb3;
+    position: relative;
+    left: 65px;
+    min-width: 384px;
+    max-width: 424px;
+    line-height: 20px;
+    height: 416px;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 0px 8px 0px 8px;
+    margin: 40px;
+    color: black;
+    text-align: justify;
+    font-size: 12pt;
+    font-weight: 400;
+    word-wrap: break-all;
+}
+
 #start-here {
 	font-weight: 750;
 	font-style: black;
@@ -325,6 +379,35 @@ textarea {
 	bottom: 34px;
 	left: 213px;
 	width: 50%;
+}
+.recL{
+	font-size: initial;
+	padding-left:7px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width:155px;
+}
+.copy-btn {
+	position:relative;
+	bottom:2px;
+	background-color: #9b3333;
+	color: orange;
+	padding:7px;
+	border-radius: 10px;
+	height: 5vh;
+	margin-top:0px;
+	font-size:12px;
+}
+
+.copy-btn:active {
+	background-color:rgb(110, 135, 101);
+}
+a.link_style {
+	color: #f2a504;
+}
+
+a.link_style:hover {
+    color: #728669;
 }
 
 @media screen and (max-width: 414px) {
