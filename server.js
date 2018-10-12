@@ -83,8 +83,6 @@ var apiInstance = new SquareConnect.TransactionsApi();
 
 var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
 
-var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-
 apiInstance.charge(locationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
