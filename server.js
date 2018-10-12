@@ -82,7 +82,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new SquareConnect.TransactionsApi();
 
 var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
-
+``
 apiInstance.charge(locationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
