@@ -1,8 +1,8 @@
 // Set the application ID
-var applicationId = "";
+var applicationId = "process.env.sandbox_application_id";
 
 // Set the location ID
-var locationId = "";
+var locationId = "prcess.env.sandbox_location";
 
 /*
  * function: requestCardNonce
