@@ -128,25 +128,58 @@ var calculateHeight = function() {
 
 // getLines => 
 
+// var loadDiv = function(that) {
+//     if(that.value == "2") {
+//         document.getElementById("2").style.display="block";
+//     }
+//     else{
+//         document.getElementById("2").style.display="none";
+//     };
 
-
-
-// var xhr = new XMLHttpRequest();
-
-// xhr.onreadystatechange = aCallBack();
-
-// function aCallBack() {
-// 	console.log("a callback executed")
-// 	if(xhr.readyState < 4) {
-// 		return;
-// 	} 
-
-// 	if (xhr.status !==200) {
-// 		return;
-// 	}
-
-// 	console.log(xhr.responseText);
+//     if (that.value == "3") {
+//         document.getElementById("2").style.display="block";
+//         document.getElementById("3").style.display="block";
+//     }
+//     else{
+//         document.getElementById("2").style.display="none";
+//         document.getElementById("3").style.display="none";
+//     }
 // }
+// loadDiv()
+var load_2 = 
+    function (that) {
+    if(that.value == "2") {
+        document.getElementById("2").style.display="block";
+    }
+    else{
+        document.getElementById("2").style.display="none";
+    }
 
-// xhr.open('GET', '/', true);
-// xhr.send('');
+}
+// load_2();
+
+var load_3 =
+    function (that) {
+    if (that.value == "3") {
+        document.getElementById("2").style.display="block";
+        document.getElementById("3").style.display="block";
+    }
+    else{
+        // document.getElementById("2").style.display="none";
+        document.getElementById("3").style.display="none";
+    }
+}
+
+var load_4 =
+    function (that) {
+    if (that.value == "4") {
+        document.getElementById("2").style.display="block";
+        document.getElementById("3").style.display="block";
+        document.getElementById("4").style.display="block";
+    }
+    else{
+        // document.getElementById("2").style.display="none";
+        document.getElementById("4").style.display="none";
+    }
+}
+// load_3();

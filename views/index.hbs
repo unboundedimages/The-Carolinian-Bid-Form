@@ -31,14 +31,8 @@
 		<section>
 			<form action="/add" method="post">
 				<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
-
-					{{!-- Create two inputs that will have placeholders for Title and subtile.  Remove the borders in CSS. --}}
-					{{!-- <h2 contenteditable="true" id="start-here" data-text="Title of Bid"></h2> --}}
-					{{!-- <h3 contenteditable="true" data-text="Subtitle"></h3> --}}
-
 				</div>	
 				<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
-					{{!-- hil  oihljlllh --}}
 				</textarea>
 
 				<label class="title" >Company Name:</label><br>
@@ -49,7 +43,7 @@
 
 				<p class="how-long">
 					<b>How long will the bid run?:</b>
-					<select  name="runs" id="runs">
+					<select  name="runs" id="runs" onchange="load_2(this);load_3(this);load_4(this)">
 						<option  value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -58,8 +52,21 @@
 				</p>
 				<label>	Start Date:</label>		
 				<input  class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date">
-				<label class="end-date">End Date:</label>		
-				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end">
+				{{!-- <label class="end-date">Date 2:	
+				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date_end"> --}}
+				
+				<label id="2" style="display: none;">Date 2:	
+				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date" >
+				</label>	
+
+				<label id="3" style="display: none;">Date 3:
+				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date" >
+				</label>
+
+				<label id="4" style="display: none;">Date 4:
+				<input class="date" type="date" placeholder="YYYY-MM-DD" name="bid_date" >
+				</label>
+
 				<!-- <button class="caro-submit" id="submit-B" type="submit" value="submit">Submit</button> -->
 				{{!-- <a href="/pybtyfts.html"> --}}
 					<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
