@@ -32,6 +32,6 @@
     "express-handlebars": "^3.0.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
-    "square-connect": "^2.20180918.0"
+    "square-connect": "^2.20180918.1"
   }
 }
