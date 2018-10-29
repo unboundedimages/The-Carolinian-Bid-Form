@@ -182,4 +182,6 @@ var load_4 =
         document.getElementById("4").style.display="none";
     }
 }
-// load_3();
+//greys out dates prior to today.
+var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("date")[0].setAttribute('min', today);
