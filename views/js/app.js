@@ -182,6 +182,9 @@ var load_4 =
         document.getElementById("4").style.display="none";
     }
 }
+var testdate = new Date()
+    console.log("test date object", testdate)
 //greys out dates prior to today.
 var today = new Date().toISOString().split('T')[0];
     document.getElementsByName("date")[0].setAttribute('min', today);
+    console.log("today object: ", today)
