@@ -176,6 +176,7 @@ var load_4 =
         document.getElementById("2").style.display="block";
         document.getElementById("3").style.display="block";
         document.getElementById("4").style.display="block";
+        date.addEventListener('input',noMondays);
     }
     else{
         // document.getElementById("2").style.display="none";
@@ -188,3 +189,137 @@ var testdate = new Date()
 var today = new Date().toISOString().split('T')[0];
     document.getElementsByName("date")[0].setAttribute('min', today);
     console.log("today object: ", today)
+
+// disable days that user can select.  User must select Sunday or Thursday.  Other days will be invalid
+
+//need distinct querySelectors for each input
+var input1 = document.querySelector('[id=date1]');
+var input2 = document.querySelector('[id="date2"]');
+var input3 = document.querySelector('[id="date3"]');
+var input4  = document.querySelector('[id="date4"]');
+
+console.log(input1)
+// console.log("datess==", datess)
+
+function noMondays(e){
+
+    // Days in JS range from 0-6 where 0 is Sunday and 6 is Saturday
+  
+let dateMond = document.getElementById("date1").value;
+let dateMondUTC = new Date(dateMond).getUTCDay();  
+  console.log("todayAgainn",dateMondUTC)
+  
+
+    if(dateMondUTC === 1 || dateMondUTC === 2 || dateMondUTC === 3 || dateMondUTC === 5 || dateMondUTC === 6){
+          // alert("this is an invalid date")
+          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          
+          document.getElementById("submit-B").disabled = true;
+          document.getElementById("submit-B").style.backgroundColor = "black";
+          document.getElementById("date2").disabled = true;
+          document.getElementById("date3").disabled = true;
+          document.getElementById("date4").disabled = true;
+    } else {
+
+          e.target.setCustomValidity('');
+          document.getElementById("submit-B").disabled = false;
+          document.getElementById("date2").disabled = false;
+          document.getElementById("date3").disabled = false;
+          document.getElementById("date4").disabled = false;
+          document.getElementById("submit-B").style.backgroundColor = "#9b3333";
+    }
+  
+// noTuesdays()
+}
+
+
+function noTuesdays(e) {
+  
+  //trying to pull data from specific input
+var dateTues = document.getElementById("date2").value;
+  console.log("testme date2", dateTues)
+var dateTuesUTC = new Date(dateTues).getUTCDay()
+  console.log("dateTuesUTC",dateTuesUTC)
+  // console.log("this is a test", testme)
+  
+    if(dateTuesUTC === 6 || dateTuesUTC === 5 || dateTuesUTC === 3 || dateTuesUTC === 2 || dateTuesUTC === 1){
+          // alert("this is an invalid dates")
+          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          // document.getElementById("submit").disabled = true;
+          document.getElementById("submit-B").disabled = true;
+          document.getElementById("submit-B").style.backgroundColor = "black";
+          document.getElementById("date1").disabled = true;
+          document.getElementById("date3").disabled = true;
+          document.getElementById("date4").disabled = true;
+    } else {
+
+        e.target.setCustomValidity('');
+        document.getElementById("submit-B").disabled = false;
+        document.getElementById("date1").disabled = false;
+        document.getElementById("date3").disabled = false;
+        document.getElementById("date4").disabled = false;
+        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
+    } 
+  
+  
+}
+
+function noWednesday(e) {
+  var dateWeds = document.getElementById("date3").value;
+  var dateWedsUTC = new Date(dateWeds).getUTCDay()
+  
+   if(dateWedsUTC === 6 || dateWedsUTC === 5 || dateWedsUTC === 3 || dateWedsUTC === 2 || dateWedsUTC === 1) {
+          
+          alert("this is an invalid dates")
+          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          // document.getElementById("submit").disabled = true;
+          document.getElementById("submit-B").disabled = true;
+          document.getElementById("submit-B").style.backgroundColor = "black";
+          document.getElementById("date1").disabled = true;
+          document.getElementById("date2").disabled = true;
+          document.getElementById("date4").disabled = true;
+   
+   } else {
+
+        e.target.setCustomValidity('');
+        document.getElementById("submit-B").disabled = false;
+        document.getElementById("date1").disabled = false;
+        document.getElementById("date2").disabled = false;
+        document.getElementById("date4").disabled = false;
+        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
+    }
+  
+}
+
+function noFridays(e) {
+var dateFri = document.getElementById("date4").value;
+  var dateFriUTC = new Date(dateFri).getUTCDay()
+  
+   if(dateFriUTC === 6 || dateFriUTC === 5 || dateFriUTC === 3 || dateFriUTC === 2 || dateFriUTC === 1) {
+          
+          alert("this is an invalid dates")
+          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          // document.getElementById("submit").disabled = true;
+          document.getElementById("submit-B").disabled = true;
+          document.getElementById("submit-B").style.backgroundColor = "black";
+          document.getElementById("date1").disabled = true;
+          document.getElementById("date2").disabled = true;
+          document.getElementById("date3").disabled = true;
+   
+   } else {
+
+        e.target.setCustomValidity('');
+        document.getElementById("submit-B").disabled = false;
+        document.getElementById("date1").disabled = false;
+        document.getElementById("date2").disabled = false;
+        document.getElementById("date3").disabled = false;
+        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
+    }
+  
+}  
+
+
+input1.addEventListener('input',noMondays);
+input2.addEventListener('input',noTuesdays);
+input3.addEventListener('input', noWednesday);
+input4.addEventListener('input', noFridays);
