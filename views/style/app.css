@@ -144,8 +144,11 @@ input {
 	margin: 18px 10px 22px;
 	/*border-color:orange;*/
 }
+input:invalid {
+	border: 2px solid red;
+  }
 
-p {
+  p {
 	margin: 10px;
 }
 
