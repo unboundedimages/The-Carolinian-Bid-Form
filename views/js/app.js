@@ -119,33 +119,6 @@ var calculateHeight = function() {
 	runs.addEventListener("keyup", calculateHeight, false);
 }
 
-
-//
-// console.log("white lines blowing through my mind")
-// getLines();
-
-// document.getElementById('lines').addEventListener('click', getLines);
-
-// getLines => 
-
-// var loadDiv = function(that) {
-//     if(that.value == "2") {
-//         document.getElementById("2").style.display="block";
-//     }
-//     else{
-//         document.getElementById("2").style.display="none";
-//     };
-
-//     if (that.value == "3") {
-//         document.getElementById("2").style.display="block";
-//         document.getElementById("3").style.display="block";
-//     }
-//     else{
-//         document.getElementById("2").style.display="none";
-//         document.getElementById("3").style.display="none";
-//     }
-// }
-// loadDiv()
 var load_2 = 
     function (that) {
     if(that.value == "2") {
@@ -201,6 +174,13 @@ var input4  = document.querySelector('[id="date4"]');
 console.log(input1)
 // console.log("datess==", datess)
 
+// toast popup
+function launch_toast() {
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
+
 function noMondays(e){
 
     // Days in JS range from 0-6 where 0 is Sunday and 6 is Saturday
@@ -213,7 +193,7 @@ let dateMondUTC = new Date(dateMond).getUTCDay();
     if(dateMondUTC === 1 || dateMondUTC === 2 || dateMondUTC === 3 || dateMondUTC === 5 || dateMondUTC === 6){
           // alert("this is an invalid date")
           e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
-          
+          launch_toast()
           document.getElementById("submit-B").disabled = true;
           document.getElementById("submit-B").style.backgroundColor = "black";
           document.getElementById("date2").disabled = true;
@@ -244,8 +224,9 @@ var dateTuesUTC = new Date(dateTues).getUTCDay()
   
     if(dateTuesUTC === 6 || dateTuesUTC === 5 || dateTuesUTC === 3 || dateTuesUTC === 2 || dateTuesUTC === 1){
           // alert("this is an invalid dates")
-          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
           // document.getElementById("submit").disabled = true;
+          launch_toast()
           document.getElementById("submit-B").disabled = true;
           document.getElementById("submit-B").style.backgroundColor = "black";
           document.getElementById("date1").disabled = true;
@@ -271,13 +252,14 @@ function noWednesday(e) {
    if(dateWedsUTC === 6 || dateWedsUTC === 5 || dateWedsUTC === 3 || dateWedsUTC === 2 || dateWedsUTC === 1) {
           
           alert("this is an invalid dates")
-          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
           // document.getElementById("submit").disabled = true;
           document.getElementById("submit-B").disabled = true;
           document.getElementById("submit-B").style.backgroundColor = "black";
           document.getElementById("date1").disabled = true;
           document.getElementById("date2").disabled = true;
           document.getElementById("date4").disabled = true;
+          launch_toast()
    
    } else {
 
@@ -298,13 +280,14 @@ var dateFri = document.getElementById("date4").value;
    if(dateFriUTC === 6 || dateFriUTC === 5 || dateFriUTC === 3 || dateFriUTC === 2 || dateFriUTC === 1) {
           
           alert("this is an invalid dates")
-          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
+          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
           // document.getElementById("submit").disabled = true;
           document.getElementById("submit-B").disabled = true;
           document.getElementById("submit-B").style.backgroundColor = "black";
           document.getElementById("date1").disabled = true;
           document.getElementById("date2").disabled = true;
           document.getElementById("date3").disabled = true;
+          launch_toast()
    
    } else {
 
