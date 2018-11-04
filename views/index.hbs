@@ -52,24 +52,24 @@
 				</p>
 				<span>
 				<label>	Date 1:	
-				<input  name="date" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
+				<input  name="date1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
 				</label>	
 				
 				<label id="2" style="display: none;">Date 2:	
-				<input name="date" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date2">
+				<input name="date2" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date2">
 				</label>	
 
 				<label id="3" style="display: none;">Date 3:
-				<input name="date" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3">
+				<input name="date3" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3">
 				</label>
 
 				<label id="4" style="display: none;">Date 4:
-				<input name="date" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4">
+				<input name="date4" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4">
 				</label>
 				</span>
 
 				{{!-- Submit button --}}
-				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
+				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="button" value="Submit">Submit</button>
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
