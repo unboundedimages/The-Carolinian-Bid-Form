@@ -160,7 +160,9 @@ var testdate = new Date()
     console.log("test date object", testdate)
 //greys out dates prior to today.
 var today = new Date().toISOString().split('T')[0];
-    document.getElementsByName("date")[0].setAttribute('min', today);
+    // document.getElementsByName("date")[0].setAttribute('min', today);
+    document.getElementsByClassName('date')[0].setAttribute('min', today);
+    // document.getElementsByTagName('input')[0].setAttribute('min', today);
     console.log("today object: ", today)
 
 // disable days that user can select.  User must select Sunday or Thursday.  Other days will be invalid
@@ -306,3 +308,9 @@ input1.addEventListener('input',noMondays);
 input2.addEventListener('input',noTuesdays);
 input3.addEventListener('input', noWednesday);
 input4.addEventListener('input', noFridays);
+
+// function doesWork() {
+//  alert("does this work?")
+//  return false;
+// }
+// document.getElementById('submit-B').onclick = doesWork;
