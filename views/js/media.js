@@ -2,8 +2,8 @@
 window.onload = function carobanner(){
 	let caro_banner = '<img src="/img/caro-logo-for-website.png">';
 	document.getElementById("CaroBanner").innerHTML = caro_banner;
-//	let caro_man = '<img src="http://caro.news/wp-content/uploads/2018/01/Caro-Newsman-Mark-223x300.png" class="caroman">';
-//	document.getElementById("CaroMan").innerHTML = caro_man;
+	let caro_man = '<img src="/img/Caro-Newsman-Mark-223x300" class="caroman">';
+	document.getElementById("CaroMan").innerHTML = caro_man;
 }
 
 function copyRecord(e) { 
