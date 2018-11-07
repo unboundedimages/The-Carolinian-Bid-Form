@@ -123,7 +123,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, start_date DATE, end_date DATE, runs int, bid_ad LONGTEXT, price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
@@ -158,8 +158,10 @@ app.post("/add", (req, res, next)=> {
 //Puts data into DB
 db.query("INSERT INTO bid_nfo SET ?",{
 	name:req.body.company, 
-	start_date:req.body.bid_date,
-	end_date:req.body.bid_date_end,
+	date1:req.body.input1,
+	date2:req.body.input2,
+	date3:req.body.input3,
+	date4:req.body.input4,
 	rec_locator:text3,
 	price:req.body.price,
 	bid_ad:req.body.bid_Ad,
