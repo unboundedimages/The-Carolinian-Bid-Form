@@ -2,7 +2,7 @@
 window.onload = function carobanner(){
 	let caro_banner = '<img src="/img/caro-logo-for-website.png">';
 	document.getElementById("CaroBanner").innerHTML = caro_banner;
-	let caro_man = '<img src="/img/Caro-Newsman-Mark-223x300" class="caroman">';
+	let caro_man = '<img src="/img/Caro-Newsman-Mark-223x300.png" class="caroman">';
 	document.getElementById("CaroMan").innerHTML = caro_man;
 }
 
