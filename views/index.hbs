@@ -1,5 +1,5 @@
 <div class="container">
-	<div id="pad">
+	{{!-- <div id="pad"> --}}
 		<header><h2 id="bid-form">The Carolinian <b>Bid Form</b</h2></header>
 		<div id=text-editor>
 			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
@@ -36,7 +36,7 @@
 				</textarea>
 
 				<label class="title" >Company Name:</label><br>
-				<input class="title-input" type="text" name="company"><span><img src="img/Caro-Newsman-Mark-223x300.png" class="caroman"></span><br>
+				<input class="title-input" type="text" name="company"><br>
 				<label class="billed">	Bid Details:</label>
 				&nbsp; &nbsp;
 				<a href="#" class="billed">How you are billed</a><br>		
@@ -78,7 +78,7 @@
 				<div id="toast"><div id="desc">You have entered an invalid date. <br>Please select either Sunday or Thursday</div></div>
 			</form>
 		</section>
-	</div>	
+	{{!-- </div>	 --}}
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
 <script type="text/javascript" src="/js/media.js"></script>
