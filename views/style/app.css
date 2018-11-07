@@ -144,13 +144,15 @@ input {
 	margin: 18px 10px 22px;
 	/*border-color:orange;*/
 }
-input:invalid {
+input.date {
+	background-color: #fffdf4;
+}
+input:disabled {
+	background-color: white;
+}
+/* input:invalid {
 	border: 2px solid red;
-  }
-
-  .date:invalid {
-	  border:2px solid red;
-  }
+  } */
 
   p {
 	margin: 10px;
