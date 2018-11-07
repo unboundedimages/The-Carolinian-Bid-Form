@@ -1,10 +1,8 @@
-// document.getElementById('bidAd').onload = ()=> getBidNfo();
 // "use strict";
 
 function getBidNfo() {
-	// window.onload(){	
+
 		let bidText = document.getElementById("ta")		
-        // let bidz = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerText;
         
         /////////////////////////////////////////////////////////////////////////
         // this will insert the html markup with the text in the db
@@ -12,22 +10,10 @@ function getBidNfo() {
 		let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
         //////////////////////////////////////////////////////////////////////////
 
-        // console.log("bzzzzzzzzzzzzzzzzzzzzzz",bidz);
 		console.log("text text text text text ", bidText.innerText)
 	}
 
 	getBidNfo()
-// getBidNfo()
-//Use an event listener to 
-// document.addEventListener('keyup', checkKey);
-
-// function checkKey(event) {
-// 	var key = event.keyCode;
-// 	if (key === 13) {
-// 		money(event)
-// 	}
-// }
-
 
 // create a formula that refreshes the index page so that when the user hits back the form is blank
 
@@ -87,14 +73,9 @@ var calculateHeight = function() {
         taHeight = calculateContentHeight(ta, taLineHeight),
         // calculate the number of lines
         numberOfLines = Math.ceil(taHeight / taLineHeight) *(2.57)+5.14;
-        // numberOfLiness = Math.ceil(taHeight / taLineHeight);
-
         var runs = document.getElementById("runs").value * numberOfLines
-        // document.getElementById("lines").innerHTML = "Estimate $" +
-        // runs.toFixed(2) + " for " + numberOfLiness + " lines.";
         document.getElementById("lines").innerHTML = "$" +
         runs.toFixed(2);
-        // estimate.push(runs.toFixed(2))
         var json = runs.toFixed(2)
         var obj = JSON.parse(json)
         console.log("obj ", obj)
@@ -104,10 +85,7 @@ var calculateHeight = function() {
     };
 
     calculateHeight();
-    // function getBidAd() {	
-    	
-    // 	console.log(getBid)
-    // }
+    
     if (ta.addEventListener) {
     	ta.addEventListener("mouseup", calculateHeight, false);
     	ta.addEventListener("keyup", calculateHeight, false);
@@ -119,51 +97,58 @@ var calculateHeight = function() {
 	runs.addEventListener("keyup", calculateHeight, false);
 }
 
-var load_2 = 
-    function (that) {
-    if(that.value == "2") {
-        document.getElementById("2").style.display="block";
-    }
-    else{
-        document.getElementById("2").style.display="none";
+////// Toggle visibility of input fields, and enable and disable them for db entries.//////
+function enable_dates(that) {
+    
+    if (that.value == "2") {
+       document.getElementById('date2').disabled = false;
+       document.getElementById('date3').disabled = true;
+       document.getElementById('date4').disabled = true;
+    } else if (that.value =="1") {
+        document.getElementById('date2').disabled = true;
+        document.getElementById('date3').disabled = true;
+        document.getElementById('date4').disabled = true;
+    } else if (that.value == "3") {
+        document.getElementById('date2').disabled = false;
+        document.getElementById('date3').disabled = false;
+        document.getElementById('date4').disabled = true;
+    } else if (that.value == "4") {
+        document.getElementById('date2').disabled = false;
+        document.getElementById('date3').disabled = false;
+        document.getElementById('date4').disabled = false;
     }
 
 }
-// load_2();
 
-var load_3 =
-    function (that) {
-    if (that.value == "3") {
-        document.getElementById("2").style.display="block";
-        document.getElementById("3").style.display="block";
-    }
-    else{
-        // document.getElementById("2").style.display="none";
-        document.getElementById("3").style.display="none";
+function show_inputs(that) {
+    if (that.value == "2") {
+        document.getElementById('2').style.display = "inline";
+        document.getElementById('3').style.display = "none";
+        document.getElementById('4').style.display = "none";
+    } else if (that.value == "3") {
+        document.getElementById('2').style.display = "inline";
+        document.getElementById('3').style.display = "block";
+        document.getElementById('4').style.display = "none";
+    } else if (that.value == "4") {
+        document.getElementById('2').style.display = "inline";
+        document.getElementById('3').style.display = "inline";
+        document.getElementById('4').style.display = "inline";
+    } else if (that.value == '1') {
+        document.getElementById('2').style.display = "none";
+        document.getElementById('3').style.display = "none";
+        document.getElementById('4').style.display = "none";
     }
 }
 
-var load_4 =
-    function (that) {
-    if (that.value == "4") {
-        document.getElementById("2").style.display="block";
-        document.getElementById("3").style.display="block";
-        document.getElementById("4").style.display="block";
-        date.addEventListener('input',noMondays);
-    }
-    else{
-        // document.getElementById("2").style.display="none";
-        document.getElementById("4").style.display="none";
-    }
-}
-var testdate = new Date()
-    console.log("test date object", testdate)
 //greys out dates prior to today.
 var today = new Date().toISOString().split('T')[0];
-    // document.getElementsByName("date")[0].setAttribute('min', today);
-    document.getElementsByClassName('date')[0].setAttribute('min', today);
-    // document.getElementsByTagName('input')[0].setAttribute('min', today);
-    console.log("today object: ", today)
+//     // document.getElementsByName("date")[0].setAttribute('min', today);
+    // document.getElementsByClassName('date')[0].setAttribute('min', today);
+    document.getElementsByName('input1')[0].setAttribute('min', today);
+    document.getElementsByName('input2')[0].setAttribute('min', today);
+    document.getElementsByName('input3')[0].setAttribute('min', today);
+    document.getElementsByName('input4')[0].setAttribute('min', today);
+//     console.log("today object: ", today)
 
 // disable days that user can select.  User must select Sunday or Thursday.  Other days will be invalid
 
@@ -171,7 +156,7 @@ var today = new Date().toISOString().split('T')[0];
 var input1 = document.querySelector('[id=date1]');
 var input2 = document.querySelector('[id="date2"]');
 var input3 = document.querySelector('[id="date3"]');
-var input4  = document.querySelector('[id="date4"]');
+var input4 = document.querySelector('[id="date4"]');
 
 console.log(input1)
 // console.log("datess==", datess)
@@ -188,129 +173,30 @@ function noMondays(e){
     // Days in JS range from 0-6 where 0 is Sunday and 6 is Saturday
   
 let dateMond = document.getElementById("date1").value;
-let dateMondUTC = new Date(dateMond).getUTCDay();  
-  console.log("todayAgainn",dateMondUTC)
+let inputfield2 = document.getElementById("date2").value;
+let inputfield3 = document.getElementById("date3").value;
+let inputfield4 = document.getElementById("date4").value;
+let dateMondUTC = new Date(dateMond).getUTCDay();
+let input2UTC = new Date(inputfield2).getUTCDay();  
+let input3UTC = new Date(inputfield3).getUTCDay();  
+let input4UTC = new Date(inputfield4).getUTCDay();  
+//   console.log("todayAgainn",dateMondUTC)
   
-
-    if(dateMondUTC === 1 || dateMondUTC === 2 || dateMondUTC === 3 || dateMondUTC === 5 || dateMondUTC === 6){
-          // alert("this is an invalid date")
-          e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
-          launch_toast()
-          document.getElementById("submit-B").disabled = true;
-          document.getElementById("submit-B").style.backgroundColor = "black";
-          document.getElementById("date2").disabled = true;
-          document.getElementById("date3").disabled = true;
-          document.getElementById("date4").disabled = true;
+  if(dateMondUTC === 1 || dateMondUTC === 2 || dateMondUTC === 3 || dateMondUTC === 5 || dateMondUTC === 6 
+    || input2UTC === 1 || input2UTC === 2  || input2UTC === 3 || input2UTC === 5  || input2UTC === 6
+    || input3UTC === 1 || input3UTC === 2  || input3UTC === 3 || input3UTC === 5  || input3UTC === 6
+    || input4UTC === 1 || input4UTC === 2  || input4UTC === 3 || input4UTC === 5  || input4UTC === 6
+    ) {
+        launch_toast()
+        document.getElementById("submit-B").disabled = true;
+        document.getElementById("submit-B").style.backgroundColor = "black";
     } else {
-
-          e.target.setCustomValidity('');
           document.getElementById("submit-B").disabled = false;
-          document.getElementById("date2").disabled = false;
-          document.getElementById("date3").disabled = false;
-          document.getElementById("date4").disabled = false;
           document.getElementById("submit-B").style.backgroundColor = "#9b3333";
     }
-  
-// noTuesdays()
 }
-
-
-function noTuesdays(e) {
-  
-  //trying to pull data from specific input
-var dateTues = document.getElementById("date2").value;
-  console.log("testme date2", dateTues)
-var dateTuesUTC = new Date(dateTues).getUTCDay()
-  console.log("dateTuesUTC",dateTuesUTC)
-  // console.log("this is a test", testme)
-  
-    if(dateTuesUTC === 6 || dateTuesUTC === 5 || dateTuesUTC === 3 || dateTuesUTC === 2 || dateTuesUTC === 1){
-          // alert("this is an invalid dates")
-          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
-          // document.getElementById("submit").disabled = true;
-          launch_toast()
-          document.getElementById("submit-B").disabled = true;
-          document.getElementById("submit-B").style.backgroundColor = "black";
-          document.getElementById("date1").disabled = true;
-          document.getElementById("date3").disabled = true;
-          document.getElementById("date4").disabled = true;
-    } else {
-
-        e.target.setCustomValidity('');
-        document.getElementById("submit-B").disabled = false;
-        document.getElementById("date1").disabled = false;
-        document.getElementById("date3").disabled = false;
-        document.getElementById("date4").disabled = false;
-        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
-    } 
-  
-  
-}
-
-function noWednesday(e) {
-  var dateWeds = document.getElementById("date3").value;
-  var dateWedsUTC = new Date(dateWeds).getUTCDay()
-  
-   if(dateWedsUTC === 6 || dateWedsUTC === 5 || dateWedsUTC === 3 || dateWedsUTC === 2 || dateWedsUTC === 1) {
-          
-          alert("this is an invalid dates")
-          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
-          // document.getElementById("submit").disabled = true;
-          document.getElementById("submit-B").disabled = true;
-          document.getElementById("submit-B").style.backgroundColor = "black";
-          document.getElementById("date1").disabled = true;
-          document.getElementById("date2").disabled = true;
-          document.getElementById("date4").disabled = true;
-          launch_toast()
-   
-   } else {
-
-        e.target.setCustomValidity('');
-        document.getElementById("submit-B").disabled = false;
-        document.getElementById("date1").disabled = false;
-        document.getElementById("date2").disabled = false;
-        document.getElementById("date4").disabled = false;
-        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
-    }
-  
-}
-
-function noFridays(e) {
-var dateFri = document.getElementById("date4").value;
-  var dateFriUTC = new Date(dateFri).getUTCDay()
-  
-   if(dateFriUTC === 6 || dateFriUTC === 5 || dateFriUTC === 3 || dateFriUTC === 2 || dateFriUTC === 1) {
-          
-          alert("this is an invalid dates")
-          //e.target.setCustomValidity('OH NOES! We hate Mondays! Please pick any day but Monday.');
-          // document.getElementById("submit").disabled = true;
-          document.getElementById("submit-B").disabled = true;
-          document.getElementById("submit-B").style.backgroundColor = "black";
-          document.getElementById("date1").disabled = true;
-          document.getElementById("date2").disabled = true;
-          document.getElementById("date3").disabled = true;
-          launch_toast()
-   
-   } else {
-
-        e.target.setCustomValidity('');
-        document.getElementById("submit-B").disabled = false;
-        document.getElementById("date1").disabled = false;
-        document.getElementById("date2").disabled = false;
-        document.getElementById("date3").disabled = false;
-        document.getElementById("submit-B").style.backgroundColor = "#9b3333";
-    }
-  
-}  
-
 
 input1.addEventListener('input',noMondays);
-input2.addEventListener('input',noTuesdays);
-input3.addEventListener('input', noWednesday);
-input4.addEventListener('input', noFridays);
-
-// function doesWork() {
-//  alert("does this work?")
-//  return false;
-// }
-// document.getElementById('submit-B').onclick = doesWork;
+input2.addEventListener('input',noMondays);
+input3.addEventListener('input',noMondays);
+input4.addEventListener('input',noMondays);
