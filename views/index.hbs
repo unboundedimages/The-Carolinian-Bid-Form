@@ -43,8 +43,8 @@
 
 				<p class="how-long">
 					<b>How long will the bid run?:</b>
-					<select  name="runs" id="runs" onchange="load_2(this);load_3(this);load_4(this)">
-						<option  value="1">1</option>
+					<select  name="runs" id="runs" onchange="enable_dates(this); show_inputs(this);">
+						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
@@ -52,24 +52,25 @@
 				</p>
 				<span>
 				<label>	Date 1:	
-				<input  name="date1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
+				<input  min="today" name="input1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
 				</label>	
 				
-				<label id="2" style="display: none;">Date 2:	
-				<input name="date2" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date2">
+				<label id="2" hidden>Date 2:	
+				<input name="input2" class="date" type="date" placeholder="YYYY-MM-DD" required onkeypress="return event.keyCode != 13;" id = "date2" disabled>
 				</label>	
-
-				<label id="3" style="display: none;">Date 3:
-				<input name="date3" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3">
+				</span>
+				<br>
+				<span>
+				<label id="3" hidden>Date 3:
+				<input name="input3" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3" disabled>
 				</label>
 
-				<label id="4" style="display: none;">Date 4:
-				<input name="date4" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4">
+				<label id="4" hidden>Date 4:
+				<input name="input4" class="date" type="date" placeholder="YYYY-MM-DD"  onkeypress="return event.keyCode != 13;" id = "date4" disabled>
 				</label>
 				</span>
-
 				{{!-- Submit button --}}
-				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="button" value="Submit">Submit</button>
+				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
