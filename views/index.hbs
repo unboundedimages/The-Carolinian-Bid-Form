@@ -2,22 +2,22 @@
 	{{!-- <div id="pad"> --}}
 		<header><h2 id="bid-form">The Carolinian <b>Bid Form</b</h2></header>
 		<div id=text-editor>
-			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>');" contenteditable="false">
+			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>'); getBidNfo();" contenteditable="false">
 				<b>h1</b>
 			</button>
-			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>');" contenteditable="false">
+			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>'); getBidNfo();" contenteditable="false">
 				<b>h3</b>
 			</button>
-			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text" contenteditable="false">
+			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null); getBidNfo();" title="Bold Highlighted Text" contenteditable="false">
 				<b>B</b>
 			</button>
-			<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text" contenteditable="false">
+			<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null); getBidNfo();" title="Italicize Highlighted Text" contenteditable="false">
 				<i>i</i>
 			</button>
-			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null);" contenteditable="false">
+			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null); getBidNfo();" contenteditable="false">
 				<u>U</u>
 			</button>
-			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','true',null);" contenteditable="false">
+			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','false',null); getBidNfo();" contenteditable="false">
 				<img id="bul-list" src="/img/bullet-List.png">
 			</button>
 			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
