@@ -134,7 +134,7 @@ img {
 	top: 121px;
 	/*top: 76px;*/
 	overflow: hidden;
-	/*z-index: -1;*/
+	z-index: 11;
 	/*opacity: 0.15;*/
 }
 
