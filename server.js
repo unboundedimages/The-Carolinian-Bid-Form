@@ -123,7 +123,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), logged TIMESTAMP, date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
@@ -154,10 +154,13 @@ app.post("/add", (req, res, next)=> {
 	}
 	makeid();
 
+	let timenow = Date.now();
+console.log("this is the time ====================================================", timenow)
 
 //Puts data into DB
 db.query("INSERT INTO bid_nfo SET ?",{
-	name:req.body.company, 
+	name:req.body.company,
+	// logged: req.body.date, 
 	date1:req.body.input1,
 	date2:req.body.input2,
 	date3:req.body.input3,
@@ -195,6 +198,49 @@ db.query(queires.join(';'), function(error, results, fields){
 });
 }); //end of post route
 
+//get all records
+app.get("/fetch-seek-find-locate", (req,res)=> { 
+	db.query("SELECT * FROM bid_nfo", (err, rows, field)=> {
+			if (!err)
+			// console.log("ooooooooOOOOOOOoooooooOOOOOOOOooooooOOOOOOOoooooOOOO: ",rows[0].rec_locator);
+			res.send(rows)
+			else
+			console.log(err);
+		}
+	)
+})
+
+//get specific single record
+app.get("/fetch-seek-find-locate/:id", (req,res)=> { 
+	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.params.id],(err, rows, field)=> {
+			if (!err)
+			res.send(rows)
+			else
+			console.log(err);
+		}
+	)
+})
+
+//catch all query #2
+app.get("/fetch-seek-find-locate-name", (req,res)=> { 
+	db.query("SELECT * FROM bid_nfo", (err, rows, field)=> {
+			if (!err)
+			res.send(rows)
+			else
+			console.log(err);
+		}
+	)
+})
+//get query by company name 
+app.get("/fetch-seek-find-locate-name/:id", (req,res)=> { 
+	db.query("SELECT * FROM bid_nfo WHERE name = ?",[req.params.id],(err, rows, field)=> {
+			if (!err)
+			res.send(rows)
+			else
+			console.log(err);
+		}
+	)
+})
 //===============================================================================================
 
 //todo
