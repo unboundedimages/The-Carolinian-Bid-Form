@@ -1,12 +1,12 @@
 <div class="container border-main">
     <div id="bid-query">
-        {{#each rows}}
         <div id="ta_2"> 
     <form action= "/fetch-seek-find-locate/submit" method="post" >
         <div>
             Enter Record locator: <input name="id" type="text"> <button type="submit" value="Submit" id=findIT>Search</button>
         </div>
     </form>
+        {{#each rows}}
             <div>Date of runs: {{this.runs}}</div>
             <br>
             <div>Company name: {{this.name}}</div>
