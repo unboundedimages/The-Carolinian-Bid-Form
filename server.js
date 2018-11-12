@@ -200,6 +200,7 @@ db.query(queires.join(';'), function(error, results, fields){
 
 //get all records
 app.get("/fetch-seek-find-locate", (req,res)=> { 
+	// console.log("xx+++++++++++++++++  ", req._events)
 	db.query("SELECT * FROM bid_nfo", (err, rows, field)=> {
 			if (!err)
 			// console.log("ooooooooOOOOOOOoooooooOOOOOOOOooooooOOOOOOOoooooOOOO: ",rows[0].rec_locator);
@@ -210,13 +211,32 @@ app.get("/fetch-seek-find-locate", (req,res)=> {
 	)
 })
 
+
+
+// 	
+
 //get specific single record
-app.get("/fetch-seek-find-locate/:id", (req,res)=> { 
+app.get("/fetch-seek-find-locate/:id", (req,res,next)=> { 
 	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.params.id],(err, rows, field)=> {
+		// console.log(rows)
 			if (!err)
-			res.send(rows)
+			// res.send(rows)
+			res.render('myquery', {rows})
 			else
 			console.log(err);
+		}
+	)
+})
+
+app.post("/fetch-seek-find-locate/submit", (req,res)=> { 
+	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.params.id],(err, rows, field)=> {
+		// if (!err)
+		var id = req.body.id;
+		console.log("req req req req req rqe req req rqe your body:  ", id)
+			// res.send(rows)
+			res.redirect('/fetch-seek-find-locate/' + id)
+			// else
+			// console.log(err);
 		}
 	)
 })
