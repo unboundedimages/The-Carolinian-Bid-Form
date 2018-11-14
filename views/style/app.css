@@ -416,7 +416,7 @@ textarea {
 	color: orange;
 	padding:7px;
 	border-radius: 10px;
-	height: 5vh;
+	/* height: 10vh; */
 	margin-top:0px;
 	font-size:12px;
 }
