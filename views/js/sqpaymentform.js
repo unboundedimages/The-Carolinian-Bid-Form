@@ -1,8 +1,9 @@
+var env = require('dotenv').load()
 // Set the application ID
-var applicationId = "process.env.sandbox_application_id";
+var applicationId = "sandbox-sq0idp-JhgseKPGUJdRedabr7S9yQ";
 
 // Set the location ID
-var locationId = "prcess.env.sandbox_location";
+var locationId = "CBASEJ0TfXItWeS50VHaxidbWdIgAQ";
 
 /*
  * function: requestCardNonce
@@ -167,7 +168,7 @@ var paymentForm = new SqPaymentForm({
         return;
       }
 
-      alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
+      // alert('Nonce received: ' + nonce); /* FOR TESTING ONLY */
 
       // Assign the nonce value to the hidden form field
       document.getElementById('card-nonce').value = nonce;
