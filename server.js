@@ -10,26 +10,30 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 ///////////////////////////////////
 //square
-var SquareConnect = require('square-connect');
-var defaultClient = SquareConnect.ApiClient.instance;
+// var SquareConnect = require('square-connect');
+// var defaultClient = SquareConnect.ApiClient.instance;
 
-// Configure OAuth2 access token for authorization: oauth2
-var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = "YOUR ACCESS TOKEN";
+// // Configure OAuth2 access token for authorization: oauth2
+// var oauth2 = defaultClient.authentications['oauth2'];
+// oauth2.accessToken = process.env.sandbox_token;
 
-var api = new SquareConnect.LocationsApi();
-var apiInstance = new SquareConnect.TransactionsApi();
-var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
-var transactionId = "transactionId_example"; //String |
+// var api = new SquareConnect.LocationsApi();
+// var apiInstance = new SquareConnect.TransactionsApi();
+// var locationId = process.env.sandbox_location; // String | The ID of the location to associate the created transaction with.
+// var transactionId = process.env.sandbox_application_id; //String |
+// apiInstance.captureTransaction(locationId, transactionId).then(function(data) {
+// 	console.log('API called successfully. Returned data: ' + data);
+//   }, function(error) {
+// 	console.error(error);
+//   });
+// var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
-var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
 
-
-api.listLocations().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+// api.listLocations().then(function(data) {
+//   console.log('API called successfully. Returned data: ' + data);
+// }, function(error) {
+//   console.error(error);
+// });
 
 //connect express server 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -77,11 +81,12 @@ var defaultClient = SquareConnect.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
+// oauth2.accessToken = 'YOUR ACCESS TOKEN';
+oauth2.accessToken = process.env.token;
 
 var apiInstance = new SquareConnect.TransactionsApi();
 
-var locationId = "locationId_example"; // String | The ID of the location to associate the created transaction with.
+var locationId = process.env.location; // String | The ID of the location to associate the created transaction with.
 
 apiInstance.charge(locationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
