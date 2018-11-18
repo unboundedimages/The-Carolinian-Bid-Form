@@ -9,6 +9,7 @@
        <b> Your bill comes out to: <span class="money">{{rec.price}}</span></b>
     </div>
     <div id="ta_3">
+        <div id="form-container">
         <div id="sq-ccbox">
         <!--
             You should replace the action attribute of the form with the path of
@@ -48,8 +49,12 @@
                 <!--
                 After a nonce is generated it will be assigned to this hidden input field.
                 -->
-                <input type="hidden" id="card-nonce" name="nonce">
+                {{!-- <input type="hidden" id="card-nonce" name="nonce"> --}}
+                <input value="{{rec.price}}" id="card-nonce" name="nonce">
+                <input value="{{rec.rec_locator}}" id="r_locator" name="rec_locator">
+                {{!-- <input value="{{rec.company_name}}" id="r_locator" name="company_name"> --}}
             </form>
+        </div>
         </div>
         <div id="sq-walletbox">
             Pay with a Digital Wallet
@@ -64,6 +69,8 @@
         </div>
     </div>
 </div>
-<!-- link to the local SqPaymentForm initialization -->
+<!-- link to the SqPaymentForm library -->
+<link rel="stylesheet" type="text/css" href="squareCss/sqpaymentform.css">
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
 <script type="text/javascript" src="/js/sqpaymentform.js"></script>
 <script type="text/javascript" src="/js/media.js"></script>
