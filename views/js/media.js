@@ -12,11 +12,11 @@ function copyRecord(e) {
 	document.execCommand("copy");
 	// alert("Copied the text: " + x.value);
 }
-//strips formatting when text is pasted into text area
-document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
-    e.preventDefault();
-    var text = e.clipboardData.getData("text/plain");
-    var temp = document.createElement("div");
-    temp.innerHTML = text;
-    document.execCommand("insertHTML", false, temp.textContent);
-});
+// //strips formatting when text is pasted into text area
+// document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
+//     e.preventDefault();
+//     var text = e.clipboardData.getData("text/plain");
+//     var temp = document.createElement("div");
+//     temp.innerHTML = text;
+//     document.execCommand("insertHTML", false, temp.textContent);
+// });
