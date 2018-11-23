@@ -17,7 +17,7 @@
 			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null); getBidNfo();" contenteditable="false">
 				<u>U</u>
 			</button>
-			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand( 'insertUnorderedList','false',null); getBidNfo();" contenteditable="false">
+			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand('insertUnorderedlist'); getBidNfo();" contenteditable="false">
 				<img id="bul-list" src="/img/bullet-List.png">
 			</button>
 			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
@@ -41,6 +41,7 @@
 				&nbsp; &nbsp;
 				<a href="#" class="billed">How you are billed</a><br>		
 
+				<div id="toast" hidden><div id="desc">You have entered an invalid date. <br>Please select either Sunday or Thursday</div></div>
 				<p class="how-long">
 					<b>How long will the bid run?:</b>
 					<select  name="runs" id="runs" onchange="enable_dates(this); show_inputs(this);">
@@ -66,7 +67,7 @@
 				</label>
 
 				<label id="4" hidden>Date 4:
-				<input name="input4" class="date" type="date" placeholder="YYYY-MM-DD"  onkeypress="return event.keyCode != 13;" id = "date4" disabled>
+				<input name="input4" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4" disabled>
 				</label>
 				</span>
 				{{!-- Submit button --}}
@@ -74,11 +75,13 @@
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
+				{{!-- <textarea contenteditable="true" id="lines_2" type="text" name="price_2">
+				</textarea> --}}
+				<input type="text" id ="lines_2" name="price_2" hidden>
 				{{!-- toast --}}
-				<div id="toast"><div id="desc">You have entered an invalid date. <br>Please select either Sunday or Thursday</div></div>
 			</form>
 		</section>
 	{{!-- </div>	 --}}
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
-<script type="text/javascript" src="/js/media.js"></script>
+{{!-- <script type="text/javascript" src="/js/media.js"></script> --}}
