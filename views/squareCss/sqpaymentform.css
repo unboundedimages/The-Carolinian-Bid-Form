@@ -17,18 +17,33 @@
   }
   
   /* Customize the "Pay with Credit Card" button */
+  #sq-creditcard:hover {
+    background: rgb(111, 136, 102);
+  }
+  .button-credit-card:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
   .button-credit-card {
     min-width: 200px;
-    min-height: 20px;
-    padding: 0;
+    min-height: 30px;
+    padding: 9px;
+    margin-top: 30px;
     margin-left: 15px;
     line-height: 20px;
     box-shadow: 2px 2px 1px rgb(200, 200, 200);
-    background: rgb(255, 255, 255);
-    border-radius: 5px;
+    /* background: rgb(227, 153, 94); */
+    /* color: rgb(94, 61, 24); */
+
+    /* background: rgb(237, 143, 28); */
+    background: rgb(111, 136, 102);
+    color: rgb(255, 252, 218);
+    border-radius: 9px;
     border: 1px solid rgb(200, 200, 200);
     font-weight: bold;
-    cursor:pointer;
+    font-size: 14px;
+    cursor: pointer;
   }
   
   /* Customize the Apple Pay on the Web button */
@@ -96,10 +111,53 @@
   }
   
   #sq-ccbox {
-    float:left;
+    /* float:left; */
     margin:5px;
     padding:10px;
     text-align: center;
     vertical-align: top;
     font-weight: bold;
   }
+
+  .shake-in {
+    animation: shake 2.7s;
+    /*animation-iteration-count: infinite;*/
+    animation-duration: 1s;
+  }
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  #toast2 {
+    visibility: hidden;
+    max-width: 50px;
+    height: 70px;
+    margin-left: 80px;
+    padding-top: 25px;
+    /* margin: auto; */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 14px;
+    position: relative;
+    z-index: 1827;
+    /* top: 10px; */
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+    #toast2.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s 4.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s 4.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
