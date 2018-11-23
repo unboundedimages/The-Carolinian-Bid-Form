@@ -13,8 +13,8 @@ var SquareConnect = require('square-connect');
 var defaultClient = SquareConnect.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = process.env.sandbox_token;
-// oauth2.accessToken = process.env.token;
+// oauth2.accessToken = process.env.sandbox_token;
+oauth2.accessToken = process.env.token;
 var transactions_api = new SquareConnect.TransactionsApi();
 
 
@@ -45,6 +45,7 @@ app.get('/payment', function(req, res) {
 		"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
 		"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
 		"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1",
+		"SELECT price_2 FROM bid_nfo ORDER BY id DESC LIMIT 1",
 		// "SELECT name FROM bid_nfo ORDER BY id DESC LIMIT 1",
 	]
 	db.query(queires.join(';'), function(error, results, fields){
@@ -56,50 +57,39 @@ app.get('/payment', function(req, res) {
 			rec_locator: results[0][0].rec_locator,
 			price: results[1][0].price,
 			bid_text: results[2][0].bid_ad,
+			price_2: results[3][0].price_2,
 			// company_name: results[3][0].name
 		}
 		res.render('ccpgtm', {rec})
 		return;
 	});
 });
-app.post('/payment', (req, res, next)=>{
 
-// var SquareConnect = require('square-connect');
-// var defaultClient = SquareConnect.ApiClient.instance;
-
-// // Configure OAuth2 access token for authorization: oauth2
-// var oauth2 = defaultClient.authentications['oauth2'];
-// // oauth2.accessToken = 'YOUR ACCESS TOKEN';
-// oauth2.accessToken = process.env.token;
-
-// var apiInstance = new SquareConnect.TransactionsApi();
-
-// var locationId = process.env.location; // String | The ID of the location to associate the created transaction with.
-
-// apiInstance.charge(locationId, body).then(function(data) {
-//   console.log('API called successfully. Returned data: ' + data);
-// }, function(error) {
-//   console.error(error);
-// });
-})
 app.post('/thanks', (req,res, next)=>{
+//write an insert that puts  a paid status into the dB with the record locator.
+//possibly create another table for this.  The record locator can be used in
+//square to show proof of payments  Doing it on this side would be for redundancy.
+
 console.log(req.body)
-	// var squareLocationId = process.env.location;
-	var squareLocationId = process.env.sandbox_location;
+	var squareLocationId = process.env.location;
+	// var squareLocationId = process.env.sandbox_location;
 	var request_params = req.body;
 
 	var idempotency_key = require('crypto').randomBytes(64).toString('hex');
-	
+	price = parseInt(request_params._price_)
+	console.log(price)
 	// Charge the customer's card
 	var request_body = {
 		card_nonce: request_params.nonce,
 		amount_money: {
-			amount: 100, // $1.00 charge
+			amount: price, 
 			currency: 'USD'
 		},
 		idempotency_key: idempotency_key,
-		reference_id: request_params.rec_locator,
+		note: request_params.rec_locator
+		
 	};
+	// console.log("console ref_id: ", request_body.reference_id)
 	transactions_api.charge(squareLocationId, request_body).then(function(data) {
 		
 		var queires = [
@@ -122,11 +112,7 @@ console.log(req.body)
 			res.render('tycbrs', {rec})
 			// return;
 			})
-
-
-		// res.render('tycbrs', {rec});
 	}, function(error) {
-		// console.log(util.inspect(error.status, false, null));
 		res.send({
 			'title': 'Payment Failure',
 			'result': "Payment Failed (see console for error output)"
@@ -188,7 +174,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, name VARCHAR(255), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, logged VARCHAR(30), name VARCHAR(255), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), price_2 VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
@@ -199,6 +185,9 @@ app.get('/ad', (req,res)=>{
 // Insert into Table
 
 app.post("/add", (req, res, next)=> {
+	//creates time stamp
+	let timenow = new Date();
+	// let timenow = Date.now();
 	//create random key for record locator
 	let text3 = []
 	function makeid(text, text2) {
@@ -218,20 +207,21 @@ app.post("/add", (req, res, next)=> {
 		return text + "-" + text2; 
 	}
 	makeid();
-
-	let timenow = Date.now();
+//to do list, convert timenow to EST and have that post to DB for entry time log.
+	// let timenow = Date.now();
 console.log("this is the time ====================================================", timenow)
 
 //Puts data into DB
 db.query("INSERT INTO bid_nfo SET ?",{
 	name:req.body.company,
-	// logged: req.body.date, 
+	logged: timenow, 
 	date1:req.body.input1,
 	date2:req.body.input2,
 	date3:req.body.input3,
 	date4:req.body.input4,
 	rec_locator:text3,
 	price:req.body.price,
+	price_2:req.body.price_2,
 	bid_ad:req.body.bid_Ad,
 	runs:req.body.runs
 		// runs:BidRun
@@ -324,8 +314,8 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 			else
 			console.log(err);
 		}
-	)
-})
+		)
+	})
 //===============================================================================================
 
 //todo
@@ -333,26 +323,26 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 //company name  ** done
 //random identifier ** done
 //amount charged ** done
+//date add runs ** done
+//text from add ** done
+//create a function that takes the total - estimate for the lines ** done
+//and save that to the DB so it can be posted to the payment page. ** done
+//on submit, user goes to a verificiation of screen to preview text they typed ** done
+//and the amount that's billed, with payment options. ** done
+//paypal, square, cashapp etc.  ** sqaure done
+
+// ***********************************************************//
+
 // paid true/false
-//date paid
-//date add runs
-//text from add
-// **************//
+// time that card was processed == handled through square 
 // create code that only allows bids to be submitted by a certain time
 //otherwise the date is greyed out
-
-//on submit, user goes to a verificiation of screen to preview text they typed
-//and the amount that's billed, with payment options.
-//paypal, square, cashapp etc.
-//upon statement, user is emailed invoice/reciept, and a cc of invoice goes to 
+	
+//upon statement, user is emailed invoice/reciept, and a cc of invoice goes to == handled through sqauare receipt
 //companies email.
 
-//company does not print on sundays
-//so the dates the user picks
-//if user wants bid add in print, it must be submitted by 5pm monday of same week.
+// bid add in print, must be submitted by 5pm Tuesday of same week.
 // otherwise the date for print will be greyed out for that week
-// so if the user sumbits on tuesday, it will be in the following (next) week's print addition.
-//user must know and be reminded of when the add will run when they hit submit.
 
 //table one customer info:
 // customer id
@@ -375,7 +365,3 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 // customer id
 // date(s) bid will run
 // text from bid
-
-//create a function that takes the total - estimate for the lines
-
-//and save that to the DB so it can be posted to the payment page.
