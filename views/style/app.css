@@ -419,7 +419,8 @@ a.link_style:hover {
 }
 
 #toast {
-    visibility: hidden;
+	visibility: hidden;
+	padding-top: 24px;
     max-width: 70px;
     height: 70px;
     margin-left: 10px;
