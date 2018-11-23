@@ -118,48 +118,6 @@ console.log(req.body)
 			'result': "Payment Failed (see console for error output)"
 		});
 	});
-
-
-
-
-
-
-// var defaultClient = SquareConnect.ApiClient.instance;
-
-// // Configure OAuth2 access token for authorization: oauth2
-// var oauth2 = defaultClient.authentications['oauth2'];
-// // oauth2.accessToken = 'YOUR ACCESS TOKEN';
-// oauth2.accessToken = process.env.sandbox_token;
-
-// var apiInstance = new SquareConnect.TransactionsApi();
-
-// var locationId = process.env.sandbox_location; // String | The ID of the location to associate the created transaction with.
-// var body = new SquareConnect.ChargeRequest(); // ChargeRequest | An object containing the fields to POST for the request.  See the corresponding object definition for field details.
-
-// apiInstance.charge(locationId, req.body).then(function(data) {
-//   console.log('API called successfully. Returned data: ' + data);
-// }, function(error) {
-//   console.error(error);
-// });
-// 	console.log("ty for the business")
-// 	var queires = [
-// 		"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
-// 		"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
-// 		"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
-// 	]
-// 	db.query(queires.join(';'), function(error, results, fields){
-		
-// if(error) {
-// 	console.log("it didn't make it: ", error)
-// }
-// var rec = {
-// 	rec_locator: results[0][0].rec_locator,
-// 	price: results[1][0].price,
-// 	bid_text: results[2][0].bid_ad
-// }
-// res.render('tycbrs', {rec})
-// return;
-// });
 });
 //CREATE db
 
