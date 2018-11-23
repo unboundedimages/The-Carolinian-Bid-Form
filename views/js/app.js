@@ -22,9 +22,7 @@ function getBidNfo() {
 // }
 
 //create a formula that counts the lines and multiplies it by 1.56
-
 //create a function that substracts 1.56 every time a line is removed.
-
 var calculateContentHeight = function( ta, scanAmount ) {
 	var origHeight = ta.style.height,
 	height = ta.offsetHeight,
@@ -59,6 +57,7 @@ var calculateContentHeight = function( ta, scanAmount ) {
     }
 }
 let estimate= [];
+let new_estimate = [];
 console.log("estimate xxxx: ", estimate)
 
 var calculateHeight = function() {
@@ -76,13 +75,28 @@ var calculateHeight = function() {
         var runs = document.getElementById("runs").value * numberOfLines
         document.getElementById("lines").innerHTML = "$" +
         runs.toFixed(2);
+        //this has no decimals for square requirements
+        var runs_2 = document.getElementById("runs").value * numberOfLines * 100
+        // document.getElementById("lines_2").innerHTML = runs_2.toFixed(2);
+        document.getElementById("lines_2").value = runs_2.toFixed(0);
+
         var json = runs.toFixed(2)
+        //no decimal
+        var json_2 = runs_2.toFixed(0)
         var obj = JSON.parse(json)
-        console.log("obj ", obj)
+        //no decimal
+        var obj_2 = JSON.parse(json_2)
+        console.log("obj ", obj, obj_2)
         var new_json = JSON.stringify(obj)
+        //no decimal
+        var new_json_2= JSON.parse(obj_2)
         estimate.push(new_json)
-        console.log("new J", new_json)
+        //no decimal
+        new_estimate.push(new_json_2)
+
+        console.log("new J", new_json, new_json_2)
     };
+    console.log("new estimate xxxxxxxxxxxxxxxxxxxxxx: ", new_estimate)
 
     calculateHeight();
     
@@ -165,7 +179,11 @@ console.log(input1)
 function launch_toast() {
     var x = document.getElementById("toast")
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+    x.hidden = false;
+    setTimeout(function(){ 
+        x.className = x.className.replace("show", ""); 
+        x.hidden = true;
+    }, 5000);
 }
 
 function noMondays(e){
