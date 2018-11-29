@@ -32,13 +32,91 @@ app.listen(PORT, function() {
 	console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
 
-
+//home route
 app.get('/', function(req, res) {
 	console.log("we in here")
 	res.render('index')
 });
+//get /add route
+app.get("/add", (req,res)=>{
+	res.redirect("/")
+})
+// Insert into Table
+app.post("/add", (req, res, next)=> {
+	//creates time stamp
+	let timenow = new Date();
+	//create random key for record locator
+	let text3 = []
+	function makeid(text, text2) {
+		var text = "";
+		var text2 = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		for (let i = 0; i < 8; i++) {
+			text += possible.charAt(Math.floor(Math.random() * possible.length))
+		}
+		for (let i = 0; i < 8; i++) {
+			text2 += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+		text3.push(text + "-" + text2)
+		return text + "-" + text2; 
+	}
+	makeid();
+	//to do list, convert timenow to EST and have that post to DB for entry time log.
+	// let timenow = Date.now();
+	console.log("this is text text text x3: ", text3)
+	console.log("this is the time ====================================================", timenow)
+	
+	//Posts data into DB
+	db.query("INSERT INTO bid_nfo SET ?",{
+		name:req.body.company,
+		logged: timenow, 
+		date1:req.body.input1,
+		date2:req.body.input2,
+		date3:req.body.input3,
+		date4:req.body.input4,
+		rec_locator:text3,
+		price:req.body.price,
+		price_2:req.body.price_2,
+		bid_ad:req.body.bid_Ad,
+		runs:req.body.runs
+		}, (err,res)=>{
+			if (err){ 
+				console.log("Error inserting into db:  ", err)
+				throw err;
+			}
+			console.log("data inserted", res);
+		});
 
-app.get('/payment', function(req, res) {
+
+//display queries in DOM
+var queires = [
+	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
+	"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
+	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
+]
+db.query(queires.join(';'), function(error, results, fields){
+	
+	if(error) { 
+		throw error;
+	}
+	var rec = {
+		rec_locator: results[0][0].rec_locator,
+		price: results[1][0].price,
+		bid_text: results[2][0].bid_ad
+	}
+	res.render('pybtyfts', {rec})
+	// return;
+});
+}); //end of add post route
+
+
+
+// get redirect to home
+app.get('/payment',(req,res)=>{
+	res.redirect('/')
+})
+//payment route to square
+app.post('/payment', function(req, res, next) {
 	console.log("we in here again")
 	
 	var queires = [
@@ -60,11 +138,15 @@ app.get('/payment', function(req, res) {
 			price_2: results[3][0].price_2,
 			// company_name: results[3][0].name
 		}
+		// return next();
 		res.render('ccpgtm', {rec})
-		return;
 	});
 });
 
+app.get('/thanks', (req,res)=> {
+		res.redirect('/')
+	}
+)
 app.post('/thanks', (req,res, next)=>{
 //write an insert that puts  a paid status into the dB with the record locator.
 //possibly create another table for this.  The record locator can be used in
@@ -140,78 +222,8 @@ app.get('/ad', (req,res)=>{
 });
 
 
-// Insert into Table
 
-app.post("/add", (req, res, next)=> {
-	//creates time stamp
-	let timenow = new Date();
-	// let timenow = Date.now();
-	//create random key for record locator
-	let text3 = []
-	function makeid(text, text2) {
-
-		var text = "";
-		var text2 = "";
-		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-		for (let i = 0; i < 8; i++) {
-			text += possible.charAt(Math.floor(Math.random() * possible.length))
-		}
-		for (let i = 0; i < 8; i++) {
-			text2 += possible.charAt(Math.floor(Math.random() * possible.length));
-		}
-
-		text3.push(text + "-" + text2)
-		return text + "-" + text2; 
-	}
-	makeid();
-//to do list, convert timenow to EST and have that post to DB for entry time log.
-	// let timenow = Date.now();
-console.log("this is the time ====================================================", timenow)
-
-//Puts data into DB
-db.query("INSERT INTO bid_nfo SET ?",{
-	name:req.body.company,
-	logged: timenow, 
-	date1:req.body.input1,
-	date2:req.body.input2,
-	date3:req.body.input3,
-	date4:req.body.input4,
-	rec_locator:text3,
-	price:req.body.price,
-	price_2:req.body.price_2,
-	bid_ad:req.body.bid_Ad,
-	runs:req.body.runs
-		// runs:BidRun
-	}, (err,res)=>{
-		if (err) throw err;
-		console.log("data inserted", res);
-	// return;
-});
-
-
-//display queries in DOM
-var queires = [
-	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
-]
-db.query(queires.join(';'), function(error, results, fields){
-	
-	if(error) { 
-		throw error;
-	}
-	var rec = {
-		rec_locator: results[0][0].rec_locator,
-		price: results[1][0].price,
-		bid_text: results[2][0].bid_ad
-	}
-	res.render('pybtyfts', {rec})
-	return;
-});
-}); //end of post route
-
-//get all records
+//get all rec	ords
 app.get("/fetch-seek-find-locate", (req,res)=> { 
 	// console.log("xx+++++++++++++++++  ", req._events)
 	db.query("SELECT * FROM bid_nfo", (err, rows, field)=> {
