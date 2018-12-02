@@ -43,6 +43,10 @@ body {
 	color: rgb(115, 134, 105);
 	font-size: 1.2em;
 }
+.money2 {
+	color: rgb(115, 134, 105);
+	/* font-size: 1.2em; */
+}
 
 .goodbye {
     position: relative;
@@ -115,10 +119,48 @@ img {
 	overflow: hidden;
 	z-index: 11;
 }
+/**8888888888888888888888888888888888888888888*/
+/* dont forget to to changed th color to seomthing else */
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #f5aa45;
+}
+
+::selection {
+    color: white;
+	background: #71aa66;
+	/* background: #c0ecb8; */
+}
+
+
 input {
 	outline-color: orange;
 	margin: 18px 10px 22px;
 }
+
+input:-webkit-autofill {
+	-webkit-text-fill-color: #f58c00 !important;
+	font-size: 12pt;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+input.title-input {
+	color: #f58c00;
+	/* outline-style: none; */
+	outline-color: #f7d98f;
+    border: none;
+    font-size: 12pt;
+	padding: 14px 4px 5px;
+	width: 439px;
+    border-bottom: 2px solid #fca817;
+}
+
+input.title-input:invalid {
+    border: none;
+    border-bottom: 2px solid #fc1717;
+}
+
 input.date {
 	background-color: #fffdf4;
 }
