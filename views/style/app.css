@@ -253,7 +253,9 @@ select {
 	border-style: inset;
     outline-color: orange;
 }
-
+#ta:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 #ta {
 	background-color: #ffffffb3;
 	position: relative;
