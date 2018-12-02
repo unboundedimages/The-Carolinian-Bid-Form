@@ -5,9 +5,13 @@
         </h2>
     </header>
     <div id="CaroMan"></div>
+        {{#each rows}}
     <div id="bill">
-       <b> Your bill comes out to: <span class="money">{{rec.price}}</span></b>
+       <b> Your bill comes out to: <span class="money">{{this.price}}</span></b>
+       <br>
+        <div>Record locator: <span class="money2">{{this.rec_locator}}</span></div>
     </div>
+        {{/each}}
     <div id="ta_3">
         <section id="toast2" hidden>The information is incorrect.<br>  
                 Please check your card and try again
@@ -49,8 +53,10 @@
                     {{!-- <input type="hidden" id="card-nonce" name="nonce"> --}}
                     <input id="card-nonce" name="nonce" hidden>
                     {{!-- <input value="{{rec.price}}" id="_price" name="_price"> --}}
-                    <input type="number" value={{rec.price_2}} id="_price_" name="_price_" hidden>
-                    <input value="{{rec.rec_locator}}" id="r_locator" name="rec_locator" hidden>
+                    {{#each rows}}
+                    <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" >
+                    <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" >
+                    {{/each}}
                     {{!-- <input value="{{rec.company_name}}" id="comp_name" name="company_name"> --}}
                 </form>
             </div>
