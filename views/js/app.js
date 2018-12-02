@@ -203,19 +203,25 @@ let input4UTC = new Date(inputfield4).getUTCDay();
     || input3UTC === 1 || input3UTC === 2  || input3UTC === 3 || input3UTC === 5  || input3UTC === 6
     || input4UTC === 1 || input4UTC === 2  || input4UTC === 3 || input4UTC === 5  || input4UTC === 6
     ) {
-        launch_toast()
         document.getElementById("submit-B").disabled = true;
         document.getElementById("submit-B").style.backgroundColor = "black";
+        launch_toast()
+        function restoreButton() { 
+            setTimeout(() => { 
+                document.getElementById("submit-B").disabled = false; 
+                document.getElementById("submit-B").style.backgroundColor = "#9b3333";}, 3000);
+            }
+        restoreButton()
     } else {
           document.getElementById("submit-B").disabled = false;
           document.getElementById("submit-B").style.backgroundColor = "#9b3333";
     }
 }
 
-input1.addEventListener('input',noMondays);
-input2.addEventListener('input',noMondays);
-input3.addEventListener('input',noMondays);
-input4.addEventListener('input',noMondays);
+// input1.addEventListener('input',noMondays);
+// input2.addEventListener('input',noMondays);
+// input3.addEventListener('input',noMondays);
+// input4.addEventListener('input',noMondays);
 
 //strips formatting when text is pasted into text area
 document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
@@ -278,4 +284,6 @@ function removeDot(){
     document.getElementById("ta").innerHTML="";
 }
 removeDot()
+
+// "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
 // execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
