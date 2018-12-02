@@ -109,8 +109,6 @@ db.query(queires.join(';'), function(error, results, fields){
 });
 }); //end of add post route
 
-
-
 // get redirect to home
 app.get('/payment',(req,res)=>{
 	res.redirect('/')
@@ -122,34 +120,9 @@ app.post('/payment', function(req, res, next) {
 		console.log(req.body.random_key)
 		console.log(rows)
 			if (!err)
-			// res.send(rows)
 			res.render('ccpgtm', {rows})
 			else
 			console.log(err);
-		
-	
-	// var queires = [
-	// 	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	// 	"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	// 	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	// 	"SELECT price_2 FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	// 	// "SELECT name FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	// ]
-	// db.query(queires.join(';'), function(error, results, fields){
-		
-	// 	if(error) { 
-	// 		throw error;
-	// 	}
-	// 	var rec = {
-	// 		rec_locator: results[0][0].rec_locator,
-	// 		price: results[1][0].price,
-	// 		bid_text: results[2][0].bid_ad,
-	// 		price_2: results[3][0].price_2,
-	// 		// company_name: results[3][0].name
-	// 	}
-	// 	// return next();
-		// res.render('ccpgtm', {rec})
-	// });
 	});
 });
 app.get('/thanks', (req,res)=> {
