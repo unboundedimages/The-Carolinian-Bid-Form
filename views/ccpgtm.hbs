@@ -54,8 +54,8 @@
                     <input id="card-nonce" name="nonce" hidden>
                     {{!-- <input value="{{rec.price}}" id="_price" name="_price"> --}}
                     {{#each rows}}
-                    <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" >
-                    <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" >
+                    <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" hidden>
+                    <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" hidden>
                     {{/each}}
                     {{!-- <input value="{{rec.company_name}}" id="comp_name" name="company_name"> --}}
                 </form>
