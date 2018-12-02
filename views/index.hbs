@@ -29,18 +29,26 @@
 		</div>
 		<section>
 			<form action="/add" method="post">
-				<div  id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
+				<div id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 				</div>	
 				<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
 				</textarea>
 
 				<label class="title" >Company Name:</label><br>
-				<input class="title-input" type="text" name="company"><br>
+				<input class="title-input" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required><br>
+				{{!-- <label class="title" >Email:</label><br>
+				<input class="title-input" type="email" name="company" pattern="[A-Za-z0-9-_.@ ]+" required><br> --}}
 				<label class="billed">	Bid Details:</label>
 				&nbsp; &nbsp;
-				<a href="#" class="billed">How you are billed</a><br>		
-
-				<div id="toast" hidden><div id="desc">You have entered an invalid date. <br>Please select either Sunday or Thursday</div></div>
+				<a href=" " class="popup" onclick="return false; myPopUp();"  class="billed" onmousedown="myPopUp();" onmouseup="">
+					When can your bids run.
+					<span class="popuptext" id="myPopup">
+						Bids must be placed by Monday at 5pm in order to run in this Thursday's print edition.
+						Bid adds for prints must be set for either Thursday or Sunday.  For immmediate placement
+						on the caro.news website, please call The Carolinian at 000-000-000.
+					</span>
+				</a><br>		
+				<div id="toast" hidden><div id="desc" >You have entered an invalid date. <br>Please select either <br>Sunday or Thursday.</div></div>
 				<p class="how-long">
 					<b>How long will the bid run?:</b>
 					<select  name="runs" id="runs" onchange="enable_dates(this); show_inputs(this);">
@@ -52,7 +60,7 @@
 				</p>
 				<span>
 				<label>	Date 1:	
-				<input  min="today" name="input1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
+				<input  pattern= "[0-9-]+" min="today" name="input1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
 				</label>	
 				
 				<label id="2" hidden>Date 2:	
@@ -70,16 +78,16 @@
 				</label>
 				</span>
 				{{!-- Submit button --}}
-				<button onclick="calculateHeight()" class="caro-submit" id="submit-B" href="pybtyfts.html" type="submit" value="Submit">Submit</button>
+				<button onclick="noMondays()" class="caro-submit" id="submit-B" href="pybtyfts.html"  value="Submit">Submit</button>
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
 				{{!-- <textarea contenteditable="true" id="lines_2" type="text" name="price_2">
 				</textarea> --}}
 				<input type="text" id ="lines_2" name="price_2" hidden>
+				{{!-- <input type="text" id="radKey" name="random_key" > --}}
 				{{!-- toast --}}
 			</form>
 		</section>
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
-{{!-- <script type="text/javascript" src="/js/media.js"></script> --}}
