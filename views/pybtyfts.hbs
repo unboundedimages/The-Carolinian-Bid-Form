@@ -6,8 +6,9 @@
 		<div class="black-line">
 			{{{rec.bid_text}}}
 		</div>
-	<button class="caro-submit add" id="submit-B" href='ccpgtm' >Continue</button>
+		<input type="text" id="radKey" name="random_key" value="{{{rec.rec_locator}}}" hidden>
+		<br>
+	<button class="caro-submit add" id="submit-B" href='ccpgtm' onkeyup="makeid()">Continue</button>
 	</form>
 	</div>
 </div>
-{{!-- <script type="text/javascript" src="/js/media.js"></script> --}}
