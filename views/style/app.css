@@ -24,7 +24,7 @@ body {
 .add {
     position: relative;
 	left:26vw;
-	top: 2.7vh;
+	/* top: 2.7vh; */
 }
 
 #bill {
@@ -179,7 +179,66 @@ p {
 	color:993233;	
 	padding-bottom: 10px;
 }
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 260px;
+    background-color: #555;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 6;
+    bottom: 125%;
+    left: 50%;
+	margin-left: -80px;
+	padding:10px;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	/* border: 1px yellow; */
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
 #text-editor{
 	position: relative;
 	outline-color: rgb(255, 60, 0);
@@ -370,32 +429,81 @@ textarea {
 .date {
 	width:130px;
 }
-
+#h1:hover {
+	background-color: #f99612;
+}
+#h1:active {
+	background-color:#f9bb12;
+	position: relative;
+	top:3px
+}
+#h3:hover {
+	background-color: #a31313;
+}
+#h3:active {
+	background-color:#e41d1d;
+	position: relative;
+	top:3px
+}
 #bold:hover {
 	background-color:#71aa66;
 }
-
+#bold:active {
+	background-color:#385732;
+	position: relative;
+	top:3px
+}
 #italics:hover {
 	background-color:#f99612;
 }
-
+#italics:active {
+	background-color:#f9bb12;
+	position: relative;
+	top:3px
+}
 #be-underline:hover{
 	background-color:#a31313;
+}
+#be-underline:active {
+	background-color:#e41d1d;
+	position: relative;
+	top:3px
 }
 
 #bullet-list:hover {
 	background-color:#71aa66;
 }
+#bullet-list:active {
+	background-color:#385732;
+	position: relative;
+	top:3px
+}
 #undo:hover {
 	background-color:#f99612;
+}
+#undo:active {
+	background-color:#f9bb12;
+	position: relative;
+	top:2px
 }
 
 #redo:hover {
 	background-color:#a31313;
 }
+#redo:active {
+	background-color:#e41d1d;
+	position: relative;
+	top:3px
+}
 
 #submit-B:hover {
-	background-color:#a31313;
+	background-color:#e41d1d;
+	color: yellow;
+}
+#submit-B:active {
+	background-color:green;
+	position: relative;
+	top:3px;
 }
 
 .caro-submit {
@@ -458,7 +566,7 @@ a.link_style:hover {
 	visibility: hidden;
 	padding-top: 24px;
     max-width: 70px;
-    height: 70px;
+    height: 80px;
     margin-left: 10px;
     /* margin: auto; */
     background-color: #333;
@@ -469,7 +577,9 @@ a.link_style:hover {
     z-index: 1;
     /* left: 0;right:0; */
     top: 10px;
-    font-size: 17px;
+	font-size: 17px;
+	font-family: Arial, Helvetica, sans-serif;
+	/* text-align: justify; */
     white-space: nowrap;
 }
 #toast #desc #toast2{
