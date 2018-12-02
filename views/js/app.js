@@ -285,5 +285,9 @@ function removeDot(){
 }
 removeDot()
 
+function myPopUp(){
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
 // "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
 // execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
