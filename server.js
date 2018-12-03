@@ -296,6 +296,8 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 // bid add in print, must be submitted by 5pm Tuesday of same week.
 // otherwise the date for print will be greyed out for that week
 
+//************************** Table redesign ideas ********************************* *//
+
 //table one customer info:
 // customer id
 //name of company
