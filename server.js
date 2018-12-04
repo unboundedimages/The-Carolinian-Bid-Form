@@ -196,7 +196,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, logged VARCHAR(30), name VARCHAR(255), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), price_2 VARCHAR(20), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, logged VARCHAR(30), name VARCHAR(255), email VARCHAR(50), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), price_2 VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
