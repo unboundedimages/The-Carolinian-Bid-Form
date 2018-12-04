@@ -291,10 +291,12 @@ removeDot()
 // }
 
 $(function() {
-    $("#datepicker").datepicker({
-   			minDate: new Date(),
+    $(".datepicker").datepicker({
+               minDate: new Date(),
+               dateFormat: 'yy-mm-dd',
         beforeShowDay: function (date) {
-        $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        // $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        $thisDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
     var day = date.getDay();
     if ($.inArray($thisDate) == -1&&day!=1&&day!=2&&day!=3&&day!=5&&day!=6) {
         return [true, ""];
