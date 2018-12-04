@@ -93,9 +93,12 @@ p {
 	position: relative;
 	box-sizing: border-box;
 }
-label {
-	font-weight: bold;
-	margin: 10px -9px 0px 27px;
+/* restore  */
+.date-puts {
+	position: relative;
+    bottom: 48px;
+	/* font-weight: bold; */
+	margin: 10px -9px 0px 31px;
 }
 img {
 	width:100%;
@@ -106,10 +109,11 @@ img {
 	z-index: 5;
 }
 .how-long {
-	position: relative;
-	top:14px;
-	left:16px;
-	font-size: 20px;
+    position: relative;
+    bottom: 71px;
+	left: 24px;
+	width: 260px;
+    font-size: 20px;
 }
 .caroman {
 	width: 40%;
@@ -132,7 +136,7 @@ img {
 	/* background: #c0ecb8; */
 }
 
-
+/* 
 input {
 	outline-color: orange;
 	margin: 18px 10px 22px;
@@ -147,7 +151,7 @@ input:-webkit-autofill {
 }
 input.title-input {
 	color: #f58c00;
-	/* outline-style: none; */
+	outline-style: none;
 	outline-color: #f7d98f;
     border: none;
     font-size: 12pt;
@@ -169,7 +173,155 @@ input:disabled {
 }
 input:invalid {
 	border: 2px solid red;
+  } */
+
+/*========= begining input field for company name and email*/
+input[type=email], input[type=text] {
+    font-size: 11pt;
+}
+#email-puts{
+	position: relative;
+	left:265px;
+	bottom: 78px;
+	width: 230px
+}
+.input-group {
+	position: relative;
+	margin: 40px 0 20px;
+	left: 33px;
+	width: 230px;
+}
+.name-puts {
+	/* outline: none; */
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	/* width: 300px; */
+	width: 223px;
+	border: none;
+	/* border-bottom: 1px solid #757575; */
+	border-bottom: 1px solid #ae7311;
   }
+  
+  .name-puts:focus {
+	outline: none;
+  }
+  
+  .label-names {
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+  }
+
+  .name-puts:focus ~ .label-names,
+  .name-puts:valid ~ .label-names {
+	top: -20px;
+	font-size: 14px;
+	color: #419036;
+  }
+  
+  .bar {
+	position: relative;
+	display:block;
+	/* width:315px; */
+	width: 238px;
+  }
+  
+  .bar:before,
+  .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	/* background: #4285f4; */
+	/* background: #ff970b; */
+	/* background: #ff970b; */
+	background: -webkit-linear-gradient( left, 
+	rgb(159, 63, 63) 0%, 
+	rgb(120, 142, 117) 12%, 
+	rgb(245, 170, 69) 47%, 
+	rgb(159, 63, 63) 100%);
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+  }
+  
+  .bar:before {
+	left: 50%;
+  }
+  
+  .bar:after {
+	right: 50%;
+  }
+  
+  .name-puts:focus ~ .bar:before,
+  .name-puts:focus ~ .bar:after {
+	width: 50%;
+  }
+  
+  .highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+  }
+  
+  .name-puts:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+  }
+  
+  /* animations */
+  @-webkit-keyframes inputHighlighter {
+	from { background: #4285f4; }
+	to   { width: 0; background: transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+	from { background: #4285f4; }
+	to   { width: 0; background: transparent; }
+  }
+  @keyframes inputHighlighter {
+	from { background: #4285f4; }
+	to   { width: 0; background: transparent; }
+  }
+  input[type=date] {
+	width: 80px;
+	/* border:none; */
+	border: 2px solid transparent;
+	-webkit-border-image: -webkit-linear-gradient( left, 
+	rgb(159, 63, 63) 0%, 
+	rgb(120, 142, 117) 12%, 
+	rgb(245, 170, 69) 47%, 
+	rgb(159, 63, 63) 100%);
+	border-image: linear-gradient(to right, rgb(159, 63, 63) 0%, 
+	rgb(120, 142, 117) 12%, 
+	rgb(245, 170, 69) 47%, 
+	rgb(159, 63, 63) 100%);
+	border-image-slice: 1;
+    box-sizing: border-box !important;
+    border-width: 0px 0px 2px 0px;
+	outline-color: rgba(255, 255, 255, 0.062);
+	-webkit-transition: width .25s ease-in-out;
+	transition: width .25s ease-in-out;
+  }
+  input[type=date]:focus {
+	width: 125px;
+  }
+/*=========== ending input field for company name and email*/
+
+
 
 p {
 	margin: 10px;
@@ -284,11 +436,11 @@ select {
 	min-width: 384px;
 	max-width:424px;
 	line-height: 20px;
-	height: 500px;
-	/* overflow:auto; */
-	/* overflow-x: hidden; */
+	height: 518px;
+	overflow:auto;
+	overflow-x: hidden;
 	width:100%;
-	padding: 0px 8px 0px 8px;
+	padding: 0px 21px 0px 19px;
 	margin: 40px;
 	color: black;
 	text-align: justify;
@@ -302,7 +454,7 @@ select {
 	position:relative;
 	border: 3px inset rgba(15, 10, 1, 0.959);
 	overflow-x: hidden;
-	padding: 0px 8px 11px 8px;
+	padding: 7px 13px 7px 13px;
     width: 100%;
     right: 11px;
 }
@@ -498,6 +650,32 @@ textarea {
 	position: relative;
 	top:3px
 }
+#index-Button { /*div name*/
+	position: relative;
+	bottom: 80px;
+	margin-left: 92px;
+	max-width: 0px;
+	/* z-index: -1; */
+}
+
+#submit-B {
+	position: relative;
+    /* left: 430px; */
+    /* bottom: 75px; */
+    left: 354px;
+    /* bottom: 0px; */
+}
+
+#index-Button #submit-B:active {
+	background-color:green;
+	position: relative;
+	top:5px
+	/* bottom:83px; */
+}
+#reviw-Button {
+	position: relative;
+	margin-top:7px;
+}
 
 #submit-B:hover {
 	background-color:#e41d1d;
@@ -506,7 +684,8 @@ textarea {
 #submit-B:active {
 	background-color:green;
 	position: relative;
-	top:3px;
+	top:5px
+	/* bottom:83px; */
 }
 
 .caro-submit {
@@ -518,7 +697,8 @@ textarea {
 	width: 78px;
 	height: 37px;
 	margin-left: 10px;
-	margin-bottom: 51px;
+	/* margin-bottom: 51px; */
+	margin-bottom: 32px;
 }
 
 /* form {
