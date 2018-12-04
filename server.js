@@ -74,6 +74,7 @@ app.post("/add", (req, res, next)=> {
 		date2:req.body.input2,
 		date3:req.body.input3,
 		date4:req.body.input4,
+		email:req.body.email,
 		rec_locator:text3,
 		price:req.body.price,
 		price_2:req.body.price_2,
