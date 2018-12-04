@@ -145,7 +145,7 @@ function show_inputs(that) {
         document.getElementById('4').style.display = "none";
     } else if (that.value == "4") {
         document.getElementById('2').style.display = "inline";
-        document.getElementById('3').style.display = "inline";
+        document.getElementById('3').style.display = "inline-block";
         document.getElementById('4').style.display = "inline";
     } else if (that.value == '1') {
         document.getElementById('2').style.display = "none";
@@ -285,9 +285,25 @@ function removeDot(){
 }
 removeDot()
 
-function myPopUp(){
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
+// function myPopUp(that){
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+// }
+
+$(function() {
+    $("#datepicker").datepicker({
+   			minDate: new Date(),
+        beforeShowDay: function (date) {
+        $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    var day = date.getDay();
+    if ($.inArray($thisDate) == -1&&day!=1&&day!=2&&day!=3&&day!=5&&day!=6) {
+        return [true, ""];
+    } else {
+        return [false, "", "Unavailable"];
+    }
 }
+    });
+
+});
 // "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
 // execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
