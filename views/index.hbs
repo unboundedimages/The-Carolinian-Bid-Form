@@ -33,24 +33,23 @@
 				</div>	
 				<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
 				</textarea>
-
-				<label class="title" >Company Name:</label><br>
-				<input class="title-input" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required><br>
-				{{!-- <label class="title" >Email:</label><br>
-				<input class="title-input" type="email" name="company" pattern="[A-Za-z0-9-_.@ ]+" required><br> --}}
-				<label class="billed">	Bid Details:</label>
-				&nbsp; &nbsp;
-				<a href=" " class="popup" onclick="return false; myPopUp();"  class="billed" onmousedown="myPopUp();" onmouseup="">
-					When can your bids run.
-					<span class="popuptext" id="myPopup">
-						Bids must be placed by Monday at 5pm in order to run in this Thursday's print edition.
-						Bid adds for prints must be set for either Thursday or Sunday.  For immmediate placement
-						on the caro.news website, please call The Carolinian at 000-000-000.
-					</span>
-				</a><br>		
+				<div class="input-group">
+					<input class="name-puts" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="label-names">Company Name</label>
+				</div>
+				<div id="email-puts">
+				<div class="input-group">
+					<input class="name-puts" type="email" name="email" pattern="[A-Za-z0-9-_.@]+" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="label-names">Email</label>
+				</div>
+				</div>
 				<div id="toast" hidden><div id="desc" >You have entered an invalid date. <br>Please select either <br>Sunday or Thursday.</div></div>
 				<p class="how-long">
-					<b>How long will the bid run?:</b>
+					<b>How many bid runs?</b>
 					<select  name="runs" id="runs" onchange="enable_dates(this); show_inputs(this);">
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -59,26 +58,31 @@
 					</select>
 				</p>
 				<span>
-				<label>	Date 1:	
+				<label class="date-puts">Date 1:	
 				<input  pattern= "[0-9-]+" min="today" name="input1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1">
-				</label>	
+				</label>
+				{{!-- Testing jQuery datepicker	 --}}
+				<input type="text" pattern="[0-9/]+" id="datepicker">
 				
-				<label id="2" hidden>Date 2:	
+				<label class="date-puts" id="2" hidden>Date 2:	
 				<input name="input2" class="date" type="date" placeholder="YYYY-MM-DD" required onkeypress="return event.keyCode != 13;" id = "date2" disabled>
 				</label>	
 				</span>
-				<br>
-				<span>
-				<label id="3" hidden>Date 3:
+				<div>				<span>
+				<label class="date-puts" id="3" hidden>Date 3:
 				<input name="input3" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3" disabled>
 				</label>
 
-				<label id="4" hidden>Date 4:
+				<label class="date-puts" id="4" hidden>Date 4:
 				<input name="input4" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4" disabled>
 				</label>
 				</span>
+				</div>
+
 				{{!-- Submit button --}}
-				<button onclick="noMondays()" class="caro-submit" id="submit-B" href="pybtyfts.html"  value="Submit">Submit</button>
+				<div id="index-Button">
+					<button onclick="noMondays()" class="caro-submit" id="submit-B" href="pybtyfts.html"  value="Submit">Submit</button>
+				</div>
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
