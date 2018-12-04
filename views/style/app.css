@@ -296,6 +296,46 @@ input[type=email], input[type=text] {
 	from { background: #4285f4; }
 	to   { width: 0; background: transparent; }
   }
+/*jQuery Date Picker*/
+.ui-widget-header {
+	color: #692020 !important;
+}
+
+.ui-widget-content {
+	/* background: #961f1f !important; */
+	background: #232020 !important;
+    color: #788e75 !important;
+}
+.ui-state-default {
+	border: 1px solid #d3d3d3;
+    background: #f5a539 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 15% -8% repeat-x !important;
+    font-weight: normal;
+    color: #5a1112 !important;
+}
+.datepicker {
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	/* width: 300px; */
+	width: 223px;
+	border: none;
+	/* border-bottom: 1px solid #757575; */
+	border-bottom: 1px solid #ae7311;
+}
+.datepicker:focus {
+	outline: none;
+  }
+
+  .datepicker:focus ~ .label-names,
+  .datepicker:valid ~ .label-names {
+	top: -20px;
+	font-size: 14px;
+	color: #419036;
+  }
+  .datepicker:focus ~ .bar:before,
+  .datepicker:focus ~ .bar:after {
+	width: 50%;
+  }
   input[type=date] {
 	width: 80px;
 	/* border:none; */
