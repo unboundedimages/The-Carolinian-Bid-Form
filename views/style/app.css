@@ -66,6 +66,9 @@ body {
 p {
 	text-align: justify;
 }
+form {
+overflow-x: none;
+}
 
 #bid-form {
 	text-align: center;
@@ -110,7 +113,7 @@ img {
 }
 .how-long {
     position: relative;
-    bottom: 71px;
+    bottom: -2px;
 	left: 24px;
 	width: 260px;
     font-size: 20px;
@@ -297,6 +300,32 @@ input[type=email], input[type=text] {
 	to   { width: 0; background: transparent; }
   }
 /*jQuery Date Picker*/
+div#date-groups {
+    position: relative;
+	bottom: 30px;
+	height: 79px;
+	overflow-x:none;
+}
+.i-group1 {
+    position: relative;
+    bottom: 60px;
+}
+div#two {
+    position: relative;
+    left: 265px;
+	bottom: 158px;
+	width: 300px;
+}
+div#three {
+    position: relative;
+    bottom: 182px;
+}
+div#four {
+	position:relative;
+	bottom: 280px;
+	left:265px;
+	width: 300px;
+}
 .ui-widget-header {
 	color: #692020 !important;
 }
@@ -336,6 +365,13 @@ input[type=email], input[type=text] {
   .datepicker:focus ~ .bar:after {
 	width: 50%;
   }
+
+  .datepicker:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+  }
+
   input[type=date] {
 	width: 80px;
 	/* border:none; */
@@ -698,13 +734,13 @@ textarea {
 	/* z-index: -1; */
 }
 
-#submit-B {
-	position: relative;
+/* #submit-B { */
+	/* position: relative; */
     /* left: 430px; */
     /* bottom: 75px; */
-    left: 354px;
+    /* left: 354px; */
     /* bottom: 0px; */
-}
+/* } */
 
 #index-Button #submit-B:active {
 	background-color:green;
@@ -736,7 +772,7 @@ textarea {
 	border-radius: 28px;
 	width: 78px;
 	height: 37px;
-	margin-left: 10px;
+	margin-left: 25px;
 	/* margin-bottom: 51px; */
 	margin-bottom: 32px;
 }
