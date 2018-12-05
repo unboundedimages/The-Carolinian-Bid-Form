@@ -354,13 +354,6 @@ removeDot()
 //     var popup = document.getElementById("myPopup");
 //     popup.classList.toggle("show");
 // }
-// let selects = document.getElementsByTagName('select');
-
-// for (let i = 0; i < selects.length; ++i) {
-//     let currentSelect = selects[i];
-//     let selectedOption = currentSelect.querySelector('option[selected]');
-//     if (selectedOption) currentSelect.value = selectedOption.value;
-// }
 
 $(function() {
     $(".datepicker").datepicker({
@@ -380,29 +373,6 @@ $(function() {
     });
     }
 );
-
-// $(document).ready(function () {
-//     $('select').each(function () {
-//       var select = $(this);
-//       var selectedValue = select.find('option[selected]').val();
-  
-//       if (selectedValue) {
-//         select.val(selectedValue);
-//       } $(document).ready(function () {
-//         $('select').each(function () {
-//           var select = $(this);
-//           var selectedValue = select.find('option[selected]').val();
-      
-//           if (selectedValue) {
-//             select.val(selectedValue);
-//           } else {
-//             select.prop('selectedIndex', 0);
-//           }
-//         });
-//       });
-//     });
-//   });
-
 
 // "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
 // execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
