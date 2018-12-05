@@ -1,5 +1,29 @@
 // "use strict";
 
+// (function() {
+//     var gotChrome = {
+//         isChromium: window.chrome,
+//         winNav: window.navigator,
+//         vendorName: window.navigator.vendor,
+//         isOpera:'typeof window.opr !== "undefined"',
+//         isIEedge: 'winNav.userAgent.indexOf("Edge") > -1',
+//         isIOSChrome: 'winNav.userAgent.match("CriOS")'
+//     }
+//     if(gotChrome) {
+//         if(performance.navigation.type == 2){
+//             location.reload(true);
+//         }
+//         // console.log('is Google Chrome IOS');
+//         // alert('is Google Chrome IOS');
+//     }
+// })();
+// if(performance.navigation.type == 2){
+//     location.reload(true);
+// }
+
+// if(performance.navigation.type == 2){
+//     location.reload(true);
+// }
 function getBidNfo() {
 
 		let bidText = document.getElementById("ta")		
@@ -60,7 +84,7 @@ let estimate= [];
 let new_estimate = [];
 console.log("estimate xxxx: ", estimate)
 
-var calculateHeight = function() {
+ function calculateHeight() {
 	var ta = document.getElementById("ta"),
 	style = (window.getComputedStyle) ?
 	window.getComputedStyle(ta) : ta.currentStyle,
@@ -98,59 +122,100 @@ var calculateHeight = function() {
     };
     console.log("new estimate xxxxxxxxxxxxxxxxxxxxxx: ", new_estimate)
 
-    calculateHeight();
-    
+    // calculateHeight();
+    function getit(getruns) {
+        calculateHeight()
+        document.getElementById('runs').focus()
+        document.getElementById('ta').focus()
+        var getruns = document.getElementById('runs').value;
+       console.log("what the hell is up with runs: ", getruns);
+    }
+    getit();
+
     if (ta.addEventListener) {
     	ta.addEventListener("mouseup", calculateHeight, false);
     	ta.addEventListener("keyup", calculateHeight, false);
-} else if (ta.attachEvent) { // IE
-	ta.attachEvent("onmouseup", calculateHeight);
-	ta.attachEvent("onkeyup", calculateHeight);
-} else if (runs.addEventListener) {
-	runs.addEventListener("mouseup", calculateHeight, false);
-	runs.addEventListener("keyup", calculateHeight, false);
-}
+    } else if (ta.attachEvent) { // IE
+        ta.attachEvent("onmouseup", calculateHeight);
+        ta.attachEvent("onkeyup", calculateHeight);
+    } else if (runs.addEventListener) {
+        runs.addEventListener("mouseup", calculateHeight, false);
+        runs.addEventListener("keyup", calculateHeight, false);
+        runs.addEventListener("click", calculateHeight, false);
+    }
 
 ////// Toggle visibility of input fields, and enable and disable them for db entries.//////
 function enable_dates(that) {
     
-    if (that.value == "2") {
-       document.getElementById('date2').disabled = false;
-       document.getElementById('date3').disabled = true;
-       document.getElementById('date4').disabled = true;
-    } else if (that.value =="1") {
+    if (that.value === "1") {
         document.getElementById('date2').disabled = true;
         document.getElementById('date3').disabled = true;
         document.getElementById('date4').disabled = true;
+        return;
+    } else if (that.value ==="2") {
+        document.getElementById('date1').disabled = false;
+        document.getElementById('date2').disabled = false;
+        document.getElementById('date3').disabled = true;
+        document.getElementById('date4').disabled = true; 
+        return;     
     } else if (that.value == "3") {
+        document.getElementById('date1').disabled = false;
         document.getElementById('date2').disabled = false;
         document.getElementById('date3').disabled = false;
         document.getElementById('date4').disabled = true;
+        return;
     } else if (that.value == "4") {
+        document.getElementById('date1').disabled = false;
         document.getElementById('date2').disabled = false;
         document.getElementById('date3').disabled = false;
         document.getElementById('date4').disabled = false;
+        return;
     }
+    // if (that.value == "2") {
+    //    document.getElementById('date2').disabled = false;
+    //    document.getElementById('date3').disabled = true;
+    //    document.getElementById('date4').disabled = true;
+    // } else if (that.value =="1") {
+    //     document.getElementById('date2').disabled = true;
+    //     document.getElementById('date3').disabled = true;
+    //     document.getElementById('date4').disabled = true;
+    // } else if (that.value == "3") {
+    //     document.getElementById('date2').disabled = false;
+    //     document.getElementById('date3').disabled = false;
+    //     document.getElementById('date4').disabled = true;
+    // } else if (that.value == "4") {
+    //     document.getElementById('date2').disabled = false;
+    //     document.getElementById('date3').disabled = false;
+    //     document.getElementById('date4').disabled = false;
+    // }
 
 }
 
 function show_inputs(that) {
-    if (that.value == "2") {
-        document.getElementById('2').style.display = "inline";
-        document.getElementById('3').style.display = "none";
-        document.getElementById('4').style.display = "none";
-    } else if (that.value == "3") {
-        document.getElementById('2').style.display = "inline";
-        document.getElementById('3').style.display = "block";
-        document.getElementById('4').style.display = "none";
-    } else if (that.value == "4") {
-        document.getElementById('2').style.display = "inline";
-        document.getElementById('3').style.display = "inline-block";
-        document.getElementById('4').style.display = "inline";
-    } else if (that.value == '1') {
+    if (that.value === "1") {
+        document.getElementById('1').style.display = "inline-block";
         document.getElementById('2').style.display = "none";
         document.getElementById('3').style.display = "none";
         document.getElementById('4').style.display = "none";
+        return;
+    } else if (that.value == "2") {
+        document.getElementById('1').style.display = "inline-block";
+        document.getElementById('2').style.display = "inline-block";
+        document.getElementById('3').style.display = "none";
+        document.getElementById('4').style.display = "none";
+        return;
+    } else if (that.value == "3") {
+        document.getElementById('1').style.display = "inline-block";
+        document.getElementById('2').style.display = "inline-block";
+        document.getElementById('3').style.display = "inline-block";
+        document.getElementById('4').style.display = "none";
+        return;
+    } else if (that.value == '4') {
+        document.getElementById('1').style.display = "inline-block";
+        document.getElementById('2').style.display = "inline-block";
+        document.getElementById('3').style.display = "inline-block";
+        document.getElementById('4').style.display = "inline-block";
+        return;
     }
 }
 
@@ -289,11 +354,19 @@ removeDot()
 //     var popup = document.getElementById("myPopup");
 //     popup.classList.toggle("show");
 // }
+// let selects = document.getElementsByTagName('select');
+
+// for (let i = 0; i < selects.length; ++i) {
+//     let currentSelect = selects[i];
+//     let selectedOption = currentSelect.querySelector('option[selected]');
+//     if (selectedOption) currentSelect.value = selectedOption.value;
+// }
 
 $(function() {
     $(".datepicker").datepicker({
-               minDate: new Date(),
-               dateFormat: 'yy-mm-dd',
+        minDate: new Date(),
+        showAdmin: 'clip',
+        dateFormat: 'yy-mm-dd',
         beforeShowDay: function (date) {
         // $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
         $thisDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
@@ -305,7 +378,31 @@ $(function() {
     }
 }
     });
+    }
+);
 
-});
+// $(document).ready(function () {
+//     $('select').each(function () {
+//       var select = $(this);
+//       var selectedValue = select.find('option[selected]').val();
+  
+//       if (selectedValue) {
+//         select.val(selectedValue);
+//       } $(document).ready(function () {
+//         $('select').each(function () {
+//           var select = $(this);
+//           var selectedValue = select.find('option[selected]').val();
+      
+//           if (selectedValue) {
+//             select.val(selectedValue);
+//           } else {
+//             select.prop('selectedIndex', 0);
+//           }
+//         });
+//       });
+//     });
+//   });
+
+
 // "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
 // execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
