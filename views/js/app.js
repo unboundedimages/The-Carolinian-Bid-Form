@@ -354,22 +354,77 @@ removeDot()
 //     var popup = document.getElementById("myPopup");
 //     popup.classList.toggle("show");
 // }
+function miniUpdate() {
+    let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    let one = 1;
+    // let twelve= 12;
+    let fin = new Date;
+    let plusOne = fin.getHours()
+    if (12 < plusOne) 
+    return one;
+}
 
 $(function() {
     $(".datepicker").datepicker({
-        minDate: new Date(),
+        minDate: miniUpdate(),
         showAdmin: 'clip',
         dateFormat: 'yy-mm-dd',
+        showOtherMonths: true,
+        selectOtherMonths: true,
         beforeShowDay: function (date) {
+            // console.log("can someone tell me what date is? Well date is : ", date)
         // $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-        $thisDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-    var day = date.getDay();
-    if ($.inArray($thisDate) == -1&&day!=1&&day!=2&&day!=3&&day!=5&&day!=6) {
-        return [true, ""];
-    } else {
-        return [false, "", "Unavailable"];
-    }
-}
+            let a = 11;
+            $thisDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            var day = date.getDay();
+            theHour = date.getHours()+12
+            console.log($thisDate)
+            console.log(theHour)
+            if (a < theHour && $.inArray($thisDate) == -1&&day!=1&&day!=2&&day!=3&&day!=5&&day!=6) {
+                return [true, ""];
+            } else if (a < theHour ) {
+                a = new Date;
+                aa = a.getHours()
+                console.log("aa anonymous", aa)
+                $(".datepicker").datepicker({
+                    minDate: 3
+                })
+                // alert("doink")
+                return [false];
+            } else {
+                return [false, "", "Unavailable"];
+
+            }
+
+        }
+        // doink:$(".i-group1").click(function() {
+        //     var a = 12;
+        //     let d = new Date();
+        //     if (a > d.getHours() && d.getDay() == 4){
+        //         // alert("doink")
+        //         (()=>{
+        //             let d = new Date();
+        //             let $thisDateIs= d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+        //             let dd = d.getDay();
+        //             console.log("This is inside of the if statement: ", $thisDateIs)
+        //             console.log("this is the indexed of the day ", dd)
+        //             if(dd == 4 || $.inArray($thisDateIs) !=-1 && dd!=4) {
+        //                 console.log("made it to the if statement ", dd, $thisDateIs)
+        //             //  alert('doink')
+        //                 return [false,"","Unavailable"];
+        //             } else {
+        //                 return [true]
+        //             }
+                    
+        //         })()
+           
+        //     } 
+        //   })
+        //   doink()
+        // cancelWednesday: function(noWeds) {
+
+
+        // }  
     });
     }
 );
