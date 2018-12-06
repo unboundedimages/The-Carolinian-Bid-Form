@@ -355,9 +355,18 @@ removeDot()
 //     popup.classList.toggle("show");
 // }
 
-$(function() {
+function miniUpdate() {
+    let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    let one = 1;
+    // let twelve= 12;
+    let fin = new Date;
+    let plusOne = fin.getHours()
+    if (12 < plusOne) 
+    return one;
+}
+ $(function() {
     $(".datepicker").datepicker({
-        minDate: new Date(),
+        minDate: miniUpdate(),
         showAdmin: 'clip',
         dateFormat: 'yy-mm-dd',
         showOtherMonths: true,
