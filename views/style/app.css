@@ -512,7 +512,7 @@ select {
 	min-width: 384px;
 	max-width:424px;
 	line-height: 20px;
-	height: 518px;
+	height: 449px;
 	overflow:auto;
 	overflow-x: hidden;
 	width:100%;
@@ -527,11 +527,14 @@ select {
 }
 
 .black-line {
-	position:relative;
-	border: 3px inset rgba(15, 10, 1, 0.959);
-	overflow-x: hidden;
-	padding: 7px 13px 7px 13px;
-    width: 100%;
+    position: relative;
+    border: 3px inset rgba(15, 10, 1, 0.959);
+    /* overflow: auto; */
+    overflow-x: hidden;
+    padding: 7px 13px 7px 13px;
+    height: 405px;
+	width: 100%;
+	overflow-y: scroll;
     right: 11px;
 }
 
@@ -607,6 +610,10 @@ textarea {
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+#noh1 {
+	padding:14px 16px;
+	background-color: #f5a73f;
+}
 #h1 {
 	padding:14px 16px;
 	background-color: #f5a73f;
@@ -763,7 +770,11 @@ textarea {
 	top:5px
 	/* bottom:83px; */
 }
-
+#confirmBtn{
+	position: relative;
+    width: 5px;
+	left: 135px; 
+}
 .caro-submit {
 	background-color:  #9b3333;
 	outline-color: orange;
