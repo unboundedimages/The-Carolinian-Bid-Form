@@ -82,10 +82,12 @@ app.post("/add", (req, res, next)=> {
 		runs:req.body.runs
 		}, (err,res)=>{
 			if (err){ 
-				console.log("Error inserting into db:  ", err)
-				throw err;
-			}
+				console.log("Error inserting into db:  ", err.sqlMessage)
+			// redirect('/')
+				return err;
+			}else {
 			console.log("data inserted", res);
+		}
 		});
 
 
