@@ -206,8 +206,6 @@ app.get('/ad', (req,res)=>{
 	});
 });
 
-
-
 //get all rec	ords
 app.get("/fetch-seek-find-locate", (req,res)=> { 
 	// console.log("xx+++++++++++++++++  ", req._events)
@@ -220,10 +218,6 @@ app.get("/fetch-seek-find-locate", (req,res)=> {
 		}
 	)
 })
-
-
-
-// 	
 
 //get specific single record
 app.get("/fetch-seek-find-locate/:id", (req,res,next)=> { 
@@ -285,19 +279,19 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 //on submit, user goes to a verificiation of screen to preview text they typed ** done
 //and the amount that's billed, with payment options. ** done
 //paypal, square, cashapp etc.  ** sqaure done
+// create code that only allows bids to be submitted by a certain time ** done clientside
+//otherwise the date is greyed out
+// bid add in print, must be submitted by 5pm Tuesday of same week. Boss changed it to 12pm noon ** done
+// otherwise the date for print will be greyed out for that week **
 
 // ***********************************************************//
 
 // paid true/false
 // time that card was processed == handled through square 
-// create code that only allows bids to be submitted by a certain time
-//otherwise the date is greyed out
 	
 //upon statement, user is emailed invoice/reciept, and a cc of invoice goes to == handled through sqauare receipt
 //companies email.
 
-// bid add in print, must be submitted by 5pm Tuesday of same week.
-// otherwise the date for print will be greyed out for that week
 
 //************************** Table redesign ideas ********************************* *//
 
