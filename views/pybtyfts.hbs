@@ -2,15 +2,17 @@
 	<div id="CaroMan"></div>
 	<header><h2 id="bid-form">Please review your BID AD before continuing: </h2></header>	
 	<div id="ta_2">
-	<form action='/payment' method="post">
-		<div class="black-line">
-			{{{rec.bid_text}}}
-		</div>
-		<div id="reviw-Button">
-			<input type="text" id="radKey" name="random_key" value="{{{rec.rec_locator}}}" hidden>
-		</div>
-		<br>
-	<button class="caro-submit add" id="submit-B" href='ccpgtm' onkeyup="makeid()">Continue</button>
-	</form>
+		<form id="ontothenext" action='/payment' method="post">
+			<div class="black-line">
+				{{{rec.bid_text}}}
+			</div>
+			<div id="reviw-Button">
+				<input type="text" id="radKey" name="random_key" value="{{{rec.rec_locator}}}" hidden>
+			</div>
+			{{!-- <br> --}}
+		</form>
+	</div>
+	<div id="confirmBtn">
+		<button class="caro-submit add" id="submit-B" type='submit' form="ontothenext" href='ccpgtm' onkeyup="makeid()">Continue</button>
 	</div>
 </div>
