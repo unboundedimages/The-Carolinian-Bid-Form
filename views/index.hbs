@@ -1,10 +1,10 @@
 <div class="container">
 		<header><h2 id="bid-form">The Carolinian <b>Bid Form</b></h2></header>
 		<div id=text-editor>
-			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h1>'); getBidNfo();" contenteditable="false">
+			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h1>'); getBidNfo();" contenteditable="false">
 				<b>h1</b>
 			</button>
-			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand( 'formatBlock','false','<h3>'); getBidNfo();" contenteditable="false">
+			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h3>'); getBidNfo();" contenteditable="false">
 				<b>h3</b>
 			</button>
 			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null); getBidNfo();" title="Bold Highlighted Text" contenteditable="false">
@@ -27,7 +27,6 @@
 				<b>&#x27f3;</b>
 			</button>
 		</div>
-		{{!-- <section> --}}
 			<form action="/add" method="post">
 				<div id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 				</div>	
@@ -47,7 +46,6 @@
 				</p>
 				<div class="input-group">
 					<input class="name-puts" type="text" onkeyup="getBidNfo()" name="company" pattern="[A-Za-z0-9-_. ]+" required>
-					{{!-- <input class="datepicker" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required> --}}
 					<span class="highlight"></span>
 					<span class="bar"></span>
 					<label class="label-names">Company Name</label>
@@ -71,18 +69,10 @@
 						Sunday or Thursday.
 					</div>
 				</div>
-				
-				{{!-- <span> --}}
-				{{!-- <label class="date-puts">Date 1:	 --}}
-				{{!-- <input  pattern= "[0-9-]+" min="today" name="input1" class="date" type="date" placeholder="YYYY-MM-DD" title="Your bid must be placed on a Sunday or a Thursday" required onkeypress="return event.keyCode != 13;" id = "date1"> --}}
-				{{!-- Testing jQuery datepicker	 --}}
-				{{!-- <input type="text" pattern="[0-9-]+" class="datepicker" name="input1" required onkeypress="return event.keyCode != 13;" id = "date1"> --}}
 			<div id="date-groups">	
-				{{!-- <span> --}}
 					<div class="i-group1">
 						<div class="input-group" id="1" hidden>
-							{{!-- <input class="name-puts" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required> --}}
-							<input class="datepicker" type="text" pattern="[0-9-]+" name="input1" id="date1" onkeypress="return event.keyCode != 13;" autocomplete="off" required>
+							<input class="datepicker" type="text" pattern="[0-9-]+" name="input1" id="date1" onkeypress="return event.keyCode != 13;" onkeydown="noText();" autocomplete="off" required>
 							<span class="highlight"></span>
 							<span class="bar"></span>
 							<label class="label-names">
@@ -92,7 +82,6 @@
 					</div>
 					<div class="i-group1" id="two">
 						<div class="input-group" id="2" hidden>
-							{{!-- <input class="name-puts" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required> --}}
 							<input class="datepicker" type="text" pattern="[0-9-]+" name="input2" id="date2" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
 							<span class="highlight"></span>
 							<span class="bar"></span>
@@ -101,11 +90,8 @@
 							</label>
 						</div>
 					</div>	
-				{{!-- </span> --}}
-				{{!-- <span> --}}
 					<div class="i-group1" id="three">	
 						<div class="input-group" id="3" hidden>
-							{{!-- <input class="name-puts" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required> --}}
 							<input class="datepicker" type="text" pattern="[0-9-]+" name="input3" id="date3" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
 							<span class="highlight"></span>
 							<span class="bar"></span>
@@ -116,7 +102,6 @@
 					</div>
 					<div class="i-group1" id="four">
 						<div class="input-group" id="4" hidden>
-							{{!-- <input class="name-puts" type="text" name="company" pattern="[A-Za-z0-9-_. ]+" required> --}}
 							<input class="datepicker" type="text" pattern="[0-9-]+" name="input4" id="date4" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
 							<span class="highlight"></span>
 							<span class="bar"></span>
@@ -125,42 +110,12 @@
 							</label>
 						</div>
 					</div>
-				{{!-- </span> --}}
-				{{!-- Submit button --}}
-				{{!-- <span> --}}
-					{{!-- <div id="index-Button">
-						<button onclick="noMondays()" class="caro-submit" id="submit-B" href="pybtyfts.html"  value="Submit">Submit</button>
-					</div> --}}
-				{{!-- </span> --}}
 			</div>	{{!-- ends date-group  --}}
-			<button class="caro-submit" id="submit-B" value="Submit" onkeydown="getit();">Button</button>
-				{{!-- </label> --}}
-				
-				{{!-- <label class="date-puts" id="2" hidden>Date 2:	
-				<input name="input2" class="date" type="date" placeholder="YYYY-MM-DD" required onkeypress="return event.keyCode != 13;" id = "date2" disabled>
-				</label>	
-				</span>
-				<div>				<span>
-				<label class="date-puts" id="3" hidden>Date 3:
-				<input name="input3" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date3" disabled>
-				</label>
-
-				<label class="date-puts" id="4" hidden>Date 4:
-				<input name="input4" class="date" type="date" placeholder="YYYY-MM-DD"  required onkeypress="return event.keyCode != 13;" id = "date4" disabled>
-				</label>
-				</span>
-				</div> --}}
-
-				
+			<button class="caro-submit" id="submit-B" value="Submit" onclick="getit();" onkeydown="getit();">Button</button>
 				{{!-- Used to push text to db --}}
 				<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
-				{{!-- <textarea contenteditable="true" id="lines_2" type="text" name="price_2">
-				</textarea> --}}
 				<input type="text" id ="lines_2" name="price_2" hidden>
-				{{!-- <input type="text" id="radKey" name="random_key" > --}}
-				{{!-- toast --}}
 			</form>
-		{{!-- </section> --}}
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
