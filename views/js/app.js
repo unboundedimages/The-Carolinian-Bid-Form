@@ -1,32 +1,7 @@
 // "use strict";
-
-// (function() {
-//     var gotChrome = {
-//         isChromium: window.chrome,
-//         winNav: window.navigator,
-//         vendorName: window.navigator.vendor,
-//         isOpera:'typeof window.opr !== "undefined"',
-//         isIEedge: 'winNav.userAgent.indexOf("Edge") > -1',
-//         isIOSChrome: 'winNav.userAgent.match("CriOS")'
-//     }
-//     if(gotChrome) {
-//         if(performance.navigation.type == 2){
-//             location.reload(true);
-//         }
-//         // console.log('is Google Chrome IOS');
-//         // alert('is Google Chrome IOS');
-//     }
-// })();
-// if(performance.navigation.type == 2){
-//     location.reload(true);
-// }
-
-// if(performance.navigation.type == 2){
-//     location.reload(true);
-// }
 function getBidNfo() {
 
-		let bidText = document.getElementById("ta")		
+		let bidText = document.getElementById("ta");
         
         /////////////////////////////////////////////////////////////////////////
         // this will insert the html markup with the text in the db
@@ -34,16 +9,10 @@ function getBidNfo() {
 		let bidzHTML = document.getElementById("bidAd").innerHTML = document.querySelector('#ta').innerHTML;
         //////////////////////////////////////////////////////////////////////////
 
-		console.log("text text text text text ", bidText.innerText)
+		console.log("text text text text text ", bidText.innerText);
 	}
 
-	getBidNfo()
-
-// create a formula that refreshes the index page so that when the user hits back the form is blank
-
-// function clearPage() {
-//     document.getElementsByName('input').values == 
-// }
+	getBidNfo();
 
 //create a formula that counts the lines and multiplies it by 1.56
 //create a function that substracts 1.56 every time a line is removed.
@@ -124,7 +93,7 @@ console.log("estimate xxxx: ", estimate)
 
     // calculateHeight();
     function getit(getruns) {
-        calculateHeight()
+        calculateHeight();
         document.getElementById('runs').focus()
         document.getElementById('ta').focus()
         var getruns = document.getElementById('runs').value;
@@ -171,24 +140,6 @@ function enable_dates(that) {
         document.getElementById('date4').disabled = false;
         return;
     }
-    // if (that.value == "2") {
-    //    document.getElementById('date2').disabled = false;
-    //    document.getElementById('date3').disabled = true;
-    //    document.getElementById('date4').disabled = true;
-    // } else if (that.value =="1") {
-    //     document.getElementById('date2').disabled = true;
-    //     document.getElementById('date3').disabled = true;
-    //     document.getElementById('date4').disabled = true;
-    // } else if (that.value == "3") {
-    //     document.getElementById('date2').disabled = false;
-    //     document.getElementById('date3').disabled = false;
-    //     document.getElementById('date4').disabled = true;
-    // } else if (that.value == "4") {
-    //     document.getElementById('date2').disabled = false;
-    //     document.getElementById('date3').disabled = false;
-    //     document.getElementById('date4').disabled = false;
-    // }
-
 }
 
 function show_inputs(that) {
@@ -218,75 +169,6 @@ function show_inputs(that) {
         return;
     }
 }
-
-//greys out dates prior to today.
-var today = new Date().toISOString().split('T')[0];
-    document.getElementsByName('input1')[0].setAttribute('min', today);
-    document.getElementsByName('input2')[0].setAttribute('min', today);
-    document.getElementsByName('input3')[0].setAttribute('min', today);
-    document.getElementsByName('input4')[0].setAttribute('min', today);
-//     console.log("today object: ", today)
-
-// disable days that user can select.  User must select Sunday or Thursday.  Other days will be invalid
-
-//need distinct querySelectors for each input
-var input1 = document.querySelector('[id=date1]');
-var input2 = document.querySelector('[id="date2"]');
-var input3 = document.querySelector('[id="date3"]');
-var input4 = document.querySelector('[id="date4"]');
-
-console.log(input1)
-// console.log("datess==", datess)
-
-// toast popup
-function launch_toast() {
-    var x = document.getElementById("toast")
-    x.className = "show";
-    x.hidden = false;
-    setTimeout(function(){ 
-        x.className = x.className.replace("show", ""); 
-        x.hidden = true;
-    }, 5000);
-}
-
-function noMondays(e){
-
-    // Days in JS range from 0-6 where 0 is Sunday and 6 is Saturday
-  
-let dateMond = document.getElementById("date1").value;
-let inputfield2 = document.getElementById("date2").value;
-let inputfield3 = document.getElementById("date3").value;
-let inputfield4 = document.getElementById("date4").value;
-let dateMondUTC = new Date(dateMond).getUTCDay();
-let input2UTC = new Date(inputfield2).getUTCDay();  
-let input3UTC = new Date(inputfield3).getUTCDay();  
-let input4UTC = new Date(inputfield4).getUTCDay();  
-//   console.log("todayAgainn",dateMondUTC)
-  
-  if(dateMondUTC === 1 || dateMondUTC === 2 || dateMondUTC === 3 || dateMondUTC === 5 || dateMondUTC === 6 
-    || input2UTC === 1 || input2UTC === 2  || input2UTC === 3 || input2UTC === 5  || input2UTC === 6
-    || input3UTC === 1 || input3UTC === 2  || input3UTC === 3 || input3UTC === 5  || input3UTC === 6
-    || input4UTC === 1 || input4UTC === 2  || input4UTC === 3 || input4UTC === 5  || input4UTC === 6
-    ) {
-        document.getElementById("submit-B").disabled = true;
-        document.getElementById("submit-B").style.backgroundColor = "black";
-        launch_toast()
-        function restoreButton() { 
-            setTimeout(() => { 
-                document.getElementById("submit-B").disabled = false; 
-                document.getElementById("submit-B").style.backgroundColor = "#9b3333";}, 3000);
-            }
-        restoreButton()
-    } else {
-          document.getElementById("submit-B").disabled = false;
-          document.getElementById("submit-B").style.backgroundColor = "#9b3333";
-    }
-}
-
-// input1.addEventListener('input',noMondays);
-// input2.addEventListener('input',noMondays);
-// input3.addEventListener('input',noMondays);
-// input4.addEventListener('input',noMondays);
 
 //strips formatting when text is pasted into text area
 document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
@@ -344,35 +226,81 @@ function execCommandOnElement(el, commandName, value) {
     }
 }
 
+// Toggle H1 and H3
+let reSize = true;
+
+function myH1() {
+    document.execCommand( 'formatBlock',false,'<h1>')
+}
+function myH3() {
+    document.execCommand( 'formatBlock',false,'<h3>')
+}
+
+function noH1() {
+    document.execCommand('formatBlock', false, 'div')
+}
+function callResize(){
+document.getElementById('h1').addEventListener("click",function () {
+    if(reSize)
+    myH1();
+    else
+    noH1();
+    reSize = !reSize;
+    
+})
+}
+callResize();
+
+function callResizeH3() {
+document.getElementById('h3').addEventListener("click",function () {
+        if(reSize)
+        myH3();
+        else
+        noH1();
+        reSize = !reSize;
+    })
+}
+callResizeH3();
+
+// ends H1 and H3 toggle
+
+
 function removeDot(){
     execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
     document.getElementById("ta").innerHTML="";
 }
-removeDot()
-
-// function myPopUp(that){
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-// }
+removeDot();
 
 function miniUpdate() {
-    let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-    let one = 1;
+    let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    let four = 4;
     // let twelve= 12;
     let fin = new Date;
+    let shutDown = fin.getDay();
+    let today= dow[shutDown]
+    console.log("what is today my dude?, Today is: ", today)
     let plusOne = fin.getHours()
-    if (12 < plusOne) 
-    return one;
+    //if the hour is greater then 12 and the day index is 4
+    if (12 < plusOne && today == 'Tuesday'){
+        return four;
+    } else if(today == 'Wednesday'){
+        return 3;
+    } else if (today == 'Thursday'){
+        return 2;
+    } else {
+        return 0;
+    }
 }
  $(function() {
     $(".datepicker").datepicker({
         minDate: miniUpdate(),
         showAdmin: 'clip',
         dateFormat: 'yy-mm-dd',
+        currentText: "Now",
+        constrainInput: true,
         showOtherMonths: true,
         selectOtherMonths: true,
         beforeShowDay: function (date) {
-        // $thisDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
             $thisDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
             var day = date.getDay();
             if ($.inArray($thisDate) == -1&&day!=1&&day!=2&&day!=3&&day!=5&&day!=6) {
@@ -385,5 +313,18 @@ function miniUpdate() {
     }
 );
 
-// "Bids must be placed by Monday at 5pm,"+"<br>"+ "<br>"+ "in order to run in this Thursday's print edition"+"<br>"
-// execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
+function noText() {
+    document.getElementById("date1").addEventListener("keydown", function(event){
+        event.preventDefault();
+    });
+    document.getElementById("date2").addEventListener("keydown", function(event){
+        event.preventDefault();
+    });
+    document.getElementById("date3").addEventListener("keydown", function(event){
+        event.preventDefault();
+    });
+    document.getElementById("date4").addEventListener("keydown", function(event){
+        event.preventDefault();
+    });
+}
+noText();
