@@ -297,6 +297,9 @@ function miniUpdate() {
         showAdmin: 'clip',
         dateFormat: 'yy-mm-dd',
         currentText: "Now",
+        showWeek: true,
+        weekHeader: "Wk",
+        yearRange: "2018:2030",
         constrainInput: true,
         showOtherMonths: true,
         selectOtherMonths: true,
@@ -312,7 +315,8 @@ function miniUpdate() {
     });
     }
 );
-
+// prevent user from being able to type in input date fields
+// and force use of the datepicker
 function noText() {
     document.getElementById("date1").addEventListener("keydown", function(event){
         event.preventDefault();
