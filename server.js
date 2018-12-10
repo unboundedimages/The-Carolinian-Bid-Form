@@ -83,9 +83,11 @@ app.post("/add", (req, res, next)=> {
 		}, (err,res)=>{
 			if (err){ 
 				console.log("Error inserting into db:  ", err.sqlMessage)
-			// redirect('/')
-				return err;
-			}else {
+			next("OOPS")
+				// throw err;
+			}
+			else {
+				// res.render('pybtyfts')
 			console.log("data inserted", res);
 		}
 		});
@@ -100,7 +102,9 @@ var queires = [
 db.query(queires.join(';'), function(error, results, fields){
 	
 	if(error) { 
-		throw error;
+		console.log("Please MercifulAllah work....", error)
+		res.redirect('/')
+		// throw error;
 	}
 	var rec = {
 		rec_locator: results[0][0].rec_locator,
