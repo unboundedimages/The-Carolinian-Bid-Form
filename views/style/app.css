@@ -918,46 +918,126 @@ a.link_style:hover {
     to {bottom: 60px; opacity: 0;}
 }
 
-@media screen and (max-width: 414px) {
-	body {
-		background:none;
-		background-size: cover;
+@media screen and (max-width: 376px) {
+	#medias {
+		position: relative;
+		margin: auto;
+		width: 156.3vw;
+	}
+	#CaroBanner {
+		width: 156.3vw;
+		margin:auto;
+	}
+	/* placement of div */
+	#CaroMan {
+		position: relative;
+		bottom: 31vw;
+		left: 10vw;
+		width: 2vw;
+	}
+	
+	/*size of man*/
+	.caroman {
+		width: 20vw;
+		left: 117vw;
+		position: relative;
+	
 	}
 
 	.container {
-		position: relative;
-		overflow: hidden;
-		/* widows:100v; */
-		width: 100vw;
-		height:710px;
-	    /* right:2px; */
+		bottom: 30.3vw;
 	}
-	#text-editor {
-		position: relative;
-		right: 7px;
-		left: -7px;
-		outline-color: rgb(255, 60, 0);
+	.black-line {
+		position:relative;
+		margin: auto;
+		width: inherit;
+		/* right:0; */
+	}
+	#bill {
+		position:relative;
+		left:0;
+		margin:auto;
+	}
+	#ta_3 {
+		position:relative;
+		left:0;
+	}
+}
+
+@media screen and (max-width: 414px) and (min-width: 377px) {
+	
+	#CaroBanner {
+		width: 132vw;
+		/* margin: -5px; */
 	}
 
-	.button {
-		margin: 4px 0px 0px -2px;
-		outline-color: rgb(255, 60, 0);
+	#bid-form {
+		font-size: 3vw;
+	}
+
+	#CaroMan {
+		position: relative;
+		top: -1.5vh;
+	}
+	.caroman {
+		/* width: 127%;
+		position: absolute;
+		left: 15px;
+		top: 61px;
+		z-index: 10;
+		opacity: 1.15; */
+
+		left: 97vw;
+		width: 23vw;
+		position: relative;
+		/* left: 15px; */
+		top: 0vh;
+		/* z-index: 11; */
+		opacity: 2.15;
+	}
+	.container {
+		position: relative;
+		/* overflow-x: hidden; */
+		/* widows:100v; */
+		width: 131vw;
+		height:767px;
+		/* height:733px; */
+		top: -140px;
+	    /* right:2px; */
 	}
 
 	#ta{
 		left:0px;
-		font-size: 11pt;
+		font-size: 12pt;
+		margin:auto;
 	}
 
-	.caroman {
-		width: 127%;
-		position: absolute;
-		left: 15px;
-		top: 61px;
-		z-index: -1;
-		opacity: 0.15;
+	#text-editor {
+		position: relative;
+		width: 126vw;
+		margin: auto;
+		outline-color: rgb(255, 60, 0);
 	}
 
+	.button {
+		margin: 1.5vw;
+		outline-color: rgb(255, 60, 0);
+	}
+
+	/* .datepicker {
+		width: 202px;
+	} */
+	#bar-4 {
+		position: relative;
+		top: -6px;
+	}
+	.label-names {
+		top:0px;
+	}
+	input#date4 {
+		bottom: 6px;
+		position: relative;
+	}
 	.date {
 		width:90px;
 	}
@@ -987,26 +1067,85 @@ a.link_style:hover {
 	.end-date{
 		margin:-6px;
 	}
+
+	div#date-groups {
+		position: relative;
+		bottom: 50px;
+		/* height: 79px; */
+		/* overflow-x: none; */
+	}
+
+	#ta_2 {
+		position: relative;
+		left:0px;
+		margin:auto;
+	}
+	.black-line {
+		position:relative;
+		margin:auto;
+		right:0;
+		width:auto;
+	}
+	#bill {
+		position:relative;
+		left:0;
+		margin:auto;
+	}
+	#ta_3 {
+		position:relative;
+		left:0;
+	}
+
+	/* #sq-creditcard {
+		position: relative;
+		margin: auto;
+	} */
 }
 
-@media screen and (max-width: 736px) and (min-width: 660px) {
+@media screen and (max-width: 1019px) and (min-width: 646px) {
+/* @media screen and (max-width: 736px) and (min-width: 660px) { */
 	body{
 		background-size: cover;
 	}
 	.container {
+		/* position: absolute; */
 		position: relative;
-		left:10%;
+		/* left:21vw; */
+		/* left:10%; */
+		top: -0.3vh;
+		margin:auto;
 		width:575px;
 		overflow: hidden;
+		opacity: 0.87;
+	}
+	#ta_2 {
+		position: relative;
+		left:0;
+		margin:auto;
+	}
+	.black-line {
+		position: relative;
+		border: 3px inset rgba(15, 10, 1, 0.959);
+		/* overflow: auto; */
+		overflow-x: hidden;
+		padding: 7px 13px 7px 13px;
+		height: 405px;
+		/* width: 100%; */
+		overflow-y: scroll;
+		/* right: 11px; */
+		margin: auto;
 	}
 
 	.caroman {
-		width: 127%;
+		width: 97vw;
+		/* width: 127%; */
 		position: absolute;
-		left: 15px;
+		left: 3vw;
+		/* left: 15px; */
 		top: 61px;
 		z-index: -1;
-		opacity: 0.15;	
+		opacity: 0.12;
+		/* opacity: 0.15;	 */
 	}
 
 	#undo {
@@ -1028,6 +1167,16 @@ a.link_style:hover {
 	.caro-submit {
 		position:relative;
 		margin:-6px 23px 10px;
+	}
+
+	#bill {
+		position:relative;
+		left:0;
+		margin:auto;
+	}
+	#ta_3 {
+		position:relative;
+		left:0;
 	}
 
 }
