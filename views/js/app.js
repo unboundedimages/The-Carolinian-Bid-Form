@@ -273,7 +273,6 @@ removeDot();
 
 function miniUpdate() {
     let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    let four = 4;
     // let twelve= 12;
     let fin = new Date;
     let shutDown = fin.getDay();
@@ -281,12 +280,12 @@ function miniUpdate() {
     console.log("what is today my dude?, Today is: ", today)
     let plusOne = fin.getHours()
     //if the hour is greater then 12 and the day index is 4
-    if (12 < plusOne && today == 'Tuesday'){
-        return four;
+    if (12 <= plusOne && today == 'Tuesday'){
+        return 3;
     } else if(today == 'Wednesday'){
         return 3;
     } else if (today == 'Thursday'){
-        return 2;
+        return 6;
     } else {
         return 0;
     }
