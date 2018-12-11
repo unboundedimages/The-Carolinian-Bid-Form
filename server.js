@@ -128,9 +128,10 @@ app.post('/payment', function(req, res, next) {
 		console.log(rows)
 			if (!err)
 			res.render('ccpgtm', {rows})
+			// console.log("sucessful selection form")
 			else
 			console.log(err);
-	});
+		});
 });
 app.get('/thanks', (req,res)=> {
 		res.redirect('/')
@@ -138,14 +139,20 @@ app.get('/thanks', (req,res)=> {
 )
 app.post('/thanks', (req,res, next)=>{
 //write an insert that puts  a paid status into the dB with the record locator.
+let pricePaid = req.body.rec_locator
+console.log("this is the recLoc to link the paid column that should be updated: ", pricePaid)
+clientPaid = ["UPDATE bid_nfo SET paid = 'Paid' WHERE rec_locator = ?"]
+db.query(clientPaid.join(';'), pricePaid, function (err, result) {
+	if (err) throw err;
+	console.log(result.affectedRows + "we won.")
+}),
+
 //possibly create another table for this.  The record locator can be used in
 //square to show proof of payments  Doing it on this side would be for redundancy.
-
 console.log(req.body)
 	var squareLocationId = process.env.location;
 	// var squareLocationId = process.env.sandbox_location;
 	var request_params = req.body;
-
 	var idempotency_key = require('crypto').randomBytes(64).toString('hex');
 	price = parseInt(request_params._price_)
 	console.log(price)
@@ -160,6 +167,8 @@ console.log(req.body)
 		note: request_params.rec_locator
 		
 	};
+	//update paid status
+	// db.query(" UPDATE bid_nfo SET paid = 'Paid' WHERE rec_locator = ?", )
 	// console.log("console ref_id: ", request_body.reference_id)
 	transactions_api.charge(squareLocationId, request_body).then(function(data) {
 		
@@ -203,7 +212,7 @@ app.get('/caro_bids', (req, res)=> {
 //Create Table
 
 app.get('/ad', (req,res)=>{
-	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, logged VARCHAR(30), name VARCHAR(255), email VARCHAR(50), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), price_2 VARCHAR(20), PRIMARY KEY(id))', function(err, result){
+	db.query('CREATE TABLE bid_nfo (id int AUTO_INCREMENT, logged VARCHAR(30), paid VARCHAR(30), name VARCHAR(255), email VARCHAR(50), rec_locator VARCHAR(20), date1 DATE, date2 DATE default NULL, date3 DATE default NULL,  date4 DATE default NULL, runs int, bid_ad LONGTEXT, price VARCHAR(20), price_2 VARCHAR(20), PRIMARY KEY(id))', function(err, result){
 		if (err) throw err;
 		console.log("Table created" + result)
 		res.send("Table created")
