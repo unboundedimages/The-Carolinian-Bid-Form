@@ -921,7 +921,7 @@ a.link_style:hover {
     to {bottom: 60px; opacity: 0;}
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 399px) {
 	#medias {
 		position: relative;
 		margin: auto;
@@ -967,9 +967,12 @@ a.link_style:hover {
 	}
 }
 
-@media screen and (max-width: 539px) and (min-width: 377px) {
-	
+@media screen and (max-width: 429px) and (min-width: 400px) {
+	#medias {
+		width:100%;
+	}
 	#CaroBanner {
+		/* width: 100%; */
 		width: 132vw;
 		/* margin: -5px; */
 	}
@@ -1116,7 +1119,7 @@ a.link_style:hover {
 	} */
 }
 
-@media (max-width: 1019px) and (min-width: 540px) {
+@media (max-width: 1019px) and (min-width: 430px) {
 /* @media screen and (max-width: 1019px) and (min-width: 646px) { */
 /* @media screen and (max-width: 736px) and (min-width: 660px) { */
 	body{
