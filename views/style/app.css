@@ -1116,7 +1116,7 @@ a.link_style:hover {
 	} */
 }
 
-@media screen and (max-width: 1019px) and (min-width: 540px) {
+@media (max-width: 1019px) and (min-width: 540px) {
 /* @media screen and (max-width: 1019px) and (min-width: 646px) { */
 /* @media screen and (max-width: 736px) and (min-width: 660px) { */
 	body{
