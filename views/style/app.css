@@ -23,7 +23,7 @@ body {
 
 .add {
     position: relative;
-	left:26vw;
+	/* left:26vw; */
 	/* top: 2.7vh; */
 }
 
@@ -761,8 +761,10 @@ textarea {
 }
 
 #submit-B:hover {
-	background-color:#e41d1d;
-	color: yellow;
+	background-color:#728669;
+	/* background-color:#e41d1d; */
+	/* color: yellow; */
+	color: rgb(255, 252, 218);
 }
 #submit-B:active {
 	background-color:green;
@@ -773,7 +775,8 @@ textarea {
 #confirmBtn{
 	position: relative;
     width: 5px;
-	left: 135px; 
+	left: 90px; 
+	/* left: 135px;  */
 }
 .caro-submit {
 	background-color:  #9b3333;
@@ -964,7 +967,7 @@ a.link_style:hover {
 	}
 }
 
-@media screen and (max-width: 414px) and (min-width: 377px) {
+@media screen and (max-width: 539px) and (min-width: 377px) {
 	
 	#CaroBanner {
 		width: 132vw;
@@ -1080,11 +1083,22 @@ a.link_style:hover {
 		left:0px;
 		margin:auto;
 	}
+	
 	.black-line {
 		position:relative;
 		margin:auto;
 		right:0;
 		width:auto;
+	}
+	/* #confirmBtn{
+		position:relative;
+		right:100px;
+	} */
+
+
+	.caro-submit {
+		margin-left:0px;
+		right: 30px;	
 	}
 	#bill {
 		position:relative;
