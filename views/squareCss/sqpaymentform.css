@@ -8,7 +8,11 @@
   
   /* Define how SqPaymentForm iframes should look when they have focus */
   .sq-input--focus {
-    outline: 5px auto rgb(59, 153, 252);
+    outline: 5px auto rgb(238, 143, 34);
+  }
+  
+  .button-credit-card:focus {
+    outline: 5px auto rgb(238, 143, 34);
   }
   
   /* Define how SqPaymentForm iframes should look when they contain invalid values */
@@ -37,7 +41,8 @@
     /* color: rgb(94, 61, 24); */
 
     /* background: rgb(237, 143, 28); */
-    background: rgb(111, 136, 102);
+    background: rgb(151, 52, 49);
+    /* background: rgb(111, 136, 102); */
     color: rgb(255, 252, 218);
     border-radius: 9px;
     border: 1px solid rgb(200, 200, 200);
