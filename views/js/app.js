@@ -228,37 +228,35 @@ function execCommandOnElement(el, commandName, value) {
 
 // Toggle H1 and H3
 let reSize = true;
-
-function myH1() {
-    document.execCommand( 'formatBlock',false,'<h1>')
-}
-function myH3() {
-    document.execCommand( 'formatBlock',false,'<h3>')
-}
-
-function noH1() {
-    document.execCommand('formatBlock', false, 'div')
-}
-function callResize(){
+let h3Size = true;
+function callResizeH1(){
 document.getElementById('h1').addEventListener("click",function () {
-    if(reSize)
-    myH1();
-    else
-    noH1();
-    reSize = !reSize;
-    
+    if(reSize || h3Size == false){
+    reSize = false;
+    h3Size = true;
+    (()=>document.execCommand( 'formatBlock',false,'<h1>'))()}
+    else {
+        reSize = true;
+        h3Size = true;
+    // noH1();
+    (()=>document.execCommand('formatBlock', false, 'div'))()
+    }
 })
 }
-callResize();
+callResizeH1();
 
 function callResizeH3() {
 document.getElementById('h3').addEventListener("click",function () {
-        if(reSize)
-        myH3();
-        else
-        noH1();
-        reSize = !reSize;
-    })
+    if(h3Size || reSize == false){
+        h3Size = false;
+        reSize = true;
+        (()=>document.execCommand( 'formatBlock',false,'<h3>'))()}
+        else {
+        h3Size = true;
+        reSize = true;
+        (()=>document.execCommand('formatBlock', false, 'div'))()
+    }
+})
 }
 callResizeH3();
 
