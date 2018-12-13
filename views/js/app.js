@@ -282,7 +282,7 @@ function miniUpdate() {
         return 3;
     } else if(today == 'Wednesday'){
         return 3;
-    } else if (today == 'Thursday'){
+    } else if (17 <= plusOne && today == 'Thursday'){
         return 6;
     } else {
         return 0;
