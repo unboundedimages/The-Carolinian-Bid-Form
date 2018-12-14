@@ -1,4 +1,10 @@
 // "use strict";
+// if(performance.navigation.type == 2)
+// {
+//     //Do your code here
+//     location.reload(true);
+// }
+
 function getBidNfo() {
 
 		let bidText = document.getElementById("ta");
@@ -276,13 +282,13 @@ function miniUpdate() {
     let shutDown = fin.getDay();
     let today= dow[shutDown]
     console.log("what is today my dude?, Today is: ", today)
-    let plusOne = fin.getHours()
+    let theHour = fin.getHours()
     //if the hour is greater then 12 and the day index is 4
-    if (12 <= plusOne && today == 'Tuesday'){
+    if (12 <= theHour && today == 'Tuesday'){
         return 3;
     } else if(today == 'Wednesday'){
         return 3;
-    } else if (17 <= plusOne && today == 'Thursday'){
+    } else if (17 <= theHour && today == 'Thursday' || 'Friday' || 'Saturday' || 'Sunday'){
         return 6;
     } else {
         return 0;
