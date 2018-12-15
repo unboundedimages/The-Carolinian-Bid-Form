@@ -288,9 +288,14 @@ function miniUpdate() {
         return 3;
     } else if(today == 'Wednesday'){
         return 3;
-    } else if (17 <= theHour && today == 'Thursday' || 'Friday' || 'Saturday' || 'Sunday'){
+    } else if (17 <= theHour && today == 'Thursday'){
         return 6;
-    } else {
+    } else if (today == 'Friday'){
+        return 3;
+    }else if (today == 'Saturday'){
+        return 2;
+    }
+    else {
         return 0;
     }
 }
