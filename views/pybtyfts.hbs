@@ -16,3 +16,16 @@
 		<button class="caro-submit add" id="submit-B" type='submit' form="ontothenext" href='ccpgtm' onkeyup="makeid()">Continue</button>
 	</div>
 </div>
+<script type="text/javascript">
+window.onbeforeunload = function (e) {
+    sessionStorage.clear();
+};
+	function noBack()
+	{
+		window.history.forward()
+	}
+	noBack();
+	window.onload = noBack;
+	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+	window.onunload = function() { void (0) }
+</script>
