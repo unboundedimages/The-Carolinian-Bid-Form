@@ -294,6 +294,8 @@ function miniUpdate() {
         return 3;
     }else if (today == 'Saturday'){
         return 2;
+    }else if (today == 'Sunday'){
+        return 2;
     }
     else {
         return 0;
