@@ -1,9 +1,19 @@
 //load banner
+// window.location.assign("https://www.carobids.com")
+// window.history.go(1)
+// window.history.back()
+// location.reload(false);
 window.onload = function carobanner(){
+	if(!window.location.hash) {
+		window.location = window.location + '#caro';
+		window.location.reload(true);
+		window.history.go(0);
+	}
 	let caro_banner = '<img src="/img/caro-logo-for-website.png">';
 	document.getElementById("CaroBanner").innerHTML = caro_banner;
 	let caro_man = '<img src="/img/Caro-Newsman-Mark-223x300.png" class="caroman">';
 	document.getElementById("CaroMan").innerHTML = caro_man;
+	document.getElementById('home').innerHTML = '<div id="line-it"><img src="/img/home-icon-for-website-1.png"></div>';
 }
 
 function copyRecord(e) { 
@@ -12,11 +22,3 @@ function copyRecord(e) {
 	document.execCommand("copy");
 	// alert("Copied the text: " + x.value);
 }
-// //strips formatting when text is pasted into text area
-// document.querySelector("div[contenteditable]").addEventListener("paste", function(e) {
-//     e.preventDefault();
-//     var text = e.clipboardData.getData("text/plain");
-//     var temp = document.createElement("div");
-//     temp.innerHTML = text;
-//     document.execCommand("insertHTML", false, temp.textContent);
-// });
