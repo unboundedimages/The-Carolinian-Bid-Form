@@ -10,6 +10,15 @@ window.onload = function carobanner(){
 	document.getElementById("CaroMan").innerHTML = caro_man;
 	document.getElementById('home').innerHTML = '<div id="line-it"><img src="/img/home-icon-for-website-1.png"></div>';
 }
+function redirect()
+{
+    setInterval(function(){
+		window.location='https://carobids.com'
+		// window.onload=redirect;
+	},1000 * 60 * 5);//5 minutes secs
+}
+redirect()
+
 
 function copyRecord(e) { 
 	var x = document.getElementById('invisiline');
