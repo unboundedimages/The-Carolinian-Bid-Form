@@ -1,8 +1,3 @@
-//load banner
-// window.location.assign("https://www.carobids.com")
-// window.history.go(1)
-// window.history.back()
-// location.reload(false);
 window.onload = function carobanner(){
 	if(!window.location.hash) {
 		window.location = window.location + '#caro';
