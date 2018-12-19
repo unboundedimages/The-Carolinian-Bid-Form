@@ -2,11 +2,58 @@ html{
 	height:100%;
 	margin:0;
 	padding:0;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 #CaroBanner {
 	margin: -4px;
 	width: 100.4vw;
+}
+
+/* #CaroBanner {
+	margin: -4px;
+	width: 100.4vw;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+} */
+/* @keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+} */
+
+div#home {
+    z-index: 11;
+    position: relative;
+    width: 2.5%;
+    height: auto;
+    bottom: -19px;
+    margin: -17px;
+    text-align: center;
+}
+
+div#line-it {
+    position: relative;
+    left: 500px;
+    top: 12px;
 }
 
 body {
