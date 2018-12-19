@@ -8,6 +8,42 @@ const bodyParser = require ('body-parser');
 const db = require ("./config/dbConnection.js")
 const PORT = process.env.PORT || 8080;
 const app = express();
+const session = require('express-session')
+// consxole.log(session)
+const MySQLStore = require('express-mysql-session')(session);
+let options = {
+    host: 'localhost',
+    port: 8080,
+    user: 'process.env.dbu',
+    password: 'process.env.dbp',
+	database: 'process.env.dbn',
+	clearExpired: true,
+    // How frequently expired sessions will be cleared; milliseconds:
+    checkExpirationInterval: 1000 * 6, //6 seconds
+    // The maximum age of a valid session; milliseconds:
+    expiration: 86400000,
+    // Whether or not to create the sessions database table, if one does not already exist:
+    createDatabaseTable: true,
+    // Number of connections when creating a connection pool:
+    connectionLimit: 1,
+    // Whether or not to end the database connection when the store is closed.
+    // The default value of this option depends on whether or not a connection was passed to the constructor.
+    // If a connection object is passed to the constructor, the default value for this option is false.
+    endConnectionOnClose: true,
+    charset: 'utf8mb4_bin',
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+};
+let connection = mysql.createConnection(options); // or mysql.createPool(options);
+// let sessionStore = new MySQLStore({}/* session store options */, connection);
+let sessionStore = new MySQLStore(options, connection);
+// sessionStore.close();
 var SquareConnect = require('square-connect');
 
 var defaultClient = SquareConnect.ApiClient.instance;
@@ -22,10 +58,23 @@ var transactions_api = new SquareConnect.TransactionsApi();
 
 
 //connect express server 
+app.disable('x-powered-by')
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '/views')));
 app.set('views', './views');
+app.use(function(req, res, next) {
+	res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+	next();
+  });
+app.use(session({
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}));  
 app.engine('hbs', exphbs({defaultLayout: 'main', layoutsDir: __dirname + '/views/layouts/'}));
 app.set('view engine', '.hbs')
 app.listen(PORT, function() {
@@ -37,12 +86,9 @@ app.get('/', function(req, res) {
 	console.log("we in here")
 	res.render('index')
 });
-//get /add route
-app.get("/add", (req,res)=>{
-	res.redirect("/")
-})
+
 // Insert into Table
-app.post("/add", (req, res, next)=> {
+app.post("/", (req, res, next)=> {
 	//creates time stamp
 	let timenow = new Date();
 	//create random key for record locator
@@ -87,12 +133,18 @@ app.post("/add", (req, res, next)=> {
 				// throw err;
 			}
 			else {
-				// res.render('pybtyfts')
-			console.log("data inserted", res);
-		}
+				console.log("data inserted", res);
+			}
 		});
+		res.redirect(307,'/add')
+}); //end of add post route
 
-
+//get /add route
+app.get("/add", (req,res)=>{
+	res.redirect("/")
+});
+app.post('/add', (req,res)=>{
+console.log(req.body.random_key)
 //display queries in DOM
 var queires = [
 	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
@@ -103,7 +155,7 @@ db.query(queires.join(';'), function(error, results, fields){
 	
 	if(error) { 
 		console.log("Please MercifulAllah work....", error)
-		res.redirect('/')
+		// res.redirect('/')
 		// throw error;
 	}
 	var rec = {
@@ -114,7 +166,7 @@ db.query(queires.join(';'), function(error, results, fields){
 	res.render('pybtyfts', {rec})
 	// return;
 });
-}); //end of add post route
+})
 
 // get redirect to home
 app.get('/payment',(req,res)=>{
@@ -296,10 +348,10 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 //otherwise the date is greyed out
 // bid add in print, must be submitted by 5pm Tuesday of same week. Boss changed it to 12pm noon ** done
 // otherwise the date for print will be greyed out for that week **
+// paid true/false ** done
 
 // ***********************************************************//
 
-// paid true/false
 // time that card was processed == handled through square 
 	
 //upon statement, user is emailed invoice/reciept, and a cc of invoice goes to == handled through sqauare receipt
