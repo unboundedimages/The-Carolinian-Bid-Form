@@ -1,9 +1,8 @@
 'use strict';
 window.onclick= myStopFunction;
 window.onkeyup = myStopFunction;
-var myVar = setInterval(myTimer, 1000 * 60);
-// var myVar = setInterval(myTimer, 1000 * 60 * 5);
-// var myVar2 = setInterval(gotoUrl, 5000)
+window.onmousemove = myStopFunction;
+var myVar = setInterval(myTimer, 1000 * 60 * 5);
 
 function myTimer() {
     document.getElementById("notify").style.display="block"
@@ -15,7 +14,6 @@ function myTimer() {
                 window.onclick = function hideDiv(){
                     clearInterval(myVar2)
                     document.getElementById("notify").style.display="none"
-                    // myStopFunction();
                     return myVar;
                 }
                 
@@ -29,17 +27,6 @@ var nut = true;
 var up = true;
 function myStopFunction() {
     nut = false;
-    // clearInterval(myVar && myVar2);
     clearInterval(myVar)
-	// clearInterval(myVar2);
-   
-    myVar= setInterval(myTimer,10000);
-    //alert("dddd")
-    // myVar2 = setInterval(gotoUrl, 5000) //35 seconds - 5 from myVar is 25 sec
-    //alert("dddd")
-	
-    //alert("dddd")
-  	//myTimer();
-    //nut=true;
-	
+    myVar= setInterval(myTimer,1000 * 60 * 5);
 }
