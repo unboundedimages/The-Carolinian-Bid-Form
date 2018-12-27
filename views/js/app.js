@@ -1,10 +1,4 @@
 // "use strict";
-// if(performance.navigation.type == 2)
-// {
-//     //Do your code here
-//     location.reload(true);
-// }
-
 function getBidNfo() {
 
 		let bidText = document.getElementById("ta");
@@ -97,7 +91,6 @@ console.log("estimate xxxx: ", estimate)
     };
     console.log("new estimate xxxxxxxxxxxxxxxxxxxxxx: ", new_estimate)
 
-    // calculateHeight();
     function getit(getruns) {
         calculateHeight();
         document.getElementById('runs').focus()
@@ -233,19 +226,30 @@ function execCommandOnElement(el, commandName, value) {
 }
 
 // Toggle H1 and H3
-let reSize = true;
+let h1Size = true;
 let h3Size = true;
+let ulBullets = true;
 function callResizeH1(){
 document.getElementById('h1').addEventListener("click",function () {
-    if(reSize || h3Size == false){
-    reSize = false;
+    // if(h1Size || h1Size === true && h3Size === false){
+    if(h1Size == true && ulBullets== true){
+    h1Size = false;
     h3Size = true;
+    ulBullets = true;
+    
     (()=>document.execCommand( 'formatBlock',false,'<h1>'))()}
-    else {
-        reSize = true;
+    else if(h1Size === true && ulBullets === false) {
+        h1Size = false;
         h3Size = true;
-    // noH1();
-    (()=>document.execCommand('formatBlock', false, 'div'))()
+        ulBullets = true;
+    document.execCommand('insertUnorderedlist', false, 'div')
+    document.execCommand( 'formatBlock',false,'<h1>')
+    }
+    else {
+        h1Size = true;
+        h3Size = true;
+        ulBullets = true;
+    document.execCommand('formatBlock', false, 'div')
     }
 })
 }
@@ -253,13 +257,24 @@ callResizeH1();
 
 function callResizeH3() {
 document.getElementById('h3').addEventListener("click",function () {
-    if(h3Size || reSize == false){
-        h3Size = false;
-        reSize = true;
-        (()=>document.execCommand( 'formatBlock',false,'<h3>'))()}
+    if(h3Size === true && ulBullets === true){
+            h3Size = false;
+            h1Size = true;
+            ulBullets=true;
+            document.execCommand( 'formatBlock',false,'<h3>')
+        } 
+        else if(h3Size === true && ulBullets === false){
+            h3Size = false;
+            h1Size = true;
+            ulBullets=true;
+            document.execCommand('insertUnorderedlist', false, null)
+            document.execCommand( 'formatBlock',false,'<h3>')
+        }
+        
         else {
         h3Size = true;
-        reSize = true;
+        h1Size = true;
+        ulBullets=true;
         (()=>document.execCommand('formatBlock', false, 'div'))()
     }
 })
@@ -268,7 +283,37 @@ callResizeH3();
 
 // ends H1 and H3 toggle
 
+function noH1ResizeForUl() {
+    document.getElementById("bullet-list").addEventListener("click", function (){
+        
+        if (ulBullets || h3Size == false || ulBullets === true && h1Size == false) {
+            ulBullets = false;
+            h1Size = true;
+            h3Size = true;
+            document.execCommand('formatBlock', false, 'div')
+            document.execCommand('insertUnorderedlist', false, 'div')
+            document.execCommand('formatBlock', false, 'div')
+        }else{
+            ulBullets = true;
+            h1Size = true;
+            h3Size = true;
+            document.execCommand('formatBlock', false, 'div')
+            document.execCommand('insertUnorderedlist', false, 'div')
+            function changeFontSize(fontvar) {
+                 fontvar = 20;
+                var div = document.getElementById("ta");
+                var currentFont = div.style.fontSize.replace("pt", "");
+            
+                div.style.fontSize = parseInt(currentFont) + parseInt(fontvar) + "pt";
+            }
+            changeFontSize()
+            document.execCommand('formatBlock', false, 'div')
+            return;
+        }
 
+    })
+}
+noH1ResizeForUl()
 function removeDot(){
     execCommandOnElement(document.getElementById("ta"), "insertUnorderedlist");
     document.getElementById("ta").innerHTML="";
@@ -277,7 +322,6 @@ removeDot();
 
 function miniUpdate() {
     let dow = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    // let twelve= 12;
     let fin = new Date;
     let shutDown = fin.getDay();
     let today= dow[shutDown]
