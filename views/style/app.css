@@ -40,20 +40,40 @@ html{
 	}
 } */
 
+div#notify {
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display:none;
+	text-align: center;
+}
+
 div#home {
     z-index: 11;
     position: relative;
-    width: 2.5%;
+    display: inline-block;
+    width: 27px;
     height: auto;
-    bottom: -19px;
+    /* bottom: -19px; */
     margin: -17px;
     text-align: center;
 }
 
 div#line-it {
     position: relative;
-    left: 500px;
-    top: 12px;
+    right: 30px;
+    top: 2px;
+    height: auto;
+}
+
+div#bid-verify {
+    text-transform: uppercase;
+	width: 112px;
+	height:auto;
+	left: 110px;
+	color:black;
+	position:relative;
+	top:32px;
 }
 
 body {
@@ -614,7 +634,8 @@ select {
 h1 {
 	text-transform: uppercase;
 	text-align:center;
-	font-size: 1.5em;
+	font-size: 18pt !important;
+	/* font-size: 1.5em; */
 }
 h3 {
 	font-weight: 600;
@@ -1022,7 +1043,15 @@ a.link_style:hover {
 		left:0;
 	}
 }
-
+@media screen and (max-width: 580px) and (min-width: 430px) {
+	#CaroBanner {
+		width: 575px;
+		margin: auto;
+	}
+	div.container {
+		top: -3vh;
+	}
+}
 @media screen and (max-width: 429px) and (min-width: 400px) {
 	#medias {
 		width:100%;
@@ -1031,6 +1060,11 @@ a.link_style:hover {
 		/* width: 100%; */
 		width: 132vw;
 		/* margin: -5px; */
+	}
+
+	div#bid-verify {
+		top: -9px;
+		left: 68px;
 	}
 
 	#bid-form {
@@ -1180,6 +1214,12 @@ a.link_style:hover {
 /* @media screen and (max-width: 736px) and (min-width: 660px) { */
 	body{
 		background-size: cover;
+	}
+	div#bid-verify {
+		/* bottom: -23px; */
+		top: -6px;
+		left: 63px;
+		position: relative;
 	}
 	.container {
 		/* position: absolute; */
