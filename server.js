@@ -49,8 +49,8 @@ var SquareConnect = require('square-connect');
 var defaultClient = SquareConnect.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = process.env.sandbox_token;
-// oauth2.accessToken = process.env.token;
+// oauth2.accessToken = process.env.sandbox_token;
+oauth2.accessToken = process.env.token;
 const transactions_api = new SquareConnect.TransactionsApi();
 
 
@@ -207,8 +207,8 @@ db.query(clientPaid.join(';'), pricePaid, function (err, result) {
 //possibly create another table for this.  The record locator can be used in
 //square to show proof of payments  Doing it on this side would be for redundancy.
 console.log(req.body)
-	// var squareLocationId = process.env.location;
-	var squareLocationId = process.env.sandbox_location;
+	var squareLocationId = process.env.location;
+	// var squareLocationId = process.env.sandbox_location;
 	console.log("this is reques_params: ", request_params);
 	var idempotency_key = require('crypto').randomBytes(64).toString('hex');
 	price = parseInt(request_params._price_)

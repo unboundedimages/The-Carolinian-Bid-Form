@@ -27,12 +27,12 @@
   "homepage": "https://github.com/unboundedimages/The-Carolinian-Bid-Form#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-mysql-session": "^2.0.1",
     "mysql": "^2.16.0",
-    "mysql2": "^1.6.1",
-    "square-connect": "^2.20180918.1"
+    "mysql2": "^1.6.4",
+    "square-connect": "^2.20181212.0"
   }
 }
