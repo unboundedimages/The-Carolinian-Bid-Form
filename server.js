@@ -1,4 +1,5 @@
 //require dependencies
+'use strict;'
 const express = require ('express');
 const exphbs  = require('express-handlebars');
 const mysql = require('mysql');
@@ -9,7 +10,6 @@ const db = require ("./config/dbConnection.js")
 const PORT = process.env.PORT || 8080;
 const app = express();
 const session = require('express-session')
-// consxole.log(session)
 const MySQLStore = require('express-mysql-session')(session);
 let options = {
     host: 'localhost',
@@ -49,9 +49,10 @@ var SquareConnect = require('square-connect');
 var defaultClient = SquareConnect.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-// oauth2.accessToken = process.env.sandbox_token;
-oauth2.accessToken = process.env.token;
-var transactions_api = new SquareConnect.TransactionsApi();
+oauth2.accessToken = process.env.sandbox_token;
+// oauth2.accessToken = process.env.token;
+const transactions_api = new SquareConnect.TransactionsApi();
+
 
 
 ///////////////////////////////////
@@ -108,7 +109,6 @@ app.post("/", (req, res, next)=> {
 	}
 	makeid();
 	//to do list, convert timenow to EST and have that post to DB for entry time log.
-	// let timenow = Date.now();
 	console.log("this is text text text x3: ", text3)
 	console.log("this is the time ====================================================", timenow)
 	
@@ -130,7 +130,6 @@ app.post("/", (req, res, next)=> {
 			if (err){ 
 				console.log("Error inserting into db:  ", err.sqlMessage)
 			next("OOPS")
-				// throw err;
 			}
 			else {
 				console.log("data inserted", res);
@@ -149,22 +148,21 @@ console.log(req.body.random_key)
 var queires = [
 	"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
 	"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
-	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1"
+	"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1",
+	"SELECT email FROM bid_nfo ORDER BY id DESC LIMIT 1"
 ]
 db.query(queires.join(';'), function(error, results, fields){
 	
 	if(error) { 
 		console.log("Please MercifulAllah work....", error)
-		// res.redirect('/')
-		// throw error;
 	}
 	var rec = {
 		rec_locator: results[0][0].rec_locator,
 		price: results[1][0].price,
-		bid_text: results[2][0].bid_ad
+		bid_text: results[2][0].bid_ad,
+		email: results[3][0].email
 	}
 	res.render('pybtyfts', {rec})
-	// return;
 });
 })
 
@@ -175,12 +173,16 @@ app.get('/payment',(req,res)=>{
 //payment route to square
 app.post('/payment', function(req, res, next) {
 	console.log("we in here again")
-	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.body.random_key],(err, rows, field)=> {
-		console.log(req.body.random_key)
+	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.body.random_key,req.body.email_],(err, rows, field)=> {
+		console.log("and this wonderful bit of code is the req.body.random_key: ", req.body.random_key)
+		console.log("and this wonderful bit of code is the req.body.random_key: ", req.body.email_)
 		console.log(rows)
+		let reC = {
+			//send to DOM
+			applicationId: process.env.applicatoin_id
+		}
 			if (!err)
 			res.render('ccpgtm', {rows})
-			// console.log("sucessful selection form")
 			else
 			console.log(err);
 		});
@@ -191,7 +193,10 @@ app.get('/thanks', (req,res)=> {
 )
 app.post('/thanks', (req,res, next)=>{
 //write an insert that puts  a paid status into the dB with the record locator.
-let pricePaid = req.body.rec_locator
+let request_params = req.body;
+let pricePaid = req.body.rec_locator;
+let theMale = req.body.email;
+console.log("this is the male:", theMale)
 console.log("this is the recLoc to link the paid column that should be updated: ", pricePaid)
 clientPaid = ["UPDATE bid_nfo SET paid = 'Paid' WHERE rec_locator = ?"]
 db.query(clientPaid.join(';'), pricePaid, function (err, result) {
@@ -202,9 +207,9 @@ db.query(clientPaid.join(';'), pricePaid, function (err, result) {
 //possibly create another table for this.  The record locator can be used in
 //square to show proof of payments  Doing it on this side would be for redundancy.
 console.log(req.body)
-	var squareLocationId = process.env.location;
-	// var squareLocationId = process.env.sandbox_location;
-	var request_params = req.body;
+	// var squareLocationId = process.env.location;
+	var squareLocationId = process.env.sandbox_location;
+	console.log("this is reques_params: ", request_params);
 	var idempotency_key = require('crypto').randomBytes(64).toString('hex');
 	price = parseInt(request_params._price_)
 	console.log(price)
@@ -216,22 +221,18 @@ console.log(req.body)
 			currency: 'USD'
 		},
 		idempotency_key: idempotency_key,
-		note: request_params.rec_locator
-		
+		note: request_params.rec_locator + "   -   " + request_params._email_,
 	};
-	//update paid status
-	// db.query(" UPDATE bid_nfo SET paid = 'Paid' WHERE rec_locator = ?", )
-	// console.log("console ref_id: ", request_body.reference_id)
 	transactions_api.charge(squareLocationId, request_body).then(function(data) {
+		console.log("wtf is data: ", data)
 		
 		var queires = [
 					"SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
 					"SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
 					"SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1",
-					// "SELECT name FROM bid_nfo ORDER BY id DESC LIMIT 1",
 				]
 				db.query(queires.join(';'), function(error, results, fields){
-					
+				console.log("this is results xxxx ", results)	
 			if(error) {
 				console.log("it didn't make it: ", error)
 			}
@@ -239,16 +240,12 @@ console.log(req.body)
 				rec_locator: results[0][0].rec_locator,
 				price: results[1][0].price,
 				bid_text: results[2][0].bid_ad,
-				// company_name: results[3][0].name
 			}
-			res.render('tycbrs', {rec})
-			// return;
-			})
+			res.render('tycbrs',rec)
+		})
 	}, function(error) {
-		res.send({
-			'title': 'Payment Failure',
-			'result': "Payment Failed (see console for error output)"
-		});
+			console.log("what is broken: ", error)
+			res.redirect('/')
 	});
 });
 //CREATE db
@@ -273,10 +270,8 @@ app.get('/ad', (req,res)=>{
 
 //get all rec	ords
 app.get("/fetch-seek-find-locate", (req,res)=> { 
-	// console.log("xx+++++++++++++++++  ", req._events)
 	db.query("SELECT * FROM bid_nfo", (err, rows, field)=> {
 			if (!err)
-			// console.log("ooooooooOOOOOOOoooooooOOOOOOOOooooooOOOOOOOoooooOOOO: ",rows[0].rec_locator);
 			res.send(rows)
 			else
 			console.log(err);
@@ -287,9 +282,7 @@ app.get("/fetch-seek-find-locate", (req,res)=> {
 //get specific single record
 app.get("/fetch-seek-find-locate/:id", (req,res,next)=> { 
 	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.params.id],(err, rows, field)=> {
-		// console.log(rows)
 			if (!err)
-			// res.send(rows)
 			res.render('myquery', {rows})
 			else
 			console.log(err);
@@ -299,13 +292,9 @@ app.get("/fetch-seek-find-locate/:id", (req,res,next)=> {
 
 app.post("/fetch-seek-find-locate/submit", (req,res)=> { 
 	db.query("SELECT * FROM bid_nfo WHERE rec_locator = ?",[req.params.id],(err, rows, field)=> {
-		// if (!err)
 		var id = req.body.id;
 		console.log("req req req req req rqe req req rqe your body:  ", id)
-			// res.send(rows)
 			res.redirect('/fetch-seek-find-locate/' + id)
-			// else
-			// console.log(err);
 		}
 	)
 })
@@ -345,14 +334,14 @@ app.get("/fetch-seek-find-locate-name/:id", (req,res)=> {
 //and the amount that's billed, with payment options. ** done
 //paypal, square, cashapp etc.  ** sqaure done
 // create code that only allows bids to be submitted by a certain time ** done clientside
-//otherwise the date is greyed out
+//otherwise the date is greyed out ** done
 // bid add in print, must be submitted by 5pm Tuesday of same week. Boss changed it to 12pm noon ** done
 // otherwise the date for print will be greyed out for that week **
 // paid true/false ** done
 
 // ***********************************************************//
 
-// time that card was processed == handled through square 
+// time that card was processed == handled through square ** done
 	
 //upon statement, user is emailed invoice/reciept, and a cc of invoice goes to == handled through sqauare receipt
 //companies email.
