@@ -1,5 +1,12 @@
 <div class="container">
-		<header><h2 id="bid-form">The Carolinian <b>Bid Form</b></h2></header>
+		<header>
+			<h2 id="bid-form">
+				<div id='home'>
+
+				</div>
+				The Carolinian <b>Bid Form</b>
+			</h2>
+		</header>
 		<div id=text-editor>
 			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h1>'); getBidNfo();" contenteditable="false">
 				<b>h1</b>
@@ -16,7 +23,7 @@
 			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null); getBidNfo();" contenteditable="false">
 				<u>U</u>
 			</button>
-			<button class="button" id="bullet-list" class="fontStyle" onclick="document.execCommand('insertUnorderedlist'); getBidNfo();" contenteditable="false">
+			<button class="button" id="bullet-list" class="fontStyle" onclick="getBidNfo();" contenteditable="false">
 				<img id="bul-list" src="/img/bullet-List.png">
 			</button>
 			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
@@ -119,3 +126,4 @@
 			</form>
 </div> <!-- container -->
 <script type="text/javascript" src="/js/app.js"></script>	
+<script type="text/javascript" src="/js/media.js"></script>
