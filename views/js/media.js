@@ -15,5 +15,4 @@ function copyRecord(e) {
 	var x = document.getElementById('invisiline');
 	x.select();
 	document.execCommand("copy");
-	// alert("Copied the text: " + x.value);
 }
