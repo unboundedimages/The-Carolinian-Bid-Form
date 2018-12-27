@@ -1,6 +1,13 @@
 <div class="container border-main">
-	<div id="CaroMan"></div>
-	<header><h2 id="bid-form">Please review your BID AD before continuing: </h2></header>	
+	<header>
+		<h2 id="bid-form">
+			<div id='home'>
+
+			</div>
+			The Carolinian <b>Bid Form</b>
+		</h2>
+	</header>
+	<div id="bid-verify">BID AD preview: </div>
 	<div id="ta_2">
 		<form id="ontothenext" action='/payment' method="post">
 			<div class="black-line">
@@ -8,8 +15,8 @@
 			</div>
 			<div id="reviw-Button">
 				<input type="text" id="radKey" name="random_key" value="{{{rec.rec_locator}}}" readonly hidden>
+				<input type="text" id="radKey" name="email_" value="{{{rec.email}}}" readonly hidden>
 			</div>
-			{{!-- <br> --}}
 		</form>
 	</div>
 	<div id="confirmBtn">
@@ -17,9 +24,6 @@
 	</div>
 </div>
 <script type="text/javascript">
-window.onbeforeunload = function (e) {
-    sessionStorage.clear();
-};
 	function noBack()
 	{
 		window.history.forward()
@@ -27,5 +31,9 @@ window.onbeforeunload = function (e) {
 	noBack();
 	window.onload = noBack;
 	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+	window.onbeforeunload = function (e) {
+    sessionStorage.clear();
+	};
 	window.onunload = function() { void (0) }
 </script>
+<script type="text/javascript" src="/js/media.js"></script>
