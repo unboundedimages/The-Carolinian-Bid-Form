@@ -1,6 +1,9 @@
 <div class="container border-main">
 	<header>
         <h2 id="bid-form">
+            <div id='home'>
+
+            </div>
             The Carolinian <b>Bid Form</b>
         </h2>
     </header>
@@ -47,35 +50,33 @@
                             </tr>
                         </tbody>
                     </table>
-                    <!--
-                    After a nonce is generated it will be assigned to this hidden input field.
-                    -->
-                    {{!-- <input type="hidden" id="card-nonce" name="nonce"> --}}
                     <input id="card-nonce" name="nonce" hidden>
-                    {{!-- <input value="{{rec.price}}" id="_price" name="_price"> --}}
                     {{#each rows}}
-                    <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" hidden>
-                    <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" hidden>
+                        <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" readonly hidden>
+                        <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" hidden>
+                        <input value="{{this.email}}" id="_email_" name="_email_" hidden>
                     {{/each}}
                     	<input type="text" id="did_pay" name="did_pay" value="paid" hidden>
-
-                    {{!-- <input value="{{rec.company_name}}" id="comp_name" name="company_name"> --}}
                 </form>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-	function noBack()
-	{
-		window.history.forward()
-	}
-	noBack();
-	window.onload = noBack;
-	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
-	window.onunload = function() { void (0) }
-	</script>
+<div id="appId" hidden>{{{reC}}}</div>
 <!-- link to the SqPaymentForm library -->
 <link rel="stylesheet" type="text/css" href="squareCss/sqpaymentform.css">
 <script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
 <script type="text/javascript" src="/js/sqpaymentform.js"></script>
+<script type="text/javascript">
+    window.onbeforeunload = function (e) {
+        sessionStorage.clear();
+    };
+	function noBack()
+	{
+		window.history.forward()
+	} noBack();
+	window.onload = noBack;
+	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+	window.onunload = function() { void (0) }
+</script>
+<script type="text/javascript" src="/js/media.js"></script>
