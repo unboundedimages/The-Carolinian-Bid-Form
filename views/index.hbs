@@ -1,129 +1,141 @@
 <div class="container">
-		<header>
-			<h2 id="bid-form">
-				<div id='home'>
+	<header>
+		<h2 id="bid-form">
+			<div id='home'>
 
-				</div>
-				The Carolinian <b>Bid Form</b>
-			</h2>
-		</header>
-		<div id=text-editor>
-			<button class="button" id="h1" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h1>'); getBidNfo();" contenteditable="false">
-				<b>h1</b>
-			</button>
-			<button class="button" id="h3" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h3>'); getBidNfo();" contenteditable="false">
-				<b>h3</b>
-			</button>
-			<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null); getBidNfo();" title="Bold Highlighted Text" contenteditable="false">
-				<b>B</b>
-			</button>
-			<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null); getBidNfo();" title="Italicize Highlighted Text" contenteditable="false">
-				<i>i</i>
-			</button>
-			<button class="button" class="fontStyle" id= "be-underline" onclick="document.execCommand( 'underline',false,null); getBidNfo();" contenteditable="false">
-				<u>U</u>
-			</button>
-			<button class="button" id="bullet-list" class="fontStyle" onclick="getBidNfo();" contenteditable="false">
-				<img id="bul-list" src="/img/bullet-List.png">
-			</button>
-			<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);" contenteditable="false">
-				<b>&#x27f2;</b>
-			</button>
+			</div>
+			The Carolinian <b>Bid Form</b>
+		</h2>
+	</header>
+	<div id=text-editor>
+		<button class="button" id="h1" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h1>'); getBidNfo();"
+		 contenteditable="false">
+			<b>h1</b>
+		</button>
+		<button class="button" id="h3" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h3>'); getBidNfo();"
+		 contenteditable="false">
+			<b>h3</b>
+		</button>
+		<button id="bold" class="button" class="fontStyle" onclick="document.execCommand( 'bold',false,null); getBidNfo();"
+		 title="Bold Highlighted Text" contenteditable="false">
+			<b>B</b>
+		</button>
+		<button id="italics" class="button" class="fontStyle" onclick="document.execCommand('italic',false,null); getBidNfo();"
+		 title="Italicize Highlighted Text" contenteditable="false">
+			<i>i</i>
+		</button>
+		<button class="button" class="fontStyle" id="be-underline" onclick="document.execCommand( 'underline',false,null); getBidNfo();"
+		 contenteditable="false">
+			<u>U</u>
+		</button>
+		<button class="button" id="bullet-list" class="fontStyle" onclick="getBidNfo();" contenteditable="false">
+			<img id="bul-list" src="/img/bullet-List.png">
+		</button>
+		<button class="button" id="undo" class="fontStyle" onclick="document.execCommand( 'undo','true',null);"
+		 contenteditable="false">
+			<b>&#x27f2;</b>
+		</button>
 
-			<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);" contenteditable="false">
-				<b>&#x27f3;</b>
-			</button>
+		<button class="button" id="redo" class="fontStyle" onclick="document.execCommand( 'redo','true',null);"
+		 contenteditable="false">
+			<b>&#x27f3;</b>
+		</button>
+	</div>
+	<form action="/" method="post">
+		<div id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 		</div>
-			<form action="/" method="post">
-				<div id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
-				</div>	
-				<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
+		<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
 				</textarea>
-				<p class="how-long">
-					<b>
-						How many bid runs: 
-					</b>
-					<select name="runs" id="runs" onfocus="enable_dates(this); show_inputs(this); " onchange="enable_dates(this); show_inputs(this); getit();" required>
-						<option value="">--</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-					</select>
-				</p>
-				<div class="input-group">
-					<input class="name-puts" type="text" onkeyup="getBidNfo()" name="company" pattern="[A-Za-z0-9-_. ]+" required>
+		<p class="how-long">
+			<b>
+				How many bid runs:
+			</b>
+			<select name="runs" id="runs" onfocus="enable_dates(this); show_inputs(this); " onchange="enable_dates(this); show_inputs(this); getit();"
+			 required>
+				<option value="">--</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+		</p>
+		<div class="input-group">
+			<input class="name-puts" type="text" onkeyup="getBidNfo()" name="company" pattern="[A-Za-z0-9-_. ]+" required>
+			<span class="highlight"></span>
+			<span class="bar"></span>
+			<label class="label-names">Company Name</label>
+		</div>
+		<div id="email-puts">
+			<div class="input-group">
+				<input class="name-puts" type="email" name="email" pattern="[A-Za-z0-9-_.@]+" required>
+				<span class="highlight"></span>
+				<span class="bar"></span>
+				<label class="label-names">
+					Email
+				</label>
+			</div>
+		</div>
+		<div id="toast" hidden>
+			<div id="desc">
+				You have entered an invalid date.
+				<br>
+				Please select either
+				<br>
+				Sunday or Thursday.
+			</div>
+		</div>
+		<div id="date-groups">
+			<div class="i-group1">
+				<div class="input-group" id="1" hidden>
+					<input class="datepicker" type="text" pattern="[0-9-]+" name="input1" id="date1" onkeypress="return event.keyCode != 13;"
+					 onkeydown="noText();" autocomplete="off" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					<label class="label-names">Company Name</label>
+					<label class="label-names">
+						Date 1
+					</label>
 				</div>
-				<div id="email-puts">
-					<div class="input-group">
-						<input class="name-puts" type="email" name="email" pattern="[A-Za-z0-9-_.@]+" required>
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label class="label-names">
-							Email
-						</label>
-					</div>
+			</div>
+			<div class="i-group1" id="two">
+				<div class="input-group" id="2" hidden>
+					<input class="datepicker" type="text" pattern="[0-9-]+" name="input2" id="date2" onkeypress="return event.keyCode != 13;"
+					 autocomplete="off" required disabled>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="label-names">
+						Date 2
+					</label>
 				</div>
-				<div id="toast" hidden>
-					<div id="desc" >
-						You have entered an invalid date. 
-						<br>
-						Please select either 
-						<br>
-						Sunday or Thursday.
-					</div>
+			</div>
+			<div class="i-group1" id="three">
+				<div class="input-group" id="3" hidden>
+					<input class="datepicker" type="text" pattern="[0-9-]+" name="input3" id="date3" onkeypress="return event.keyCode != 13;"
+					 autocomplete="off" required disabled>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="label-names">
+						Date 3
+					</label>
 				</div>
-			<div id="date-groups">	
-					<div class="i-group1">
-						<div class="input-group" id="1" hidden>
-							<input class="datepicker" type="text" pattern="[0-9-]+" name="input1" id="date1" onkeypress="return event.keyCode != 13;" onkeydown="noText();" autocomplete="off" required>
-							<span class="highlight"></span>
-							<span class="bar"></span>
-							<label class="label-names">
-								Date 1
-							</label>
-						</div>
-					</div>
-					<div class="i-group1" id="two">
-						<div class="input-group" id="2" hidden>
-							<input class="datepicker" type="text" pattern="[0-9-]+" name="input2" id="date2" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
-							<span class="highlight"></span>
-							<span class="bar"></span>
-							<label class="label-names">
-								Date 2
-							</label>
-						</div>
-					</div>	
-					<div class="i-group1" id="three">	
-						<div class="input-group" id="3" hidden>
-							<input class="datepicker" type="text" pattern="[0-9-]+" name="input3" id="date3" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
-							<span class="highlight"></span>
-							<span class="bar"></span>
-							<label class="label-names">
-								Date 3
-							</label>
-						</div>
-					</div>
-					<div class="i-group1" id="four">
-						<div class="input-group" id="4" hidden>
-							<input class="datepicker" type="text" pattern="[0-9-]+" name="input4" id="date4" onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
-							<span class="highlight"></span>
-							<span id="bar-4" class="bar"></span>
-							<label class="label-names">
-								Date 4
-							</label>
-						</div>
-					</div>
-			</div>	{{!-- ends date-group  --}}
-			<button class="caro-submit" id="submit-B" onclick="getit();" onkeydown="getit();">Process</button>
-				{{!-- Used to push text to db --}}
-				<textarea contenteditable="true" id="lines" type="text" name="price">
+			</div>
+			<div class="i-group1" id="four">
+				<div class="input-group" id="4" hidden>
+					<input class="datepicker" type="text" pattern="[0-9-]+" name="input4" id="date4" onkeypress="return event.keyCode != 13;"
+					 autocomplete="off" required disabled>
+					<span class="highlight"></span>
+					<span id="bar-4" class="bar"></span>
+					<label class="label-names">
+						Date 4
+					</label>
+				</div>
+			</div>
+		</div> {{!-- ends date-group --}}
+		<button class="caro-submit" id="submit-B" onclick="getit();" onkeydown="getit();">Process</button>
+		{{!-- Used to push text to db --}}
+		<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
-				<input type="text" id ="lines_2" name="price_2" hidden>
-			</form>
+		<input type="text" id="lines_2" name="price_2" hidden>
+	</form>
 </div> <!-- container -->
-<script type="text/javascript" src="/js/app.js"></script>	
+<script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript" src="/js/media.js"></script>
