@@ -1,5 +1,10 @@
 <div class="container border-main">
-	<header>
+    <header>
+        <div>
+            <h1>
+                {{errRes.errorMessage}}
+            </h1>
+        </div>
         <h2 id="bid-form">
             <div id='home'>
 
@@ -8,55 +13,64 @@
         </h2>
     </header>
     <div id="CaroMan"></div>
-        {{#each rows}}
+    {{#each rows}}
     <div id="bill">
-       <b> Your bill comes out to: <span class="money">{{this.price}}</span></b>
-       <br>
+        <b> Your bill comes out to: <span class="money">{{this.price}}</span></b>
+        <br>
         <div>Record locator: <span class="money2">{{this.rec_locator}}</span></div>
     </div>
-        {{/each}}
     <div id="ta_3">
-        <section id="toast2" hidden>The information is incorrect.<br>  
-                Please check your card and try again
+        <section id="toast2" hidden>The information is incorrect.<br>
+            Please check your card and try again
         </section>
         <div id="form-container">
             <div id="sq-ccbox">
                 <form id="nonce-form" novalidate action="/thanks" method="post">
-                    
+                    <div id='error'>
+                        {{errRes.errorMessage2}}
+                    </div>
                     <table>
                         <tbody>
                             <tr>
                                 <td>Card Number:</td>
-                                <td><div id="sq-card-number"></div></td>
+                                <td>
+                                    <div id="sq-card-number"></div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>CVV:</td>
-                                <td><div id="sq-cvv"></div></td>
+                                <td>
+                                    <div id="sq-cvv"></div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Expiration Date:</td>
-                                <td><div id="sq-expiration-date"></div></td>
+                                <td>
+                                    <div id="sq-expiration-date"></div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Postal Code:</td>
-                                <td><div id="sq-postal-code"></div></td>
+                                <td>
+                                    <div id="sq-postal-code"></div>
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
-                                        Process payment
+                                        Process for {{this.price}}
                                     </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <input id="card-nonce" name="nonce" hidden>
-                    {{#each rows}}
-                        <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" readonly hidden>
-                        <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" hidden>
-                        <input value="{{this.email}}" id="_email_" name="_email_" hidden>
+                    <input type="number" value="{{this.price_2}}" id="_price_" name="_price_" readonly hidden>
+                    <input value="{{this.rec_locator}}" id="r_locator" name="rec_locator" readonly hidden>
+                    <input value="{{this.email}}" id="_email_" name="_email_" readonly hidden>
+                    <input value="{{this.price}}" name="price" readonly hidden>
                     {{/each}}
-                    	<input type="text" id="did_pay" name="did_pay" value="paid" hidden>
+                    <input type="text" id="did_pay" name="did_pay" value="paid" readonly hidden>
                 </form>
             </div>
         </div>
@@ -65,18 +79,20 @@
 <div id="appId" hidden>{{{reC}}}</div>
 <!-- link to the SqPaymentForm library -->
 <link rel="stylesheet" type="text/css" href="squareCss/sqpaymentform.css">
-<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+{{!--
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script> --}}
+{{!--
+<script type="text/javascript" src="/js/check.js"></script> --}}
 <script type="text/javascript" src="/js/sqpaymentform.js"></script>
 <script type="text/javascript">
     window.onbeforeunload = function (e) {
         sessionStorage.clear();
     };
-	function noBack()
-	{
-		window.history.forward()
-	} noBack();
-	window.onload = noBack;
-	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
-	window.onunload = function() { void (0) }
+    function noBack() {
+        window.history.forward()
+    } noBack();
+    window.onload = noBack;
+    window.onpageshow = function (evt) { if (evt.persisted) noBack() }
+    window.onunload = function () { void (0) }
 </script>
-<script type="text/javascript" src="/js/media.js"></script>
+<script type="text/javascript" src="/js/refresh.js"></script>
