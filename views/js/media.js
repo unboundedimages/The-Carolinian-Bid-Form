@@ -1,5 +1,5 @@
-window.onload = function carobanner(){
-	if(!window.location.hash) {
+window.onload = function carobanner() {
+	if (!window.location.hash) {
 		window.location = window.location + '#caro';
 		window.location.reload(true);
 		window.history.go(0);
@@ -11,7 +11,7 @@ window.onload = function carobanner(){
 	document.getElementById('home').innerHTML = '<div id="line-it"><a href="/"><img src="/img/home-icon-for-website-1.png"></a></div>';
 }
 
-function copyRecord(e) { 
+function copyRecord(e) {
 	var x = document.getElementById('invisiline');
 	x.select();
 	document.execCommand("copy");
