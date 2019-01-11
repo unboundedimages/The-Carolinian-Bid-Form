@@ -324,43 +324,12 @@ app.post("/thanks", (req, res, next) => {
         "inside the error body: ",
         error.response.body.errors[0].detail
       );
-      // res.redirect('/')
-      // let errRes = {
-      //   errorMessage: error.response.body.errors[0].detail
-      // };
-
-      // let errResJson = JSON.stringify(errRes);
       console.log(errRes);
       console.log(JSON.stringify(errRes));
-      // return errRes;
-      // Error: cannot POST /v2/locations/1B7S8Z5CC97TA/transactions (402)
-      // if(error)
-      // res.render("ccpgtm", { errRes, rows });
       res.render("swwwtpta", { errRes, rows });
-      // res.setHeader("MyHeader", "MyStringifiedDatas");
-      // res.redirect("/payment", 307, { errRes });
-      //   res.redirect(url.format({
-      // 	  pathname:"/payment",
-      // 	  errRes:errRes
-      //   }))
     }
   );
-  // .then(
-  //   app.post("/payment", function(req, res, next) {
-  //     errRes;
-  //     res.render("ccpgtm", errRes);
-  //   })
-  // );
 });
-// app.post("/oops", (req, res, next) => {
-//   // errRes;
-//   console.log("the oops res object ", res);
-//   res.render("swwwtpta");
-// });
-// app.get('/oops', (req, res, next) => {
-// 	console.log("the oops res object ", res)
-// 	res.render('swwwtpta')
-// })
 
 //CREATE db
 
