@@ -50,7 +50,8 @@ let paymentForm = new SqPaymentForm({
     placeholder: "MM/YY"
   },
   postalCode: {
-    elementId: "sq-postal-code"
+    elementId: "sq-postal-code",
+    placehoder: "12345"
   },
   callbacks: {
     cardNonceResponseReceived: function(
