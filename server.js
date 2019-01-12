@@ -282,7 +282,9 @@ app.post("/thanks", (req, res, next) => {
     function(error) {
       console.log("what is broken: ", error);
       let errRes = {
-        errorMessage: error.response.body.errors[0].detail
+        errorMessage: error.response.body.errors[0].detail,
+        msg1: "Invalid CVV Date or ZipCode",
+        msg2: "Please check your card and try again."
         // "errorMessage2": error.response.body.errors[0].
       };
       // let errRes2;
