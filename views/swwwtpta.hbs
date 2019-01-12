@@ -3,7 +3,8 @@
     <header>
         <div>
             <h1>
-                {{errRes.errorMessage}}
+                {{!-- {{errRes.errorMessage}} --}}
+                {{errRes.msg2}}
             </h1>
         </div>
         <h2 id="bid-form">
@@ -23,15 +24,18 @@
     {{!-- {{/each}} --}}
     <div id="ta_3">
         {{!-- {{#if rows.toast}} --}}
-        <section id="toast2">The information is incorrect.<br>
+        {{!-- <section id="toast2">The information is incorrect.<br>
             Please check your card and try again
-        </section>
+        </section> --}}
         {{!-- {{/if}} --}}
         <div id="form-container">
             <div id="sq-ccbox">
                 <form id="nonce-form" novalidate action="/thanks" method="post">
                     <div id='error'>
-                        {{errRes.errorMessage2}}
+                        <li>
+                            {{errRes.msg1}}
+                        </li>
+                        {{!-- • &nbsp;&nbsp;&nbsp;&nbsp;{{errRes.msg1}} --}}
                     </div>
                     <table>
                         <tbody>
