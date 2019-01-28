@@ -24,16 +24,15 @@
 	</div>
 </div>
 <script type="text/javascript">
-	function noBack()
-	{
+	function noBack() {
 		window.history.forward()
 	}
 	noBack();
 	window.onload = noBack;
-	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+	window.onpageshow = function (evt) { if (evt.persisted) noBack() }
 	window.onbeforeunload = function (e) {
-    sessionStorage.clear();
+		sessionStorage.clear();
 	};
-	window.onunload = function() { void (0) }
+	window.onunload = function () { void (0) }
 </script>
 <script type="text/javascript" src="/js/media.js"></script>
