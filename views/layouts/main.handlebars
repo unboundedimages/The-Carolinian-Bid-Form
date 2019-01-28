@@ -25,11 +25,35 @@
 <body>
 	<div id="medias">
 		<div id="CaroBanner"></div>
-		<div id="notify">
-			{{{errRes.errorMessage}}}
+
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">Demo</a>
+			<span onclick="copyEmial()">
+				<div class="dropdown">
+
+					<a href="#" title="Click to copy help@carobids.com to your clipboard and launch your local email." class="dropbtn"
+					 style="color:white;">Contact</a>
+					<div class="dropdown-content">
+						<a href="#" onclick="copyEmial();closeNav();alert('help@carobids.com is copied to your clipboard.  You can now paste it into your email')"
+						 style="font-size:18px" title="copy to clip board">help@carobids.com</a>
+						<a href="mailto:help@carobids.com?Subject=Carolinian%20Bid%20Form%20Inquiry" onclick="copyEmial();closeNav()"
+						 style="font-size:18px" title="Launch your desktop email">Launch
+							your
+							email</a>
+					</div>
+				</div>
+			</span>
 		</div>
-		<div id="CaroMan"></div>
-		{{{body}}}
+
+		<div id="main">
+			<div id="notify">
+				{{{errRes.errorMessage}}}
+			</div>
+			<div id="CaroMan"></div>
+
+			{{{body}}}
+		</div>
 	</div>
 	<script type="text/javascript" src="/js/re.js"></script>
 </body>
