@@ -32,6 +32,8 @@ function myStopFunction() {
 }
 
 // SIDENAV
+let bool = true;
+let booly = false;
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -42,20 +44,22 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
+document.getElementById("contain").addEventListener("click", function() {
+  if (parseInt($("#mySidenav").css("width")) > 0) {
+    bool = true;
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+});
 
-let dgebID = ["CaroBanner", "CaroMan", "ta"];
+let dgebID = ["CaroBanner", "CaroMan"];
 let x = 0;
 for (x; x < dgebID.length; x++) {
   document.getElementById(dgebID[x]).addEventListener("click", function() {
     closeNav();
   });
 }
-document.getElementById("form").addEventListener("click", () => {
-  closeNav();
-});
 
-let bool = true;
-let booly = false;
 document.getElementById("title").addEventListener("click", function() {
   if (bool) {
     bool = false;
@@ -63,14 +67,6 @@ document.getElementById("title").addEventListener("click", function() {
     openNav();
   } else {
     closeNav();
-  }
-});
-
-document.getElementById("contain").addEventListener("click", function() {
-  if (parseInt($("#mySidenav").css("width")) > 0) {
-    bool = true;
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
   }
 });
 
