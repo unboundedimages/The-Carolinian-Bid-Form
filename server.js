@@ -217,6 +217,9 @@ app.post("/payment", function(req, res, next) {
 app.get("/thanks", (req, res) => {
   res.redirect("/");
 });
+app.get("/demo", (req, res) => {
+  res.render("demo");
+});
 app.post("/verifycardinfo", (req, res) => {
   res.render("swwwtpta");
 });
