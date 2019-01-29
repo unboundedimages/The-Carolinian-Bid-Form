@@ -1,31 +1,48 @@
-<div class="goodbye">
-    <header><h2 id="bid-form"><div id='home'></div>The Carolinian <b>Bid Form</b></h2></header>
+<div id="contain" class="goodbye">
+    <header>
+        <h2 id="bid-form">
+            <div id='home'>
+
+            </div>
+            <span id="title" title="Click to open side navigator" style="cursor:pointer" onclick="openNav()">
+                <span style="font-size:30px;" onclick="openNav()">
+                    &#9776;
+                </span>
+                <span>
+                    The Carolinian
+                    <b>
+                        Bid Form
+                    </b>
+                </span>
+            </span>
+        </h2>
+    </header>
     <div>
         <h2>
-            Thank you for placing your bid ad with <a href="http://www.caro.news" title="Visit our website at www.caro.news" target="#" class="link_style">The Carolinian</a>
+            Thank you for placing your bid ad with <a href="http://www.caro.news" title="Visit our website at www.caro.news"
+                target="#" class="link_style">The Carolinian</a>
         </h2>
     </div>
     <div class="space">
-        Please save your record locator for this transatoin: 
+        Please save your record locator for this transatoin:
         <span class="money" title="click on your record locator to copy it to your click board">
         </span>
-            <input id="invisiline" class="money recL" type="text" value="{{this.rec_locator}}" readonly>
+        <input id="invisiline" class="money recL" type="text" value="{{this.rec_locator}}" readonly>
         <button class="copy-btn" onclick="copyRecord()">copy locator</button>
     </div>
-     
+
 </div>
 <div id="CaroMan"></div>
 <script type="text/javascript">
-window.onbeforeunload = function (e) {
-    sessionStorage.clear();
-};
-	function noBack()
-	{
-		window.history.forward()
-	}
-	noBack();
-	window.onload = noBack;
-	window.onpageshow = function(evt) { if (evt.persisted) noBack() }
-	window.onunload = function() { void (0) }
+    window.onbeforeunload = function (e) {
+        sessionStorage.clear();
+    };
+    function noBack() {
+        window.history.forward()
+    }
+    noBack();
+    window.onload = noBack;
+    window.onpageshow = function (evt) { if (evt.persisted) noBack() }
+    window.onunload = function () { void (0) }
 </script>
 <script type="text/javascript" src="/js/refresh.js"></script>

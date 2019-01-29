@@ -1,13 +1,23 @@
-<div class="container">
+<div id="contain" class="container">
 	<header>
 		<h2 id="bid-form">
 			<div id='home'>
 
 			</div>
-			The Carolinian <b>Bid Form</b>
+			<span id="title" style="cursor:pointer">
+				<span style="font-size:30px;" onclick="openNav()">
+					&#9776;
+				</span>
+				<span>
+					The Carolinian
+					<b>
+						Bid Form
+					</b>
+				</span>
+			</span>
 		</h2>
 	</header>
-	<div id=text-editor>
+	<div id="text-editor">
 		<button class="button" id="h1" class="fontStyle" onclick="document.execCommand('formatBlock','false','<h1>'); getBidNfo();"
 		 contenteditable="false">
 			<b>h1</b>
@@ -41,7 +51,7 @@
 			<b>&#x27f3;</b>
 		</button>
 	</div>
-	<form action="/" method="post">
+	<form id="form" action="/" method="post">
 		<div id="ta" class="bid_ad_txt" rows="2" contenteditable="true" type="text" onkeyup="getBidNfo()">
 		</div>
 		<textarea onkeyup="getBidNfo()" class="bidAd" id="bidAd" type="text" name="bid_Ad">
