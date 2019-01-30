@@ -1349,6 +1349,12 @@ a.link_style:hover {
     left: 0;
   }
 
+  iframe {
+    width: 500px;
+    position: relative;
+    top: 30px;
+    right: 9px;
+  }
   /* #sq-creditcard {
 		position: relative;
 		margin: auto;
@@ -1437,5 +1443,9 @@ a.link_style:hover {
   #ta_3 {
     position: relative;
     left: 0;
+  }
+  #youtube {
+    position: relative;
+    right: 21px;
   }
 }
