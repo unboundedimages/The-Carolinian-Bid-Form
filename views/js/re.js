@@ -2,7 +2,7 @@
 window.onclick = myStopFunction;
 window.onkeyup = myStopFunction;
 window.onmousemove = myStopFunction;
-var myVar = setInterval(myTimer, 1000 * 60 * 5);
+var myVar = setInterval(myTimer, 1000 * 60 * 10);
 
 function myTimer() {
   document.getElementById("notify").style.display = "block";
