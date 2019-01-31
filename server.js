@@ -208,7 +208,7 @@ app.post("/payment", function(req, res, next) {
         //send to DOM
         applicationId: process.env.applicatoin_id
       };
-      if (!err) res.render("ccpgtm", { rows });
+      if (!err) res.render("ccpgtm", { rows, dbQuery });
       else console.log(err);
     }
   );
