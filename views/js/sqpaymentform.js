@@ -1,16 +1,5 @@
 "use strict";
-// var applicationId = "sq0idp-JhgseKPGUJdRedabr7S9yQ";
-// let appID = document.getElementById("appId").innerHTML;
-// // let appId = JSON.stringify(appID);
-// let appIDdd = appID.split(" ");
-// let appIdd = appID.slice(0);
-// // let appId = JSON.stringify(appIdd);
-// let appId = appIDdd[24];
-// let appId2 = appId.split("");
-// let appId3 = appId2.splice(0, 29).join("");
-// var applicationId = appId3;
-
-// console.log("this is appID: ", appID.reC)
+var applicationId = "sq0idp-JhgseKPGUJdRedabr7S9yQ";
 
 /*
  * function: requestCardNonce
@@ -32,14 +21,10 @@ function requestCardNonce(event) {
 // Create and initialize a payment form object
 let paymentForm = new SqPaymentForm({
   // Initialize the payment form elements
-  // applicationId: applicationId,
-  // applicationId: "{{dbQuery.applicationId}}",
-  // locationId: locationId,
+  applicationId: applicationId,
   paymentFormLoaded: function() {
     paymentForm.focus("cardNumber");
   },
-  // applicationId: "appId3",
-  // applicationId: "appID[0]",
   inputClass: "sq-input",
 
   // Customize the CSS for SqPaymentForm iframe elements
