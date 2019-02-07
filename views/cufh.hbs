@@ -1,0 +1,66 @@
+<div id="contain" class="container border-main">
+    <header>
+        <h2 id="bid-form">
+            <div id='home'>
+
+            </div>
+            <span id="title" style="cursor:pointer">
+                <span style="font-size:30px;" onclick="openNav()">
+                    &#9776;
+                </span>
+                <span>
+                    The Carolinian
+                    <b>
+                        Bid Form
+                    </b>
+                </span>
+            </span>
+        </h2>
+    </header>
+    <div id="CaroMan"></div>
+    <div class="contac">
+        <h3>Email Us</h3>
+        {{msg}}
+    </div>
+    <div style="height:559px">
+        <form method="POST" action="send" style="height:555px;">
+            <div class="input-group">
+                <input class="name-puts" type="text" name="name" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="label-names">Name</label>
+            </div>
+            <div class="input-group">
+                <input class="name-puts" type="text" name="company" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="label-names">Company</label>
+            </div>
+            <div class="input-group">
+                <input class="name-puts" type="email" name="email" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="label-names">Email Address</label>
+            </div>
+            <div class="input-group">
+                <input class="name-puts" type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="label-names">Phone Number</label>
+            </div>
+            <div style="position:relative; left:300px; bottom: 320px; width:310px; height:280px">
+                <div class="input-group">
+                    <textarea id="message" name="message" class="name-putss" style="font-size: 11pt; height:275px; min-height: 275px; max-height:275px; min-width:350px; width:350px; "
+                        required></textarea>
+                    <span class="highlight"></span>
+                    <span id="barz" class="bar"></span>
+                    <label class="label-names" style=>Message</label>
+                </div>
+            </div>
+            <p class="full">
+                <button type="submit" class="caro-submit" id="submit-B">Send</button>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/js/refresh.js"></script>
