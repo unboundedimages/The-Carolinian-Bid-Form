@@ -318,6 +318,7 @@ input:invalid {
 /*======= begining of contact form inputs */
 .contac {
   position: relative;
+  margin: auto;
   /* right: 120px; */
   right: 264px;
   top: 13px;
@@ -327,8 +328,16 @@ input:invalid {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+/* #message { */
+/* border: 3px inset orange; */
+/* outline-color: rgb(255, 60, 0); */
+/* } */
+
 #message {
   border: 3px inset orange;
+  background-color: #000000;
+  color: #fffcda;
+  padding: 11px;
   /* outline-color: rgb(255, 60, 0); */
 }
 .full {
