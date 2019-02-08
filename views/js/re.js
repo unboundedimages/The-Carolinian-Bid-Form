@@ -28,7 +28,7 @@ var up = true;
 function myStopFunction() {
   nut = false;
   clearInterval(myVar);
-  myVar = setInterval(myTimer, 1000 * 60 * 5);
+  myVar = setInterval(myTimer, 1000 * 60 * 10);
 }
 
 // SIDENAV
