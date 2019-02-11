@@ -37,18 +37,21 @@ let booly = false;
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("CaroBanner").style.marginLeft = "246px";
 }
 
 function closeNav() {
   bool = true;
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("CaroBanner").style.margin = "-4px";
 }
 document.getElementById("contain").addEventListener("click", function() {
   if (parseInt($("#mySidenav").css("width")) > 0) {
     bool = true;
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("CaroBanner").style.margin = "-4px";
   }
 });
 
