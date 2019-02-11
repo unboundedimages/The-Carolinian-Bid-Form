@@ -13,7 +13,7 @@ html {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 11;
   top: 0;
   left: 0;
   background-color: #111;
@@ -89,6 +89,7 @@ html {
 #CaroBanner {
   margin: -4px;
   width: 100.4vw;
+  transition: margin-left 0.5s;
 }
 
 /* #CaroBanner {
@@ -393,7 +394,14 @@ input[type="text"] {
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
 }
-
+.name-putss {
+  font-size: 11pt;
+  height: 275px;
+  min-height: 260px;
+  max-height: 260px;
+  min-width: 350px;
+  width: 350px;
+}
 .name-puts:focus ~ .label-names,
 .name-puts:valid ~ .label-names {
   top: -20px;
@@ -1195,6 +1203,26 @@ a.link_style:hover {
   }
 }
 
+#textbox {
+  position: relative;
+  left: 300px;
+  bottom: 320px;
+  width: 310px;
+  height: 280px;
+}
+#spnCharLeft {
+  margin: auto;
+  height: 30px;
+  width: 140px;
+  position: relative;
+  bottom: 300px;
+  right: 230px;
+  display: block;
+}
+#marigold-Border {
+  height: 559px;
+}
+
 @media screen and (max-width: 399px) {
   #medias {
     position: relative;
@@ -1297,7 +1325,9 @@ a.link_style:hover {
     top: -140px;
     /* right:2px; */
   }
-
+  #form {
+    height: 500px;
+  }
   #ta {
     left: 0px;
     font-size: 12pt;
@@ -1323,8 +1353,14 @@ a.link_style:hover {
     position: relative;
     top: -6px;
   }
-  .label-names {
-    top: 0px;
+  /* .label-names { */
+  /* top: 0px; */
+  /* } */
+
+  .name-putss:focus ~ .label-names,
+  .name-putss:valid ~ .label-names {
+    top: -30px;
+    left: -21px;
   }
   input#date4 {
     bottom: 6px;
@@ -1386,7 +1422,10 @@ a.link_style:hover {
 
   .caro-submit {
     margin-left: 0px;
-    right: 30px;
+    /* right: 30px; */
+    position: relative;
+    left: 16px;
+    margin-bottom: 0;
   }
   #bill {
     position: relative;
@@ -1407,7 +1446,96 @@ a.link_style:hover {
   /* #sq-creditcard {
 		position: relative;
 		margin: auto;
-	} */
+  } */
+  #index414 {
+    position: relative;
+    right: 20px;
+  }
+
+  #date2 {
+    position: relative;
+    bottom: 6px;
+  }
+  #Date2-414 {
+    position: relative;
+    top: -6px;
+  }
+
+  #bar2-414 {
+    bottom: 6px;
+    position: relative;
+  }
+
+  #Date414 {
+    position: relative;
+    bottom: 7px;
+  }
+
+  .burger {
+    font-size: 11pt;
+  }
+
+  #email-us {
+    position: relative;
+    left: 80px;
+  }
+  #main {
+    height: 500px;
+  }
+
+  #textbox {
+    width: 100vw;
+    height: auto;
+    bottom: 250px;
+    left: -2px;
+  }
+  #spnCharLeft {
+    position: absolute;
+    /* top: 170px; */
+    top: -39px;
+    right: 89px;
+  }
+  #htfwik414 {
+    position: relative;
+    right: 11px;
+    top: 330px;
+    height: 220px;
+  }
+  #ttr414 {
+    left: 252px;
+    position: relative;
+    bottom: 160px;
+    width: 72vw;
+  }
+
+  #bar414 {
+    bottom: 1px;
+    position: relative;
+  }
+  #message {
+    margin: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  #label414 {
+    position: relative;
+    /* margin: 0; */
+    top: 3px;
+  }
+  #phone-line {
+    position: relative;
+    bottom: 3px;
+  }
+  .sidenav {
+    position: absolute;
+    height: 757px;
+  }
+  .full {
+    position: absolute;
+    bottom: 8px;
+    left: 303px;
+    width: 30px;
+  }
 }
 
 @media (max-width: 1019px) and (min-width: 430px) {
@@ -1481,7 +1609,7 @@ a.link_style:hover {
   }
   .caro-submit {
     position: relative;
-    margin: -6px 23px 10px;
+    margin: 24px 23px 10px;
   }
 
   #bill {
@@ -1496,5 +1624,66 @@ a.link_style:hover {
   #youtube {
     position: relative;
     right: 21px;
+  }
+  #email-us {
+    position: relative;
+    left: 80px;
+  }
+  #main {
+    height: 500px;
+  }
+
+  #textbox {
+    width: 100vw;
+    height: auto;
+    bottom: 250px;
+    left: -2px;
+  }
+  #spnCharLeft {
+    position: absolute;
+    /* top: 170px; */
+    top: -39px;
+    right: 89px;
+  }
+  #htfwik414 {
+    position: relative;
+    right: 11px;
+    top: 330px;
+    height: 220px;
+  }
+  #ttr414 {
+    left: 252px;
+    position: relative;
+    bottom: 160px;
+    width: 72vw;
+  }
+
+  #bar414 {
+    bottom: 1px;
+    position: relative;
+  }
+  #message {
+    margin: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  #label414 {
+    position: relative;
+    /* margin: 0; */
+    top: 3px;
+  }
+  #phone-line {
+    position: relative;
+    bottom: 3px;
+  }
+  .sidenav {
+    position: absolute;
+    height: 757px;
+  }
+  .full {
+    position: absolute;
+    bottom: 8px;
+    left: 303px;
+    width: 30px;
   }
 }
