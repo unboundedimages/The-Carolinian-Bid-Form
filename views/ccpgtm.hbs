@@ -11,7 +11,7 @@
             </div>
             <span id="title" title="Click to open side navigator" style="cursor:pointer" onclick="openNav()">
                 <span style="font-size:30px;" onclick="openNav()">
-                    &#9776;
+                    <span class="burger">&#9776;</span>
                 </span>
                 <span>
                     The Carolinian
@@ -67,7 +67,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                                    <button id="sq-creditcard" class="button-credit-card"
+                                        onclick="requestCardNonce(event)">
                                         Process for {{this.price}}
                                     </button>
                                 </td>

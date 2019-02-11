@@ -6,7 +6,7 @@
             </div>
             <span id="title" style="cursor:pointer">
                 <span style="font-size:30px;" onclick="openNav()">
-                    &#9776;
+                    <span class="burger">&#9776;</span>
                 </span>
                 <span>
                     The Carolinian
@@ -22,47 +22,53 @@
         {{#if msg}}
         <h3 id="sent" style="position:relative; left:51px;">Email has been sent</h3>
         {{else}}
-        <h3>Email Us</h3>
+        <h3 id="email-us">Email Us</h3>
         {{/if}}
     </div>
-    <div style="height:559px">
+    <div id="marigold-Border">
         <form method="POST" action="send" style="height:555px;">
-            <div class="input-group">
-                <input class="name-puts" type="text" name="name" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="label-names">Name</label>
-            </div>
-            <div class="input-group">
-                <input class="name-puts" type="text" name="company" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="label-names">Company</label>
-            </div>
-            <div class="input-group">
-                <input class="name-puts" type="email" name="email" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="label-names">Email Address</label>
-            </div>
-            <div class="input-group">
-                <input class="name-puts" title="Please enter your 10 digit phone number with out dashes '-'" type="tel"
-                    name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="label-names">Phone
-                    Number</label>
-            </div>
-            <div style="position:relative; left:300px; bottom: 320px; width:310px; height:280px">
+            <div id="htfwik414">
                 <div class="input-group">
-                    <textarea id="message" maxlength="615" name="message" class="name-putss" style="font-size: 11pt; height:275px; min-height: 260px; max-height:260px; min-width:350px; width:350px; "
-                        required></textarea>
+                    <input class="name-puts" type="text" name="name" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="label-names">Name</label>
+                </div>
+                <div class="input-group">
+                    <input class="name-puts" type="text" name="company" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="label-names">Company</label>
+                </div>
+                <div id="ttr414">
+                    <div class="input-group">
+                        <input class="name-puts" type="email" name="email" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label class="label-names">Email Address</label>
+                    </div>
+                    <div id="phone-line" class="input-group">
+                        <input class="name-puts" title="Please enter your 10 digit phone number with out dashes '-'"
+                            type="tel" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                        <span class="highlight"></span>
+                        <span id="bar414" class="bar"></span>
+                        <label class="label-names">
+                            <span id="label414">
+                                Phone Number
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="textbox">
+                <div class="input-group">
+                    <textarea id="message" maxlength="615" name="message" class="name-putss" required></textarea>
                     <span class="highlight"></span>
                     <span id="barz" class="bar"></span>
                     <label class="label-names" style=>How can we help?</label>
                 </div>
             </div>
-            <div id="spnCharLeft" style="margin:auto; height:30px; width:140px; position: relative; bottom: 300px; right:230px">
+            <div id="spnCharLeft">
 
             </div>
             <p class="full">
