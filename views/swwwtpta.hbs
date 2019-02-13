@@ -1,5 +1,5 @@
 <script type="text/javascript" src="/js/check.js"></script>
-<div class="container border-main">
+<div id="contain" class="container border-main">
     <header>
         <div>
             <h1>
@@ -11,7 +11,17 @@
             <div id='home'>
 
             </div>
-            The Carolinian <b>Bid Form</b>
+            <span id="title" style="cursor:pointer">
+                <span style="font-size:30px;" onclick="openNav()">
+                    <span class="burger">&#9776;</span>
+                </span>
+                <span>
+                    The Carolinian
+                    <b>
+                        Bid Form
+                    </b>
+                </span>
+            </span>
         </h2>
     </header>
     <div id="CaroMan"></div>
@@ -65,7 +75,8 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                                    <button id="sq-creditcard" class="button-credit-card"
+                                        onclick="requestCardNonce(event)">
                                         {{!-- {{#each rows}} --}}
                                         Process for {{this.price}}
                                         {{!-- {{/each}} --}}
