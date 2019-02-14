@@ -166,7 +166,11 @@ app.post("/preview-bid", (req, res) => {
     "SELECT rec_locator FROM bid_nfo ORDER BY id DESC LIMIT 1",
     "SELECT price FROM bid_nfo ORDER BY id DESC LIMIT 1",
     "SELECT bid_ad FROM bid_nfo ORDER BY id DESC LIMIT 1",
-    "SELECT email FROM bid_nfo ORDER BY id DESC LIMIT 1"
+    "SELECT email FROM bid_nfo ORDER BY id DESC LIMIT 1",
+    "SELECT date1 FROM bid_nfo ORDER BY id DESC LIMIT 1",
+    "SELECT date2 FROM bid_nfo ORDER BY id DESC LIMIT 1",
+    "SELECT date3 FROM bid_nfo ORDER BY id DESC LIMIT 1",
+    "SELECT date4 FROM bid_nfo ORDER BY id DESC LIMIT 1"
   ];
   db.query(queires.join(";"), function(error, results, fields) {
     if (error) {
@@ -178,7 +182,18 @@ app.post("/preview-bid", (req, res) => {
       bid_text: results[2][0].bid_ad,
       email: results[3][0].email
     };
-    res.render("pybtyfts", { rec });
+    let testDate = results[4][0].date1;
+    let testTest = function() {
+      testDate.substring(0, 15);
+    };
+    // console.log(testDate);
+    let dates = {
+      date1: results[4][0].date1,
+      date2: results[5][0].date2,
+      date3: results[6][0].date3,
+      date4: results[7][0].date4
+    };
+    res.render("pybtyfts", { rec, dates });
   });
 });
 
