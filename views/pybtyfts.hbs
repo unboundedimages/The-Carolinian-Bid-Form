@@ -21,6 +21,31 @@
 	<div id="ta_2">
 		<form id="ontothenext" action='/payment' method="post">
 			<div class="black-line">
+				<p id="dobr" class="radi">Date of bid runs:</p>
+				<div id="review-Date">
+					{{#if dates}}
+					<div id="date1a" class="radi">
+						{{{dates.date1}}}
+					</div>
+					{{#if dates.date2}}
+					<div id="date2a" class="radi">
+						{{{dates.date2}}}
+					</div>
+					{{/if}}
+					{{#if dates.date3}}
+					<div id="date3a" class="radi">
+						{{{dates.date3}}}
+					</div>
+					{{/if}}
+					{{#if dates.date4}}
+					<div id="date4a" class="radi">
+						{{{dates.date4}}}
+					</div>
+					{{/if}}
+					{{/if}}
+				</div>
+				<div id="prebi">Preview Bid:</div>
+				<p class="barr"></p>
 				{{{rec.bid_text}}}
 			</div>
 			<div id="reviw-Button">
@@ -29,6 +54,30 @@
 			</div>
 		</form>
 	</div>
+	{{!-- <div id="review-Date">
+		<div>
+			Your Bid will run:
+		</div>
+		{{#if dates}}
+		<label id="dl1" class="date-label">Date 1</label>
+		<span id="date1a">
+			{{{dates.date1}}}
+		</span>
+
+		<label id="dl2" class="date-label">Date 2</label>
+		<span id="date2a">
+			{{{dates.date2}}}
+		</span>
+		<label id="dl3" class="date-label">Date 3</label>
+		<span id="date3a">
+			{{{dates.date3}}}
+		</span>
+		<label id="dl4" class="date-label">Date 4</label>
+		<span id="date4a">
+			{{{dates.date4}}}
+		</span>
+		{{/if}}
+	</div> --}}
 	<div id="confirmBtn">
 		<button class="caro-submit add" id="submit-B" type='submit' form="ontothenext" href='ccpgtm'
 			onkeyup="makeid()">Continue</button>
@@ -47,3 +96,4 @@
 	window.onunload = function () { void (0) }
 </script>
 <script type="text/javascript" src="/js/media.js"></script>
+<script type="text/javascript" src="/js/dates.js"></script>
