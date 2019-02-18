@@ -69,6 +69,9 @@
 				<option value="3">3</option>
 				<option value="4">4</option>
 			</select>
+			<div id="errormsg">
+
+			</div>
 		</p>
 		<div id="index414">
 			<div class="input-group">
@@ -101,7 +104,8 @@
 				<div class="i-group1">
 					<div class="input-group" id="1" hidden>
 						<input class="datepicker" type="text" pattern="[0-9-]+" name="input1" id="date1"
-							onkeypress="return event.keyCode != 13;" onkeydown="noText();" autocomplete="off" required>
+							onchange="checkDay1();" onkeypress="return event.keyCode != 13;" autocomplete="off"
+							required>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="label-names">
@@ -112,7 +116,8 @@
 				<div class="i-group1" id="two">
 					<div class="input-group" id="2" hidden>
 						<input class="datepicker" type="text" pattern="[0-9-]+" name="input2" id="date2"
-							onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
+							onchange="checkDay1();" onkeypress="return event.keyCode != 13;" autocomplete="off" required
+							disabled>
 						<span class="highlight"></span>
 						<span id="bar2-414" class="bar"></span>
 						<label class="label-names">
@@ -123,7 +128,8 @@
 				<div class="i-group1" id="three">
 					<div class="input-group" id="3" hidden>
 						<input class="datepicker" type="text" pattern="[0-9-]+" name="input3" id="date3"
-							onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
+							onchange="checkDay1();" onkeypress="return event.keyCode != 13;" autocomplete="off" required
+							disabled>
 						<span class="highlight"></span>
 						<span class="bar"></span>
 						<label class="label-names">
@@ -134,7 +140,8 @@
 				<div class="i-group1" id="four">
 					<div class="input-group" id="4" hidden>
 						<input class="datepicker" type="text" pattern="[0-9-]+" name="input4" id="date4"
-							onkeypress="return event.keyCode != 13;" autocomplete="off" required disabled>
+							onchange="checkDay1();" onkeypress="return event.keyCode != 13;" autocomplete="off" required
+							disabled>
 						<span class="highlight"></span>
 						<span id="bar-4" class="bar"></span>
 						<label class="label-names">
@@ -147,7 +154,7 @@
 			</div>
 		</div> {{!-- ends date-group --}}
 		<button class="caro-submit" id="submit-B" onclick="getit();" onkeydown="getit();">Process</button>
-		{{!-- Used to push text to db --}}
+		{{!-- push text --}}
 		<textarea contenteditable="true" id="lines" type="text" name="price">
 				</textarea>
 		<input type="text" id="lines_2" name="price_2" hidden>
