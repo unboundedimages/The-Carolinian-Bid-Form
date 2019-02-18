@@ -343,6 +343,17 @@ img {
   width: 260px;
   font-size: 20px;
 }
+#errormsg {
+  position: relative;
+  left: 34px;
+  top: 10px;
+  /* left: 284px;
+  bottom: 33px;
+  height: 4px;
+  font-size: 16px; */
+  color: #4e9326;
+  width: 250px;
+}
 .caroman {
   width: 40%;
   position: absolute;
@@ -1113,6 +1124,8 @@ input:-webkit-autofill:active {
   margin-left: 25px;
   /* margin-bottom: 51px; */
   margin-bottom: 32px;
+  /* box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19); */
 }
 
 /* form {
