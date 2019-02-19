@@ -439,7 +439,8 @@ function checkDay1() {
     if (
       (dateArray[0] === "" && dateArray[1] === "" && dateArray[2] === "") ||
       (dateArray[0] === "" && dateArray[2] === "") ||
-      (dateArray[1] === "" && dateArray[2] === "")
+      (dateArray[1] === "" && dateArray[2] === "") ||
+      (dateArray[2] !== dateArray[1] && dateArray[0] === "")
     ) {
       document.getElementById("errormsg").innerText = "";
       oNoFF.on();
