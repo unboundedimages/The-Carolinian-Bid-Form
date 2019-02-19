@@ -345,14 +345,17 @@ img {
 }
 #errormsg {
   position: relative;
-  left: 34px;
-  top: 10px;
-  /* left: 284px;
-  bottom: 33px;
-  height: 4px;
-  font-size: 16px; */
+  font-size: 18px;
+  text-align: center;
+  font-family: arial;
+  /* left: 228px; */
+  left: 123px;
+  bottom: 58px;
+  margin: 0px;
+  height: 0;
+  padding: 0px;
   color: #4e9326;
-  width: 250px;
+  width: 324px;
 }
 .caroman {
   width: 40%;
